@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* px 像素 */
+    body{
+      height: 3000px;
+    }
+    /* id选择器
+        #（id名）
+    */
+    #wrapper{
+      /* width: 宽 */
+      width: 200px;
+      /* height: 高 */
+      height: 200px;
+      background: red;
+    }
+
+    /* class 选择器
+      .(class名)
+    */
+    .container{
+      color: green;
+    }
+  
+    /* 标签选择器
+      标签名
+    */
+    span{
+      color: blue;
+    }
+    /* 子代选择器 >  */
+    /* ul>li {
+      color: red;
+    } */
+    /* ul>.list{
+      color: green;
+    } */
+    #main>.list{
+      color: red;
+    }
+    .content>span{
+      color: black;
+    }
+
+    /* 后代选择器
+        找父元素下面的儿子 孙子 。。。。
+    */
+    .content span{
+      background: aqua;
+    }
+    /* 分组选择器 */
+    .container,.list{
+      background: pink;
+    }
+
+    .content>span>a{
+      color: red;
+    }
+
+    /* 伪类选择器 */
+    #link{
+      color: red;
+    }
+    #link:hover{
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <!-- id选择器 当前html页面中 id值必须是唯一的 -->
+  <div id="wrapper">1</div>
+
+  <!-- class选择器 当前html页面中 相同名字的class可以写多个  -->
+  <div class="container">2</div>
+  <p class="container">3</p>
+
+  <!-- 标签选择器 -->
+  <span>hello world</span>
+
+  <ul id="main">
+    <li class="list">1234567890</li>
+  </ul>
+  <!-- .content span  .content>span -->
+  <div class="content">
+    <p>
+      <span>span1</span>
+    </p>
+    <span>
+      span2
+      <a href="#">1234567</a>
+    </span>
+  </div>
+
+  <a href="#" id="link">百度</a>
+
+  <!-- css选择器
+      1.id选择器 #
+      2.class选择器/类选择器 .
+      3.标签选择器 标签名
+      4.子代选择器 >
+      5.后代选择器 (空格)
+      6.分组选择器 ，
+      7.伪类选择器 ：
+  -->
+</body>
+</html>
