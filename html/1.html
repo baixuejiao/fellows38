@@ -1,5 +1,5 @@
 <!-- html注释 -->
-<!-- 代表html版本 告诉浏览器以哪一个版本渲染页面 目前最新的是5.0版本  -->
+<!-- 声明文档类型 代表html版本 告诉浏览器以哪一个版本渲染页面 目前最新的是5.0版本  -->
 <!DOCTYPE html>
 <!-- 根标签 代表页面的开始和结束 所有的代码必须写在根标签内部 -->
 <html>
@@ -9,7 +9,7 @@
   <meta charset="UTF-8">
   <!-- 响应式配置 移动端开发中的配置信息 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- ie浏览器配置 ie=edge 以最高的ie版本渲染页面 -->
+  <!-- ie浏览器配置 ie=edge 以最高的ie版本渲染页面 ie8以上的浏览器支持 -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- 标题 -->
   <title>天猫 Tmall.com</title>
@@ -21,7 +21,6 @@
 <!-- 网页的主体部分 -->
 <body style="height: 3000px">
   天猫
-
   <!-- h1~h6 标题标签 会有加粗的默认样式 -->
   <h1>标题1</h1>
   <h2>标题2</h2>
@@ -30,10 +29,13 @@
   <h5>标题5</h5>
   <h6>标题6</h6>
 
-  <!-- 段落 会带有一定的间距 -->
-  <p>淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖,购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺</p>
-  <p>淘宝,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖,购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺</p>
-
+  <!-- p 段落 会带有一定的间距 -->
+  <!-- <br/> 换行  -->
+  <!-- i 斜体 -->
+  <p> <i>淘宝</i>,掏宝,网上购物,C2C,在线交易,<br/>交易市场,网上交易,交易市场,网上买,网上卖,购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺</p>
+  <!-- strong 加粗 -->
+  <p><strong>淘宝</strong>,掏宝,网上购物,C2C,在线交易,交易市场,网上交易,交易市场,网上买,网上卖,购物网站,团购,网上贸易,安全购物,电子商务,放心买,供应,买卖信息,网店,一口价,拍卖,网上开店,网络购物,打折,免费开店,网购,频道,店铺</p>
+  <br/>
   <!-- 图片
       src属性：图片的地址
       alt属性：当图片加载失败时展示的文案
@@ -43,19 +45,143 @@
       png 透明背景的图片
       gif 动图
   -->
-
   <!-- 相对路径
       ./ 代表的是当前目录下
       ../ 代表上一层目录
   -->
-  <img src="./img.jpg" alt="logo">
-  <img src="img.jpg" alt="logo">
+  <img src="./logo.png" alt="logo" />
+  <!-- <img src="logo.png" alt="logo"> -->
 
-  <img src="../../800.jpg" alt="">
-  <img src="../imgs/pic.jpeg" alt="logo">
+  <!-- <img src="../../800.jpg" alt=""> -->
+  <!-- <img src="../imgs/logo.png" alt="logo"> -->
 
   <!-- 绝对路径 可以在浏览器中直接打开访问的一个地址 -->
   <img src="https://gw.alicdn.com/tfs/TB10Q3PiHr1gK0jSZR0XXbP8XXa-290-130.gif" alt="天猫logo">
 
+  <!-- <br/> -->
+  <!-- a标签 超链接
+      href 跳转链接
+      target="_blank" 在新标签页打开页面
+  -->
+  <a href="https://baidu.com" >百度</a>
+  <a href="https://baidu.com" target="_blank">百度</a>
+
+  <!-- ul + li 无序列表 -->
+  <ul>
+    <li>111</li>
+    <li>222</li>
+    <li>333</li>
+  </ul>
+
+  <!-- ol + li 有序列表 -->
+  <ol>
+    <li>aaa</li>
+    <li>bbb</li>
+    <li>ccc</li>
+  </ol>
+
+  <!-- div + css 布局
+     div/span 没有特定的含义 用来做页面的布局
+  -->
+  <div>div标签</div>
+  <div>div标签</div>
+  <span>span标签</span><span>span标签</span>
+
+  <!-- 块级元素&行级元素 -->
+  <!-- 
+      块级元素 
+        单个元素占一行
+        块级元素可以嵌套块级元素/行级元素/行级块元素（h1~h6 p 除外）
+        h1~h6 p div ul li ol
+      行级元素/行内元素 
+        多个元素占一行
+        行级元素只可以嵌套行级元素
+        a span
+      行级块元素
+        既有行级元素的特点也有块级元素的特点
+        img
+   -->
+
+  <!-- 
+    table 表格
+    tr 行
+    td 列（单元格）
+    border 属性 表格的边框
+   -->
+  <table border="1">
+    <tr>
+      <td>12345678</td>
+      <td>88888</td>
+    </tr>
+    <tr>
+      <td>12345678</td>
+      <td>88888</td>
+    </tr>
+  </table>
+
+  <!-- form 表单
+    action 提交的地址
+  -->
+  <form action="https://www.qingmengtech.com/aaa">
+    <!-- input
+        type: text password radio checkbox
+        value: 当前输入框的值 
+    -->
+    <!-- input 输入框
+      type = text 文本
+    -->
+    <span>姓名：</span> <input type="text" name="nickname" value="1111">
+    <br/>
+    <!-- type = password 密码 -->
+    <span>密码：</span> <input type="password" name="psw">
+    <br/>
+
+    <!-- type: radio 单选框
+          name 的值相同的时候 表示的是同一组单选框
+    -->
+    性别： <input type="radio" name="radio_name"> 男 
+          <input type="radio" name="radio_name"> 女
+    <br/>
+    性别： 
+
+    <!-- label for属性的值等于input的id label标签和input有绑定关系 点击label的时候 input可以被选中 -->
+    <input type="radio" name="sex" id="boy" value="nan"> <label for="boy">男</label> 
+    <input type="radio" name="sex" id="girl" value="nv"> <label for="girl">女</label> 
+    <br/>
+
+    <!-- type:checkbox 复选框
+        checked 表示当前复选框被选中
+    -->
+    水果：
+    <input type="checkbox" name="fruit" id="apple"><label for="apple">苹果</label> 
+    <input type="checkbox" name="fruit">梨
+    <input type="checkbox" name="fruit">香蕉
+    <input type="checkbox" name="fruit" checked>西瓜
+
+    <br/>
+    <!-- 下拉列表
+        select + option
+        (option下拉的每一项)
+    -->
+    年级：
+    <select>
+      <option>19</option>
+      <option>18</option>
+      <option>17</option>
+      <option>16~10</option>
+    </select>
+
+    <!-- 文本域
+      rows 行
+      cols 列
+    -->
+    <textarea cols="30" rows="10">12345678</textarea>
+    <br/>
+    <!-- type: submit 提交按钮 -->
+    <input type="submit" value="提交1111">
+    <!-- 按钮 -->
+    <button>按钮</button>
+  </form>
 </body>
 </html>
+
