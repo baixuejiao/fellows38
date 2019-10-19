@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    p{
+      /* 设置字体
+        可以设置多个字体 从前往后依次识别，直到某一个字体支持为止
+        字体的名称如果是多个单词 需要用引号括起来
+      */
+      /* font-family: Times, TimesNR, 'New Century Schoolbook',Georgia, 'New York', serif; */
+      
+      /* 字体大小
+          pc默认字体大小是16px 最小显示的是12px
+          移动端可以支持小于12px的字体
+      */
+      font-size: 16px;
+
+      /* 字体风格
+        italic： 斜体
+        oblique: 倾斜展示
+      */
+      /* font-style: italic; */
+
+      /* 字体的粗细
+        权重值表示100~900
+        默认值是400 
+        bold 加粗 对应的是 700
+        bolder 更粗 相对于已设置过的字体粗细之上 再粗一点点
+      */
+      font-weight: 100;
+    }
+
+    p>span{
+      font-weight: bolder;
+    }
+
+    div{
+      /* font-style: oblique; */
+    }
+  </style>
+</head>
+<body>
+  唯创
+  <p>
+    唯创
+    <span>
+      网讯
+    </span>
+  </p>
+
+  <div>唯创</div>
+
+</body>
+</html>

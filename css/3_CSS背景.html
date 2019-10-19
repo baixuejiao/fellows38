@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      width: 400px;
+      height: 400px;
+      /* 背景颜色 */
+      background-color: blue;
+      /* 背景图片 */
+      background-image: url('../imgs/logo.png');
+
+      /* 背景图片是否重复
+        no-repeat 不重复
+        repeat-x x轴方向重复
+        repeat-y y轴方向重复
+      */
+      background-repeat: no-repeat;
+
+      /* 
+        背景图片的位置
+        1.方向： center left top bottom right
+        2.px： 两个值（x,y） 如果只写了x的值，y默认是center
+        3.百分比
+      */
+      background-position: 10% ;
+    }
+
+    #container{
+      width: 200px;
+      height: 200px;
+      /* 背景的简写 */
+      background: green url('../imgs/logo.png') center no-repeat;
+    }
+  
+  </style>
+</head>
+<body>
+  <div></div>
+  <div id="container"></div>
+</body>
+</html>
