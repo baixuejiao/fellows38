@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 
+      同一个元素的相同属性 优先级 id > class > 标签
+      同一个元素 不同选择器里的不同是属性 会合并
+      同一个元素 选择器的优先级相同时 同一个属性 后面的会把前面的覆盖
+    */
+
+    /* 
+      选择器的权重
+      !important 最高的
+      内联样式 1000
+      id 100
+      class 10
+      伪类 10
+      标签 1
+      伪元素 1
+    */
+    div{
+      width: 200px;
+      height: 200px;
+      background: aqua;
+    }
+    #wrapper{
+      font-size: 40px;
+      background: yellow;
+    }
+    .main{
+      color: orange;
+    }
+    .wrapper{
+      color: pink;
+      background: green;
+    }
+    
+    /* 1 */
+    li{
+      color: #ff8903 !important;
+    }
+    /* 2 */
+    ul>li{
+      color: pink;
+    }
+    /* 11 */
+    .content>li{
+      color: #000;
+    }
+    /* 10 */
+    .list{
+      color: red;
+    }
+    /* 110 */
+    #container>.list{
+      color: green;
+    }
+    /* 110 */
+    .content>#list1{
+      color: blue;
+    }
+    
+  
+  </style>
+</head>
+<body>
+  <!-- 内联样式的优先级最高 -->
+  <!-- <div style="width:200px;height:200px;background:red;">123</div> -->
+
+  <!-- <div id="wrapper" class="wrapper main">123</div> -->
+  
+
+  <ul class="content" id="container">
+    <li class="list" id="list1">li1</li>
+    <!-- <li>li2</li>
+    <li>li3</li> -->
+  </ul>
+
+
+</body>
+</html>

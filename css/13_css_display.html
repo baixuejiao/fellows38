@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      height: 2000px;
+    }
+    /* 
+      display 布局
+        none 隐藏
+        block 块级元素
+        inline 行级元素
+        inline-block 行级块元素
+    */
+    div{
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: aqua;
+    }
+    /* 
+      行级元素设置宽高
+        1.设置display
+        2.设置float
+    */
+    span{
+      /* display: block; */
+      /* float: left; */
+      width: 200px;
+      height: 200px;
+      background: pink;
+    }
+
+    img{
+      /* display: block; */
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    块级元素
+      1.单个元素占一行
+      2.可以设置宽高
+    
+    行级元素/行内元素
+      1.多个元素占一行
+      2.不可以设置宽高（被内容撑开）
+
+    行级块元素（既有行级元素的特点又有块级元素的特点）
+      1.多个元素占一行
+      2.可以设置宽高
+
+   -->
+  <div>hello world</div>
+
+  <span>hello world</span>
+
+  <!-- <img src="../imgs/logo.png" alt="">
+  <img src="../imgs/logo.png" alt=""> -->
+</html>
