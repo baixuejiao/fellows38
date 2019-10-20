@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #wrapper1{
+      width: 100px;
+      height: 100px;
+      margin-bottom: 90px;
+      background: aqua;
+    }
+  
+    .main{
+      width: 100px;
+      height: 100px;
+      /* margin-top: 50px; */
+      background: pink;
+    }
+
+    .parent{
+      width: 198px;
+      height: 200px;
+      margin-top: 50px;
+      background: red;
+
+      /* 溢出隐藏 */
+      /* overflow: hidden; */
+      /* 绝对定位 */
+      /* position: absolute; */
+      /* 浮动 */
+      /* float: left; */
+      border: 1px solid transparent;
+    }
+    .child{
+      width: 100px;
+      height: 100px;
+      margin-top: 20px;
+      background: green;
+      /* position: absolute; */
+      /* float: left; */
+    }
+
+    /* 外边距合并问题
+      1.并列关系 只给一个元素加上外边距
+      2.嵌套关系
+        1.给父元素加overflow:hidden
+        2.给父元素或子元素加绝对定位 position: absolute
+        3.给父元素或子元素加浮动 float
+        4.给父元素加边框
+    */
+  
+  </style>
+
+</head>
+<body>
+  <!-- 1.并列关系 -->
+  <!-- <div id="wrapper1">div1</div>
+  <div class="main">div2</div> -->
+
+  <!-- 2.嵌套关系 -->
+  <div class="parent">
+    <div class="child"></div>
+  </div>
+</body>
+</html>
