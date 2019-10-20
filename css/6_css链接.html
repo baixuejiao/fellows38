@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    /* 未访问过的样式 */
+    a:link{
+      color: pink;
+    }
+    /* 已访问过的样式 */
+    a:visited{
+      color: green;
+    }
+    /* 鼠标划入的样式 */
+    a:hover{
+      color: red;
+    }
+    /* 鼠标点击时的样式 */
+    a:active{
+      color: blue;
+    }
+    p:hover{
+      color: aqua;
+    }
+
+    /* 
+      当为链接的不同状态设置样式时，请按照以下次序规则：
+      a:hover 必须位于 a:link 和 a:visited 之后
+      a:active 必须位于 a:hover 之后
+    */
+  
+  </style>
+</head>
+<body>
+  <a href="https://www.baidu.com" target="_blank">链接</a>
+
+  <p>123456789</p>
+</body>
+</html>
