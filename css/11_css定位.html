@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      height: 2000px;
+    }
+    #parent{
+      width: 400px;
+      height: 400px;
+      margin: 50px;
+      border: 10px solid black;
+      position: relative;
+    }
+    #inner{
+      width: 300px;
+      height: 300px;
+      margin: 30px;
+      background: aqua;
+      /* position: relative; */
+    }
+    #wrapper{
+      /* postion 定位
+        relative 相对定位 相对于元素本身进行的定位 定位后空间不会被释放
+        absolute 绝对定位 定位后空间会释放 相对于最近的已定位的祖先元素进行定位 如果祖先元素都没有定位的话，就相对于body进行定位
+        fixed 固定定位 定位后空间释放 相对于浏览器的窗口定位
+
+        元素定位以后可以修改 top left right bottom
+        元素可以只进行定位 不改变位置的值，但是一旦想改变位置的值必须要先进行定位
+        */
+      width: 200px;
+      height: 200px;
+      background: red;
+      position: absolute;
+      top: 40px;
+      left: 40px;
+    }
+    #main{
+      width: 300px;
+      height: 300px;
+      background: pink;
+    }
+   
+    #aaaa{
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+
+      /* z-index: 3; */
+    }
+    #content{
+      width: 100px;
+      height: 100px;
+      background: palegoldenrod;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+    }
+
+    #container{
+      width: 100px;
+      height: 100px;
+      background: green;
+      position: relative;
+      left: 100px;
+      top: 100px;
+      /* 
+        z-index 表示层级 
+        元素只有定位以后才可以设置层级
+        z-index的值越大 元素越在上面
+      */
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <!-- <div id="parent">
+    <div id="inner">
+      <div id="wrapper">div1</div>
+    </div>
+  </div> -->
+  <!-- <div id="main">div2</div> -->
+
+  <div id="container">div3</div>
+  <div id="content">div4</div>
+  <div id="aaaa">div5</div>
+
+
+  
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    .wrapper{
+      /* float 浮动
+        元素浮动以后空间会释放
+        left 按照html结构的顺序 从左向右依次排列
+        right 按照html结构的顺序 从右向左依次排列
+      */
+      /* float: left; */
+      width: 200px;
+      height: 200px;
+    }
+    #parent{
+      height: 200px;
+      /* overflow: hidden; */
+      background: green;
+    }
+    #wrapper1{
+      background: aqua;
+    }
+    #wrapper2{
+      background: palegoldenrod
+    }
+    #wrapper3{
+      background: palegreen;
+    }
+  
+    #main{
+      width: 100%;
+      height: 300px;
+      background: red;
+    }
+
+    .child{
+      /* clear清除浮动
+        left right both
+      */
+      clear: both;
+    }
+
+    .clearfix::after{
+      /* 设置内容 */
+      content: "";
+      /* 设置为块元素 */
+      display: block;
+      /* 清除浮动 */
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+      元素浮动后 造成的塌陷问题
+      1.给父元素设置高度
+      2.给父元素设置溢出隐藏 overflow:hidden
+      3.在父元素里的最后面加一个空的子元素（块级元素），并且给这个子元素设置清除浮动 clear:both
+      4.增加伪元素 设置clearfix
+        .clearfix::after{
+          /* 设置内容 */
+          content: "";
+          /* 设置为块元素 */
+          display: block;
+          /* 清除浮动 */
+          clear: both;
+        }
+   -->
+  <div id="parent" class="clearfix">
+    <div class="wrapper" id="wrapper1">div1</div>
+    <div class="wrapper" id="wrapper2">div2</div>
+    <div class="wrapper" id="wrapper3">div3</div>
+    <!-- <div class="child"></div> -->
+  </div>
+  <!-- <div id="main" class="clearfix">hello world</div> -->
+</body>
+</html>
