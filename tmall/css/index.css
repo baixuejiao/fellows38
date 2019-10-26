@@ -1,0 +1,12 @@
+/* 首页样式 */
+#banner{
+  background: #b2cef4;
+}
+/* 
+  行级块元素/行级元素 在父元素里水平居中展示 需要设置 text-align:center
+  块级元素 在父元素里水平居中展示 需要设置 margin: 0 auto
+*/
+#banner>img{
+  display: block;
+  margin: 0 auto;
+}

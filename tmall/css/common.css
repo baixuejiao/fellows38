@@ -1,0 +1,49 @@
+/* common.css 公共样式 */
+/* 清除页面默认样式 */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: tahoma,arial;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* 主内容区域 1230px */
+.wrapper{
+  width: 1230px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* 导航条 */
+#nav{
+  height: 32px;
+  font-size: 12px;
+  border-bottom: 1px solid #e5e5e5;
+  color: #999;
+  background: #f2f2f2;
+}
+#nav-slogn{
+  float: left;
+  height: 100%;
+  /* 
+    行高 
+    当行高等于元素的高度时 文本是垂直居中
+  */
+  line-height: 32px;
+}
+#nav-slogn>span{
+  margin-right: 10px;
+}
+#nav-slogn>a{
+  padding: 0 10px;
+  color: #999;
+}
+#nav-slogn>a:hover{
+  color: #ff0036;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      list-style: none;
+    }
+
+    .clearfix::after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    #menu{
+      /* padding-top: 20px; */
+      float: right;
+      background: aqua;
+    }
+    #menu > .menu-list {
+      float: left;
+      margin-left: 16px;
+      font-size: 12px;
+      color: #000;
+    }
+    #menu > .menu-list > a {
+      font-weight: bold;
+      color: #000;
+    }
+    #menu > .menu-list > a:hover{
+      color: blue;
+    }
+    #menu > .menu-list > .menu-list-link{
+      font-weight: normal;
+    }
+    .menu-list-btn{
+      margin-right: 10px;
+      padding: 2px 2px;
+      color: #fff;
+      background: blue;
+    }
+    #logo{
+      text-align: center;
+    }
+    #logo img{
+      width: 270px;
+    }
+    #logo a {
+      display: inline-block;
+      width: 270px;
+      height: 129px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container" class="clearfix">
+    <ul id="menu">
+      <li class="menu-list">
+        <a href="">新闻</a>
+      </li>
+      <li class="menu-list">
+        <a href="">hao123</a>
+      </li>
+      <li class="menu-list">
+        <a href="">地图</a>
+      </li>
+      <li class="menu-list">
+        <a href="">视频</a>
+      </li>
+      <li class="menu-list">
+        <a href="">贴吧</a>
+      </li>
+      <li class="menu-list">
+        <a href="">学术</a>
+      </li>
+      <li class="menu-list">
+        <a href="" class="menu-list-link">登录</a>
+      </li>
+      <li class="menu-list">
+        <a href="" class="menu-list-link">设置</a>
+      </li>
+      <li class="menu-list">
+        <button class="menu-list-btn">更多产品</button>
+      </li>
+    </ul>
+    <div id="logo">
+      <a href="https://baidu.com">
+        <img src="https://www.baidu.com/img/bd_logo1.png" alt="">
+      </a>
+    </div>
+  </div>
+</body>
+</html>
