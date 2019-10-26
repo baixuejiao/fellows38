@@ -13,6 +13,10 @@ a{
   text-decoration: none;
 }
 
+li{
+  list-style: none;
+}
+
 /* 主内容区域 1230px */
 .wrapper{
   width: 1230px;
@@ -45,5 +49,85 @@ a{
   color: #999;
 }
 #nav-slogn>a:hover{
+  color: #ff0036;
+}
+
+#nav-menu{
+  float: right;
+  height: 100%;
+}
+#nav-menu > .nav-menu-list{
+  float: left;
+  padding: 0 10px;
+  height: 100%;
+  position: relative;
+}
+
+#nav-menu > .nav-menu-list >a{
+  display: inline-block;
+  height: 100%;
+  line-height: 32px;
+  color: #999;
+}
+#nav-menu > .nav-menu-list > a:hover{
+  color: #ff0036;
+}
+#nav-menu > .nav-menu-list-link{
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+}
+#nav-menu > .nav-menu-list-link:hover{
+  border-left: 1px solid #f2f2f2;
+  border-right: 1px solid #f2f2f2;
+  background: #fff;
+}
+#nav-menu > .nav-menu-list-link > a:hover{
+  text-decoration: underline;
+}
+#nav-menu > .nav-menu-list-web > a:hover{
+  color: #999;
+}
+#nav-menu > .nav-menu-list .iconfont {
+  font-size: 12px;
+  color: #ff0036;
+}
+#nav-menu .nav-menu-list-arrow {
+  float: right;
+  width: 0;
+  height: 0;
+  margin-top: 14px;
+  margin-left: 3px;
+  border: 4px solid transparent;
+  border-top-color: #999;
+  transition: all .5s ease;
+}
+
+#nav-menu > .nav-menu-list-link:hover .nav-menu-list-arrow{
+  transform: rotate(180deg);
+  margin-top: 12px;
+}
+
+#nav-menu .nav-menu-list-inner{
+  display: none;
+  width: 80px;
+  padding: 8px 10px;
+  border: 1px solid #f2f2f2;
+  border-top: none;
+  background: #fff;
+  position: absolute;
+  top: 32px;
+  left: 0;
+}
+
+#nav-menu > .nav-menu-list-link:hover .nav-menu-list-inner {
+  display: block;
+}
+
+#nav-menu .nav-menu-list-inner a {
+  line-height: 2.0;
+  color: #999;
+}
+#nav-menu .nav-menu-list-inner a:hover {
+  text-decoration: underline;
   color: #ff0036;
 }
