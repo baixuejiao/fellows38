@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    a {
+      color: red;
+    }
+    /* a:first-child{
+      text-decoration: none;
+    } */
+
+    ul>li:last-child>a {
+      text-decoration: none;
+    }
+    
+  
+  </style>
+</head>
+<body>
+  <!-- 
+    1.一定要有一个父元素
+    2.这个元素必须是父元素的最后一个子元素
+   -->
+  <ul>
+    <li>
+      <a href="#">1234567</a>
+    </li>
+    <li>
+      <a href="#">1234567</a>
+    </li>
+    <li>
+      <a href="#">1234567</a>
+    </li>
+  </ul>
+
+</body>
+</html>

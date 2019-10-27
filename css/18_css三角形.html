@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    div{
+      width: 0px;
+      height: 0px;
+      margin: 50px auto;
+      border: 20px solid transparent;
+      border-top-color: pink;
+      /* border-left-color: transparent;
+      border-bottom-color: purple; */
+      /* background: paleturquoise; */
+    }
+    div:hover{
+      transition: all 1s linear;
+      /* chrome safari */
+      -webkit-transform: rotate(180deg);
+      /* 火狐 */
+      -moz-transform: rotate(180deg);
+      /* ie */
+      -ms-transform: rotate(180deg);
+      /* 欧朋浏览器 */
+      -o-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

@@ -17,6 +17,12 @@ li{
   list-style: none;
 }
 
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
 /* 主内容区域 1230px */
 .wrapper{
   width: 1230px;
@@ -60,6 +66,7 @@ li{
   float: left;
   padding: 0 10px;
   height: 100%;
+  color: #999;
   position: relative;
 }
 
@@ -99,12 +106,12 @@ li{
   margin-left: 3px;
   border: 4px solid transparent;
   border-top-color: #999;
-  transition: all .5s ease;
 }
 
 #nav-menu > .nav-menu-list-link:hover .nav-menu-list-arrow{
-  transform: rotate(180deg);
   margin-top: 12px;
+  transform: rotate(180deg);
+  transition: all .5s ease;
 }
 
 #nav-menu .nav-menu-list-inner{
@@ -117,6 +124,7 @@ li{
   position: absolute;
   top: 32px;
   left: 0;
+  z-index: 1;
 }
 
 #nav-menu > .nav-menu-list-link:hover .nav-menu-list-inner {
@@ -130,4 +138,35 @@ li{
 #nav-menu .nav-menu-list-inner a:hover {
   text-decoration: underline;
   color: #ff0036;
+}
+#nav-menu-list-phone{
+  display: none;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #f2f2f2;
+  position: absolute;
+  top: 32px;
+  left: -60px;
+}
+#nav-menu-list-phone-qr{
+  width: 175px;
+  height: 175px;
+  background: url('../imgs/qr.png') 0 0 no-repeat;
+}
+
+#nav-menu-list-phone span {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-bottom-color: #fff;
+  position: absolute;
+  top: -8px;
+}
+.nav-menu-list-qr:hover #nav-menu-list-phone {
+  display: block;
+}
+.nav-menu-list-line{
+  line-height: 32px;
+  font-size: 14px;
 }

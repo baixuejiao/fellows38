@@ -10,3 +10,83 @@
   display: block;
   margin: 0 auto;
 }
+
+/* 搜索区域 */
+#search{
+  height: 130px;
+}
+.search-wrapper{
+  position: relative;
+}
+.search-wrapper>img {
+  position: absolute;
+  top: 0;
+  left: -20px;
+}
+#search-content{
+  width: 625px;
+  margin: 0 auto;
+  padding-top: 38px;
+}
+#search-main{
+  border: 2px solid #ff0036;
+}
+#search-main input{
+  float: left;
+  width: 483px;
+  height: 26px;
+  padding: 5px 3px 5px 5px;
+  border: none;
+  /* background: blue; */
+}
+#search-main button{
+  float: left;
+  width: 130px;
+  height: 36px;
+  border: none;
+  color: #fff;
+  background: #ff0036;
+}
+#search-list{
+  margin-top: 4px;
+}
+#search-list>a {
+  padding: 0 12px;
+  font-size: 14px;
+  border-right: 1px solid #999;
+  color: #999;
+}
+#search-list>.search-list-red{
+  color: #ff0036;
+}
+#search-list>a:last-child{
+  border-right: none;
+}
+/* #search-list>a:first-child{
+  padding-left: 0;
+} */
+#search-list{
+  margin-left: -10px;
+}
+
+/* 分站入口 */
+#type{
+  border-bottom: 2px solid #ff0036;
+}
+.type-list{
+  float: left;
+  /* display: inline-block; */
+  padding: 0 8px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
+  color: #333;
+}
+.type-list>img{
+  /* float: left; */
+  width: 100px;
+  margin-top: 2px;
+}
+.type-list:first-child{
+  margin-left: 220px;
+}
