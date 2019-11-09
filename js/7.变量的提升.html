@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = 1; //全局变量
+    b = 2; // 如果没有通过var定义的变量会当成全局变量
+
+    // 作用域
+    // 全局作用域
+    // 函数作用域
+
+    function fun() {
+      console.log(b) // 2
+      b = 5;
+      console.log(b) // 5
+    }
+
+    // 函数体内部定义的变量是局部变量，全局作用域里无法调用局部变量
+    // 局部作用域里可以调用全局变量
+
+    fun()
+    console.log(b)  // 5  
+
+    // 在当前
+
+    var c = 3 
+    function fun1() {
+      var i = 1 ; //局部变量
+      // var c 
+      console.log(c) // undefined
+      var c = 5;
+      console.log(c) // 5
+    }
+    fun1()
+
+    // var d
+    // console.log(d) //undefined 
+    // d = 10;
+    // console.log(d);
+    
+  </script>
+</body>
+</html>

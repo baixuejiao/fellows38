@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 强数据类型语言 c c++ java go
+    // 弱数据类型语言 js php
+   
+    // var 定义变量
+    var a = 1;
+    console.log( typeof a); // number
+
+    var b = 'hello';
+    console.log( typeof b); //string
+
+    var c = true;
+    console.log( typeof c); //boolen 布尔 true false
+    
+    a = 'world';
+    console.log( typeof a);
+
+    var d;
+    console.log(typeof d); // undefined 变量声明了但是未进行初始化赋值
+
+    // 基本数据类型 number string boolen undefined null(空对象)
+
+    var e = '';
+    console.log( typeof e);
+
+    var g = {}
+    var f = document.getElementsByTagName('div');
+    console.log(f, typeof f)
+    // 引用数据类型 数组 对象
+
+    var i = 1.2;
+    console.log(typeof i)
+    console.log(123)
+    console.log('123')
+
+
+    // 变量名定义规则
+    // 变量名包含 字母 数字 下划线 $
+    // 变量名开头必须是 字母 下划线 $
+
+    // var _num, $div, div1
+
+    // 链接符 side_bar
+    // 驼峰式 sideBar
+    // nav_bar  navBarMenu
+
+    var name, age, height;
+    name = 'xiaoming';
+
+    var name = 'xm',
+        age = 18;
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = 1;
+    var b = 2;
+    console.log(a+b)
+    var c = 'hello';
+    var d = 'world';
+    console.log( c + d );
+    // 字符串拼接
+    console.log(a+c+d+b);
+    var e = '5';
+    var f = '5';
+    console.log(e+f)
+    var g = true;
+    var h = false;
+    console.log(a+g);
+    console.log(a+h);
+
+    /*
+      加法运算 
+      1.number 类型相加，简单的加法计算
+      2.一旦有string类型相加 =》 字符串的拼接
+      3.如果出现 boolen => true 1 false 0
+    */
+
+    console.log(d-c) // NaN => not a number
+    console.log(c-a)
+    console.log(g-a)
+
+    /*
+      减法计算
+        number类型正常计算
+        非number类型 会进行类型转换 Number() 如果能转换称number就正常计算 ，如果转换完就是NaN结果就是NaN
+    */
+
+    var i = '3'
+    var j = 10
+
+    console.log(i-j);
+
+    console.log(a*b)
+    console.log(a*c)
+    console.log(i*j);
+    console.log(i*g) // '3'*true
+
+    /*
+      乘法计算
+        number类型正常计算
+        非number类型 会进行类型转换 Number() 如果能转换称number就正常计算 ，如果转换完就是NaN结果就是NaN
+    */
+
+    console.log(i/j)
+    console.log(j/i)
+    console.log(i/c)
+    console.log(i/h) // Infinity无限大
+
+    /*
+      除法计算
+      number类型正常计算
+      非number类型 会进行类型转换 Number() 如果能转换称number就正常计算 ，如果转换完就是NaN结果就是NaN
+    */
+
+    // 取余
+    console.log(j%i)
+
+    // 自增运算符
+    // 自减运算符
+    var k = 5;
+    console.log(--k)
+
+    var m = 12
+    var n = 13
+    // > >= < <=
+    var y = m <= n  // true
+    console.log(y/1)
+    console.log(m != n)
+
+    var o = '3'
+    var p = 3;
+    console.log( o == p)
+    console.log( o === p)
+    // == 判断值相等
+    // === 判断值和数据类型相等
+    
+    var x = true
+    console.log(!x) // 取反
+
+    var msg = prompt("请输入一个数字","默认值"); //返回值是string类型
+
+    console.log(msg);
+
+    
+  </script>
+</body>
+</html>

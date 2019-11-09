@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    fun();
+
+    // 定义函数 function 方法名
+    function fun() {
+      console.log('haha')
+    }
+    // 函数的调用
+    fun()
+
+    var fn;
+    // fn(); // is not a function
+    fn = function() {
+      console.log('12345')
+    }
+    fn();
+
+    // 形参
+    function add(x, y) {
+      return x+y // 直接返回,return 后面的语句不会执行
+      console.log('heheh')
+    }
+
+    // 实参
+    add(1,2)
+
+    var aaa = add(2,3)
+    console.log(aaa)
+    
+    
+    
+  </script>
+</body>
+</html>

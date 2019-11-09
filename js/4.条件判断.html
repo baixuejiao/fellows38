@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //分支结构
+
+    var age = 10;
+    if (age < 12) {
+      console.log('儿童')
+    } else if (age >= 12 && age< 30 ) { // 12<=a<30
+      console.log('青年')
+    } else {
+      console.log('老年')
+    } 
+
+    if (age<12) console.log('asdfghj')
+    else console.log(23456789)
+
+    // ？ ： 三目运算符
+    var tag = age < 12 ? '儿童' : '非儿童'
+
+  var condition = 5;
+  switch(condition) { 
+		case 4:
+      alert("c的值是4");
+      break;
+		case 3:
+      alert("c等于3");
+      break;
+		case 2:
+      alert("c等于2");
+      break;
+		case 1:
+      alert("c是1");
+      break;
+    default:
+      alert('other')
+  }
+  
+  // if (condition == 3 || condition == 2 || condition == 1) {
+
+  // }
+
+  // case里面的条件是否符合switch括号里的条件
+  age = 20;
+  switch(false) {
+    case age < 12:
+      console.log('儿童')
+      break
+    case age >=12 && age < 30:
+      console.log('青年')
+      break
+    case age >= 30:
+      console.log('老年')
+      break
+  }
+	
+    
+    
+  </script>
+</body>
+</html>
