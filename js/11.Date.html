@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var myDate = new Date()
+
+    console.log(myDate.getDate());
+    console.log(myDate.getDay());
+    console.log(myDate.getMonth()+1);
+    console.log(myDate.getFullYear());
+
+    console.log(myDate.getTime());
+
+    
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = date.getMonth();
+    var day = date.getDate();
+
+    var str = year + '年' + (month + 1) + '月' + day + '日';
+    console.log(str);
+    
+  </script>
+</body>
+</html>

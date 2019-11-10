@@ -8,6 +8,8 @@
 </head>
 <body>
   <script>
+    // 只有通过var定义的变量才会出现变量提升
+
     var a = 1; //全局变量
     b = 2; // 如果没有通过var定义的变量会当成全局变量
 
@@ -16,10 +18,13 @@
     // 函数作用域
 
     function fun() {
+      var i = 1
       console.log(b) // 2
       b = 5;
       console.log(b) // 5
     }
+
+    console.log(i) //i is not defined
 
     // 函数体内部定义的变量是局部变量，全局作用域里无法调用局部变量
     // 局部作用域里可以调用全局变量
@@ -43,6 +48,11 @@
     // console.log(d) //undefined 
     // d = 10;
     // console.log(d);
+
+    var x
+    console.log(x) // undefined
+    x = 10
+    console.log(x) // 10
     
   </script>
 </body>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var str = 'hello world';
+
+    console.log(str.length);
+
+    var s1 = new String();
+
+    console.log(s1);
+
+    // replace 字符串的替换
+    var s2 = str.replace('world', 'xiaoming');
+    console.log(s2);
+
+    // split 把字符串转成数组
+    var a1 = str.split('&');
+    console.log(a1);
+
+    // indexOf 检索字符串中某字符首次出现的位置，如果没找没到返回-1
+    console.log(str.indexOf('a'));
+
+    // lastIndexOf 检索字符串中某字符最后一次出现的位置
+    console.log(str.lastIndexOf('l'));
+
+    console.log(str.toUpperCase().toLowerCase());
+    
+
+    // substr(index, length) 从下标未index开始，截取length长度的字符
+    // hello world
+    console.log(str.substr(1,2));
+    // substring(start, stop) 截取start和stop之间的字符 不包括stop
+    console.log(str.substring(1,2));
+    // slice(start,end) 截取start和end之间的字符 不包括end , 能使用负数
+    console.log(str.slice(-3,-2));
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .list{
+      color: blue;
+    }
+  
+  </style>
+</head>
+<body>
+  <script>
+    var arr = [];
+    console.log(typeof arr);
+    var obj = {};
+    console.log(typeof obj);
+
+    var person = {
+      name: 'xm', // key: value
+      age: 18,
+      height: '180cm', //person.height person['height']
+      weight: '180kg',
+      p: 'xxx',
+      eat: {
+        fruit: 'apple'
+      },
+      sleep: function() {
+        console.log('huhuhu..');
+      }
+    }
+
+    console.log(person.eat.fruit);
+    console.log(person.name);
+    console.log(person.age);
+    person.eat();
+    person.sleep();
+    console.log(person['name']);
+    var obj1 = new Object();
+    console.log(obj1);
+    obj1['name'] = 'zs';
+    obj1['age'] = 20;
+    console.log(obj1);
+    console.log(person);
+
+    for(p in person) { // person 是对象
+      //  p 'name' 'age'
+      console.log(p + ':' + person[p]); // p是属性 
+    }
+
+
+    var list = [
+      {
+        name: 'zs',
+        age: '78'
+      }, {
+        name: 'lisi',
+        age: '26'
+      }, {
+        name: 'ww',
+        age: '18'
+      }
+    ]
+
+    // document.write('<ul>');
+    for(var i=0; i<list.length; i++) {
+      // console.log(list[i])
+      // 'hello' + zs
+      document.write('<li class="list">'+list[i].name +':'+list[i].age+'</li>');
+    }
+    // document.write('</ul>');
+
+
+    var obj = {
+      property: 'value'
+    }
+
+    obj.name = 'zs';
+    console.log(obj.name);
+
+    alert(obj.name);
+
+
+    var p1 = {
+      name: 'll',
+      age: 19
+    }
+
+    // 获取对象下属性的方法 
+    var tmp = 'name';
+    console.log(p1.name);
+    console.log(p1['name']);
+    console.log(p1[tmp]);
+
+    
+  </script>
+</body>
+</html>
