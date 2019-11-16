@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var x=1,y=0,z=0;
+    function add(x) {
+      return  x=x+1;
+    }
+    y = add(x);
+    // add方法里形参叫x与全局变量中的x没有关系
+    function add(m) { // 1
+      return m=m+3 // 4
+    }
+    z = add(x)
+ 
+    console.log(x, y, z)  // 1 4 4 
+
+    
+    
+    
+  </script>
+</body>
+</html>

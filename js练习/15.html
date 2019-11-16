@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 
+      box-sizing
+        border-box: 怪异盒模型 element width = width
+        content-box: 标准盒模型 element width = widht + paddign + border
+     */
+    #aaa{
+      /* 怪异盒模型 */
+      box-sizing: border-box;
+      width: 200px;
+      height: 200px;
+      padding: 10px;
+      background-color: #999999;
+      margin-top: 20px;
+    }
+    #bbb{
+      /* 标准盒模型 */
+      box-sizing: content-box;
+      width: 200px;
+      height: 200px;
+      padding: 10px;
+      background-color: seagreen;
+      margin-top: 20px;
+    }
+
+    button{
+      box-sizing: content-box;
+      width: 200px;
+      height: 40px;
+      padding: 0 10px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    在⻚面中绘制两个200*200的正⽅形 
+    一个满⾜加⼊padding:10px后整体宽度仍是200px
+    另⼀个加入padding:10px的时 候整体宽度位220px
+  -->
+
+  <div id="aaa"></div>
+  <!-- 标准盒模型 -->
+  <div id="bbb"></div>
+
+  <button>点击</button>
+</body>
+</html>

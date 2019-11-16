@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  <!-- 在⻚面上编程输出100~1000之间的所有素数，并要求每⾏显示6个素数
+      素数：只能被1和本身整除
+  -->
+    <script>
+        var a=0;
+        var b=0;
+        for(var i=100;i<=1000;i++) {
+          for(var j=2;j<=i/2;j++){
+            if(i%j==0){
+              a++;
+              console.log(a);
+            }
+          }
+          if(a==0) {
+            document.write(i);
+            document.write(' ');
+            b++;
+            if(b%6==0){
+              document.write('<br/>')
+            }
+          }
+          a=0;
+        } 
+    </script>
+</body>
+</html>

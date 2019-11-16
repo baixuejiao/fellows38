@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 28斐波纳契(Fibonacci)数列的
+      第⼀项是1，
+      第⼆项是1，
+      以后各项都是前两项的和。
+      试⽤用递归函数和⾮非递归函数各编写 ⼀个程序，求斐波纳契数列列第N项的值 -->
+  <script>
+    // 递归
+
+    // var a,i = 9;
+    // var a = function(i) {
+    //   console.log(i)
+    //   if(i==1)
+    //   {
+    //     return 1;
+    //   }
+    //   if(i==2)
+    //   {
+    //     return 1;
+    //   }
+    //   if(i>2)
+    //   {
+    //     return a(i-1)+a(i-2);
+    //   }
+      
+    // }
+    // a(9);
+    //  document.write(a(i))
+
+
+    var fun = function(i) {
+      if(i==1){
+        return 1;
+      }
+      if(i==2){
+        return 1;
+      }
+      if(i>2){ 
+        return fun(i-1)+fun(i-2); 
+      }
+    }
+
+    for(var j=1; j<=10; j++) {
+      console.log(fun(j) )
+    }
+    
+    // function Fib(num) {
+    //   if (num <= 2) {
+    //     return 1
+    //   } else {
+    //     return Fib(num-1) + Fib(num-2);
+    //   }
+    // }
+
+    // var tmp = prompt('please input a number') * 1;
+    // console.log(Fib(tmp))
+  </script>
+</body>
+</html>

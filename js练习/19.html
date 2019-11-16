@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 如果某年的年份值是4的倍数并且不不是100的倍数，
+    // 或者该年份值是400的倍数，那么这⼀一年年就是闰年年。
+    // 请编制⼀一个页面，该⻚面显示当天是否处于闰年年
+    var dat = new Date();
+    // var d=dat.getUTCFullYear()
+    var d = dat.getFullYear();
+
+    // dat = Date();
+    
+    if (( d % 4 == 0 && d % 100 != 0) || ( d % 400 == 0 )) {
+      document.write("今年是闰年");
+    } else {
+      document.write("今年不是闰年");
+    }
+  </script>
+</body>
+</html>

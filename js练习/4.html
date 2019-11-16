@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #content{
+        width: 500px;
+        height: 300px;
+        background-color: red;
+        /* border: 1px solid transparent; */
+        overflow: hidden;
+    }
+    #wrapper{
+        width: 200px;
+        height: 100px;
+        margin: 100px auto; /* 水平居中 */
+        background-color: #999;
+    }
+  #main{
+      width: 500px;
+      height: 300px;
+      text-align: center; /* 行级元素在父元素中水平居中 给父元素加text-align:center */
+      background-color: yellow;
+  }
+  #main> span{
+      /* text-align: center; */
+      line-height: 300px;
+      color: black;
+  }
+
+  #parent{
+    width: 500px;
+    height: 500px;
+    background: palegreen;
+    position: relative;
+  }
+  #child{
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    background: pink;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  </style>
+</head>
+<body>
+  <!-- 元素⽔水平垂直都居中的⽅方式(块级元素、行级元素) -->
+  <!-- 方法一 修改外边距 -->
+  <div id="content">
+    <div id="wrapper"></div>
+  </div>
+
+  <!-- 方法二 定位 -->
+  <div id="parent">
+    <div id="child"></div>
+  </div>
+
+  <div id="main">
+    <span>hello world</span> 
+  </div>
+</body>
+</html>

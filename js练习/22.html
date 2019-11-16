@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 编写程序，计算 1!+2!+3!+.....+10!的结果。 -->
+  <script>
+    //   var a=1;
+    //   var b=0;
+    //   for (var i=1;i<=10;i++) { // 1! + 2!
+        
+    //     for(var j=1;j<=i;j++){ // 1! 2！ 3！
+    //       a=a*j; 
+    //     }
+    //     b=b+a;
+    //     a=1;
+    //   }
+    //   document.write(b);
+    
+    var sum = 1;
+    var num = 0;
+    var i,j;
+    for(i = 1;i <= 10;i++){
+      for(j = 1;j <= i;j++){
+          sum *= j
+      }
+      num += sum
+    }
+    console.log("1到10的阶乘和是：",num)
+  </script>
+</body>
+</html>

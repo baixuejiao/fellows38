@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 全局作用域 全局变量
+    // 局部作用域 局部变量
+    
+    var a1 = 1;
+
+    // 局部作用域中可以调用全局变量
+    function fun() {
+      a1 = 10;
+      console.log(a1); // 1
+      var a2 = 1; // 局部变量
+      console.log(a2);
+    }
+
+    fun();
+
+    // 全局作用域中不能调用局部变量
+    // console.log(a2); // is not defined
+
+    var s1 = 1;
+    function fun1() {
+      // 变量提升
+      // var s1;
+      console.log(s11); // undefined
+      // s1=5; 
+      var s11 = 5; // 局部变量
+      console.log(s11); // 5
+    }
+    fun1();
+    console.log(s1);
+
+    var str1 = 'hello world';
+    console.log(str1.charAt(0)); //h
+    console.log(str1.indexOf('y')); // -1
+ 
+    var myarray = new Array(5);
+    console.log(myarray);
+
+    var a1 = [1,2,3,4,5]
+    console.log(a1[10]); //undefined
+
+    
+    
+    
+  </script>
+</body>
+</html>
