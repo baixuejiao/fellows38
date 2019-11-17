@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="content">hello world</div>
+  <!-- <div id="content">welcome</div> -->
+
+  <ul id="wrapper">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <ul>
+    <li>11</li>
+    <li>22</li>
+    <li>33</li>
+    <li>44</li>
+    <li>55</li>
+  </ul>
+
+  <input type="text" name="school">
+
+  <input type="radio" name="sex"> boy
+  <input type="radio" name="sex"> girl
+
+  <div name="sex">1234567</div>
+
+
+  <script>
+    // getElementById 通过ID获取元素
+    var oDiv = document.getElementById('content');
+    console.log(oDiv);
+
+    var a1 = [1,2,3];
+    console.log(a1);
+
+    // getElementsByTagName 通过标签名获取元素 返回的是一个html集合
+    // 类数组 length属性代表这个类数组的长度 其他数组的方法都没有
+    // getElementsByTagName 方法不仅是document对象下的方法，在html元素上也可以调用
+    var aLi = document.getElementsByTagName('li');
+    console.log(aLi);
+    console.log(aLi.length);
+
+    // for(var i=0; i<aLi.length; i++) {
+    //   console.log(aLi[i]);
+    // }
+
+    var oWrapper = document.getElementById('wrapper');
+    var a2 = oWrapper.getElementsByTagName('li');
+    console.log(a2);
+
+    var a3 = document.getElementsByTagName('div');
+    console.log(a3);
+
+    // getElementsByName 通过name来获取元素
+    // 返回的是一个 NodeList 类数组
+    // 有length属性 数组里提供的方法均不可用
+    var tmp = document.getElementsByName('sex');
+    console.log(tmp);
+  
+  
+  </script>
+</body>
+</html>

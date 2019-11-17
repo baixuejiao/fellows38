@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+      scheme://host.domain:port/path/filename
+      scheme: http https
+      https：相对安全
+      http: 相对不安全
+
+      http://didichuxing.com/#/
+      https://didichuxing.com/#/
+
+      //img.alicdn.com/tfs/TB1MaLKRXXXXXaWXFXXXXXXXXXX-480-260.png
+
+      https 访问的页面  资源 http://xxx -> error
+      http  访问的页面  资源 https  
+   -->
+   <!-- http://127.0.0.1:5500/dom/8.location.html
+  
+  -->
+
+    <img src="//img.alicdn.com/tfs/TB1MaLKRXXXXXaWXFXXXXXXXXXX-480-260.png" alt="">
+    <button id="btn">click</button>
+  <script>
+    // location.search lang
+    var zh = {
+      a1: '姓名',
+      a2: '年龄'
+    }
+
+    var en = {
+      a1: 'name',
+      a2: 'age'
+    }
+
+    var oBtn = document.getElementById('btn');
+    oBtn.onclick =  function() {
+      // 重新加载当前页面
+      location.reload();
+      // 打开新的页面 history中有历史记录
+      location.href = 'http://didichuxing.com'
+      // 替换当前页面，history中没有历史记录
+      location.replace('http://didichuxing.com')
+    }
+  
+  
+  </script>
+</body>
+</html>

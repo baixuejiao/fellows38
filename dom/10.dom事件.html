@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .active{
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="btn">click me </div>
+
+  <!-- key:value -->
+  <input type="text" value="1234"> 
+
+  <div id="main">鼠标点击事件</div>
+
+  <select id="list">
+    <option value="">1</option>
+    <option value="">2</option>
+    <option value="">3</option>
+  </select>
+
+  <script>
+    var oDiv = document.getElementById('btn'); 
+    
+    // onclick 鼠标单击事件
+    oDiv.onclick = function(e) {
+      console.log(e);
+      //e.clientX x轴坐标
+      //e.clientY y轴坐标
+      alert('click');
+    }
+
+    // ondblclick 鼠标双击事件
+    oDiv.ondblclick = function() {
+      alert('双击666');
+    }
+
+    // 鼠标划入
+    oDiv.onmouseover = function() {
+      //font-size => fontSize
+      oDiv.style.background = 'pink';
+
+    }
+    // 鼠标划出
+    oDiv.onmouseout =  function() {
+      oDiv.style.background = 'white';
+    }
+
+    var oInput = document.getElementsByTagName('input')[0];
+
+    oInput.index = 1;
+    console.log(oInput.index);
+   
+    // background-color
+    // onfocus 元素获取焦点
+    // oDiv.style.xxx 设置元素的样式
+    // oDiv.className 设置元素的class 
+    oInput.onfocus = function() {
+      // class 保留字
+      oInput.className="active";
+      // oInput.style.backgroundColor = 'red';
+    }
+
+    // onchange 内容改变
+    oInput.onchange = function() {
+      console.log(oInput.value); // input里面的value属性
+    }
+
+    // onblur 元素失去焦点
+    oInput.onblur = function() {
+      oInput.className = '';
+      // oInput.style.backgroundColor = 'white';
+    }
+
+
+    var oD1 = document.getElementById('main');
+    // 鼠标按钮被按下。
+    oD1.onmousedown =  function() {
+      console.log('onmousedown');
+    }
+
+    // 鼠标松开
+    oD1.onmouseup = function() {
+      console.log('onmouseup');
+    }
+
+    // 鼠标移动
+    oD1.onmousemove = function() {
+      console.log('onmousemove');
+    }
+
+    var oList = document.getElementById('list');
+    oList.onchange = function(){
+      console.log('change!');
+    }
+
+
+    oInput.onkeydown = function(e) {
+      // e.which 代表键盘码 
+      // 回车 13
+      console.log(e);
+    }
+    
+
+  
+  </script>
+</body>
+</html>
