@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      width: 2000px;
+      height: 4000px;
+    }
+
+    #btn,
+    #btn1{
+      width: 50px;
+      height: 50px;
+      color: #fff;
+      background: red;
+      position: fixed;
+      right: 50px;
+      bottom: 50px;
+    }
+
+    #btn1{
+      bottom: 100px;
+    }
+  
+  
+  </style>
+</head>
+<body>
+  <h1>hello world</h1>
+  <div id="btn2">打开页面</div>
+
+  <div id="btn">回到顶部</div>
+
+
+  <div id="btn1">click</div>
+
+  <a href="http://www.baidu.com"></a>
+
+  <script>
+    var oBtn = document.getElementById('btn'); // 通过ID获取元素
+
+    // scrollTo(X,Y) 页面滚动到指定的位置
+    oBtn.onclick = function() {
+      window.scrollTo(0,0);
+    }
+
+    var oBtn1 = document.getElementById('btn1');
+
+    // scrollBy(X, Y) 页面滚动了多少距离
+    oBtn1.onclick = function() {
+      window.scrollBy(100, 100);
+    }
+
+
+    var oBtn2 = document.getElementById('btn2');
+    oBtn2.onclick = function() {
+      // 在新窗口打开指定连接页面
+      var url = 'http://www.baidu.com?name=' +'zs&age =18'
+      window.open(url)
+    }
+
+    alert('hello');
+    // 确认对话框 包含确定和取消按钮 会返回一个boolean值
+    var tag = confirm('are you sure?')
+    console.log(tag)
+  
+  
+  </script>
+</body>
+</html>

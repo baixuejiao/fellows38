@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // n秒之后执行指定的方法 有两个参数 第一个参数是一个方法 第二个参数时间间隔数（以毫秒为单位的）
+    // var t1 = setTimeout(function(){
+    //   console.log(1)
+    // }, 2000) 
+    // clearTimeout 清除定时器 需要有一个参数 这个参数是一个定时器
+    // clearTimeout(t1); 
+
+    var i = 60;
+    // 每隔n秒执行执行的方法 有两个参数 第一个参数是一个方法 第二个参数时间间隔数（以毫秒为单位的）
+    // timer 没有特别的含义 它是一个number类型的数 可以理解为页面中的第几个定时器
+    var timer = setInterval(function(){
+      console.log(i+'秒之后可以再次发送')
+      i--;
+
+      if(i <= 50) {
+        clearInterval(timer);
+      }
+    }, 1000)
+
+    // clearInterval清除定时器
+
+    setTimeout(function(){ // 异步的方法
+      console.log(1)
+    },0);
+    console.log(2);
+    console.log(3);
+    // 2 3 1
+    // 单线程 多线程
+    // js 是单线程的
+    // 同步 异步
+    
+    // 主线程和任务队列
+    // 代码顺序执行 遇到异步方法（setTimeout）会把这个方法放进任务队列里
+    // 当主线程的任务都执行完毕后 会将任务队列中的方法取出 并且看等待时间间隔是否达到，如果时间到了就执行这个方法
+
+
+  </script>
+</body>
+</html>

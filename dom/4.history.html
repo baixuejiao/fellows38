@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>页面1</h1>
+  <a href="./5.html">点击进入页面二</a>
+  <button id="btn">进入下一个页面</button>
+  <button id="btn1">前进两步</button>
+
+  <script>
+    // history 对象 浏览器的访问历史记录
+    // back() 返回上一页面 go(-1)
+    // forward() 进入下一页面 go(1)
+    // go(number) 返回或进入number页面 
+
+    var oBtn =  document.getElementById('btn');
+    oBtn.onclick = function() {
+      history.forward();
+    }
+
+    var oB1 = document.getElementById('btn1');
+    oB1.onclick =  function() {
+      history.go(1);
+    }
+  
+  
+  </script>
+</body>
+</html>
