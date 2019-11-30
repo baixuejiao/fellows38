@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+
+    }
+
+    div{
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      background: red;
+      /* border-radius 圆角
+        width的一半 ：圆形
+      
+      */
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div>hello world</div>
+
+  <script>
+    var oDiv = document.getElementsByTagName('div');
+    oDiv[0].onclick = function() {
+      console.log(oDiv[0].innerHTML);
+    }
+  
+  </script>
+</body>
+</html>

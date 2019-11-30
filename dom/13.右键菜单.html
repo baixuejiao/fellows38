@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>右键菜单</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      height: 3000px;
+    }
+    #menu{
+      display: none;
+      width: 150px;
+      margin: 0 auto;
+      padding: 5px 0;
+      border-radius: 4px;
+      background: #ccc;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    #menu>li{
+      width: 100%;
+      height: 30px;
+      list-style: none;
+      text-align: center;
+      line-height: 30px;
+      /* cursor 设置光标样式 */
+      /* 
+        pointer： 小手状 表示可点击
+      */
+      cursor: pointer;
+    }
+    #menu>li:hover{
+      color: #fff;
+      background: paleturquoise;
+    }
+    .list{
+      border-bottom: 1px solid #fff;
+    }
+
+  
+  
+  </style>
+</head>
+<body>
+  <ul id="menu">
+    <li>打开</li>
+    <li class="list">下载</li>
+    <li class="list">分享</li>
+    <li>移动到</li>
+    <li>复制到</li>
+    <li class="list">重命名</li>
+    <li>删除</li>
+  </ul>
+
+  <script>
+    var oMenu = document.getElementById('menu');
+    var aLi = oMenu.getElementsByTagName('li');
+    // oncontextmenu 事件在元素中用户右击鼠标时触发并打开上下文菜单
+    document.oncontextmenu = function(event) {
+      // 阻止浏览器的默认行为
+      event.preventDefault();
+      // 获取鼠标点击时的坐标
+      var left = event.clientX; // 10
+      var top = event.clientY; // 20
+      console.log(left, top);
+      // font-size -> fontSize
+      oMenu.style.display = 'block';
+      // 设置样式的时候需要带上单位
+      oMenu.style.top = top + 'px';
+      oMenu.style.left = left + 'px';
+
+      // 阻止浏览器的默认行为
+      // return false;
+    }
+
+    // 单击时隐藏菜单
+    document.onclick = function() {
+      oMenu.style.display = 'none';
+    }
+
+
+    // 给每一个li绑定点击事件
+    // 注意 页面加载完成后就执行了for循环语句给每个元素绑定了点击事件， 用户点击时才会触发点击事件
+    for(var i=0; i<aLi.length; i++) {
+      aLi[i].index = i;
+      aLi[i].onclick = function() {
+        console.log(i) // 7
+        // aLi[i] => aLi[7]
+        // aLi[this.index].innerHTML = '1111'
+        console.log(aLi[this.index].innerHTML);
+      }
+    }
+
+    var obj = {
+      name: 'zs',
+      eat: function() {
+        console.log('eating....')
+      }
+    }
+
+    console.log(obj.name)
+
+    obj.name = 'xm'
+  
+  
+  </script>
+</body>
+</html>

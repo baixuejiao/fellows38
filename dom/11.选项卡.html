@@ -63,8 +63,6 @@
       <div>内容2</div>
       <div>内容3</div>
     </div>
-
-
   </div>
 
   <script>
@@ -78,6 +76,7 @@
       // 给li增加一个自定义属性 属性的值等于数组的索引
       aLi[i].index = i;
       aLi[i].onclick = function() {
+        // this -> aLi[i]
         // 给所有的元素都去掉class
         for(var j=0; j<aLi.length; j++) {
           aLi[j].className = '';
