@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    #container{
+      width: 750px;
+      height: 291px;
+      margin: 100px auto 0;
+      position: relative;
+    }
+    #swiper{
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    #swiper>img{
+      /* float: left; */
+      width: 750px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 1s ease;
+    }
+
+    #pointer{
+      width: 300px;
+      margin-left: -150px;
+      position: absolute;
+      left: 50%;
+      bottom: 30px;
+    }
+    #pointer>li{
+      float: left;
+      width: 50px;
+      height: 10px;
+      margin: 0 5px;
+      list-style: none;
+      text-align: center;
+      background: rgba(0,0,0,0.6);
+      cursor: pointer;
+    }
+    #pointer>.select{
+      background: #fff;
+    }
+
+    
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="swiper">
+      <img src="../imgs/1.jpg" alt="">
+      <img src="../imgs/2.jpg" alt="">
+      <img src="../imgs/3.jpg" alt="">
+      <img src="../imgs/4.jpg" alt="">
+      <img src="../imgs/5.jpg" alt="">
+    </div>
+
+    <ul id="pointer">
+      <li class="select"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+  </div>
+
+  <script>
+    var aLi = document.getElementsByTagName('li');
+    var aImg = document.getElementsByTagName('img');
+    var oCon = document.getElementById('container');
+
+    var tag = 0;
+    var Timer;
+
+    for(var i=0; i< aLi.length; i++) {
+      aLi[i].index = i;
+      
+      // aLi[5] = undefined
+      aLi[i].onmouseover = function() {
+        tag = this.index;
+
+        changeSlider();
+        
+        // for(var j=0; j<aLi.length; j++) {
+        //   aLi[j].className = ''
+        //   aImg[j].style.opacity = 0;
+        // }
+
+        // aLi[this.index].className = 'select'
+        // aImg[this.index].style.opacity = 1;
+      }
+    }
+
+    
+    // Timer = setInterval(function() {
+    //   tag++;
+    //   if (tag > aLi.length-1) {
+    //     tag = 0;
+    //   }
+     
+    //   changeSlider();
+
+    // }, 1000)
+    goTimer();
+
+    function changeSlider() {
+      for(var i=0; i<aLi.length; i++) {
+        aLi[i].className = ''
+        aImg[i].style.opacity = 0;
+      }
+
+      aLi[tag].className = 'select';
+      aImg[tag].style.opacity = 1;
+    }
+
+    oCon.onmouseover = function() {
+      clearInterval(Timer);
+    }
+
+    oCon.onmouseout = function() {
+      goTimer();
+    }
+
+    function goTimer() {
+      Timer = setInterval(function() {
+        tag++;
+        if (tag > aLi.length-1) {
+          tag = 0;
+        }
+      
+        changeSlider();
+
+      }, 1000)
+    }
+  </script>
+</body>
+</html>

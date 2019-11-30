@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    div{
+      width: 200px;
+      height: 200px;
+      background: pink;
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: move;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+
+  <script>
+    var oDiv = document.getElementsByTagName('div')[0];
+
+    var lx=0;
+    var ly =0;
+
+    oDiv.onmousedown = function(e) {
+      // 鼠标点击时的点与元素左边的距离 （永远保持不变）
+      var x = e.clientX - oDiv.offsetLeft;
+      var y = e.clientY - oDiv.offsetTop;
+
+      // oDiv.onmousemove = function(event) {
+      //   console.log(event.clientX - x)
+      //   oDiv.style.left = event.clientX - x + 'px';
+      //   oDiv.style.top = event.clientY - y + 'px';
+      // }
+      document.onmousemove = function(event) {
+        console.log(event.clientX - x)
+        oDiv.style.left = event.clientX - x + 'px';
+        oDiv.style.top = event.clientY - y + 'px';
+
+        // lx = oDiv.offsetLeft;
+        // ly = oDiv.offsetTop;
+      }
+    }
+
+    oDiv.onmouseup = function() {
+      // oDiv.onmousemove = null;
+      document.onmousemove = null;
+      // oDiv.style.left = lx + 'px';
+      // oDiv.style.top = ly + 'px';
+
+    }
+  
+  </script>
+</body>
+</html>

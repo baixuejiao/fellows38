@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    h1{
+      width: 200px;
+      height: 30px;
+      color: #fff;
+      font-size: 20px;
+      background: red;
+    }
+
+    ul{
+      display: none;
+      width: 200px;
+      border: 1px solid red;
+    }
+  
+  </style>
+</head>
+<body>
+  <h1>标题1</h1>
+  <ul>
+    <li>菜单1</li>
+    <li>菜单2</li>
+    <li>菜单3</li>
+  </ul>
+
+  <h1>标题2</h1>
+  <ul>
+    <li>菜单4</li>
+    <li>菜单5</li>
+    <li>菜单6</li>
+  </ul>
+
+  <script>
+    var aH = document.getElementsByTagName('h1');
+    var aUl = document.getElementsByTagName('ul');
+
+    for(var i=0; i<aH.length; i++) {
+      // tag用于展示隐藏
+
+      aH[i].index = i;
+      aH[i].tag = false;
+      
+      aH[i].onclick = function() {
+       
+        if(this.tag) {
+          aUl[this.index].style.display ='none';
+        } else {
+          aUl[this.index].style.display ='block';
+        }
+
+        this.tag = !this.tag;
+      }
+    }
+
+
+    
+  
+  </script>
+</body>
+</html>
