@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+
+
+    
+  <div>
+    hello
+    <a href="#">a标签</a>
+  </div>
+  <span></span>
+
+  <ul>
+    <li id="list">1</li>
+    <li>2</li>
+    <li id="last">3</li>
+  </ul>
+  <!-- 
+    Node.ELEMENT_NODE (1) 元素节点
+    Node.ATTRIBUTE_NODE (2) 属性节点
+    Node.TEXT_NODE (3) 文本节点
+    Node.COMMENT_NODE (8) 注释节点
+
+   -->
+
+  <script>
+    // nodeName 标签名称 普通标签的名称就是tagname 文本节点的标签名是#text
+    // nodeType 节点类型
+    var oDiv = document.getElementsByTagName('div')[0]
+    console.log(oDiv.nodeName, oDiv.nodeType)
+    // firstChild 第一个节点
+    // lastChild 最后一个节点
+    var child = oDiv.firstChild
+    console.log(oDiv.firstChild)
+    console.log(child.nodeName)
+
+    var oA = document.getElementsByTagName('a')[0]
+
+    console.log(oA.nodeName);
+
+    var oLi = document.getElementById('list');
+
+    console.log(oLi.nextSibling)
+
+    // 找到下一个兄弟元素节点
+    // 使用nextSibling 找到下一个节点 并判断节点类型 如果节点类型不是 元素节点 就继续循环找下一个节点
+    // nextElementSibling
+    function next(elem) {
+      do {
+        elem = elem.nextSibling
+      } while (elem.nodeType != 1)
+      return elem
+    }
+
+    console.log(next(oLi))
+
+    // nextSibling 在标准浏览器（谷歌 Safari 火狐。。）会找到 回车 空格 在IE浏览器里会直接找到下一个元素节点
+    // nextElementSibling 下一个元素节点 标准浏览器里支持 IE浏览器不支持
+    console.log(oLi.nextElementSibling)
+
+
+    function next_new(elem) {
+      var ua  = navigator.userAgent
+      if(ua.indexOf('MSIE') != -1) { // ie
+        elem = elem.nextSibling
+      } else { // 标准浏览器
+        elem  = elem.nextElementSibling
+      }
+      return elem
+    }
+
+    // previousSibling 前一个兄弟节点 标准浏览器里会找到回车换行 ie浏览器找到元素节点
+    // previousElementSibling 找到前一个兄弟元素节点 标准浏览器 ie浏览器不支持
+
+    var oLast = document.getElementById('last')
+
+    console.log(oLast.previousSibling, oLast.previousElementSibling);
+
+    function pre(elem) {
+      do{
+        elem = elem.previousSibling
+      }while(elem.nodeType != 1)
+      return elem
+    }
+
+    function pre_new(elem) {
+      var ua = navigator.userAgent;
+      if(ua.indexOf('MSIE') != -1) {
+        elem = elem.previousSibling
+      } else {
+        elem = elem.previousElementSibling
+      }
+      return elem
+    }
+
+    var oUl = document.getElementsByTagName('ul')[0];
+
+    console.log(oUl.firstChild)
+
+    function first(elem){
+      elem = elem.firstChild;
+      if (elem.nodeType != 1) {
+        elem = next(elem)
+      }
+      return elem
+    }
+
+    console.log(first(oUl))
+  </script>
+</body>
+</html>

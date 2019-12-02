@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div name="title"></div>
+
+  <ul id="wrapper">
+    <li name="list">1</li>
+    <li name="list">2</li>
+    <li name="list">3</li>
+  </ul>
+
+  <script>
+    var oP = document.createElement('p');
+    oP.innerHTML = 'hello'
+    console.log(oP);
+
+    var oDiv = document.getElementsByTagName('div')[0];
+    oDiv.appendChild(oP);
+    console.log(oDiv)
+
+    var oA = document.createElement('a');
+    oA.innerHTML = 'link';
+
+    // 插入
+    // oDiv.insertBefore(oA, oP)
+
+    // 删除
+    // oDiv.removeChild(oA);
+
+    // replaceChild 替换
+    oDiv.replaceChild(oA, oP)
+
+    // setAttribute 给元素设置属性 可以直接在HTML里看到属性
+    oDiv.setAttribute('index', 1)
+    console.log(oDiv.getAttribute('index') * 1)
+    // 给元素设置属性 但是在HTML结构中无法直接看到
+    oDiv.tag = false;
+    console.log(oDiv.tag)
+    // removeAttribute 移除属性
+    oDiv.removeAttribute('name', '111') 
+    console.log(oDiv.getAttribute('name'))
+
+  
+    var oUl = document.getElementById('wrapper')
+    var aLi = oUl.getElementsByTagName('li');
+    var u = document.createElement('ul')
+    for(var i=0; i< aLi.length ;i++) {
+      var node = aLi[i].cloneNode();
+      node.innerHTML = i
+      u.appendChild(node)
+    }
+    console.log(u)
+    console.log(u.getElementsByTagName('li'))
+    var array = u.getElementsByTagName('li');
+    console.log(array);
+    for(var i=0; i<aLi.length; i++) {
+      u.appendChild(aLi[i]);
+    }
+
+    console.log(u)
+    // for(var j= 0; j< array.length; j++){
+    //   console.log(array[j])
+    //   u.appendChild(array[j])
+    // }
+    // var a = u.getElementsByTagName('li')
+    // console.log(u, a)
+    // for(j=0; j< a.length; j++) {
+    //   console.log(j, a[j])
+    //   oUl.appendChild(a[j]);
+    // }
+
+
+
+    // var a = document.getElementsByName('list');
+    // console.log(a)
+
+    
+  </script>
+</body>
+</html>

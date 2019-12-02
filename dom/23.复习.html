@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #parent{
+      width: 100%;
+      height: 500px;
+      padding-top: 100px;
+      background: pink;
+      /* position: relative; */
+    }
+    #child{
+      width: 300px;
+      height: 300px;
+      background: aqua;
+      margin: 0 auto;
+      /* margin: -150px 0 0 -150px;
+      position: absolute;
+      left: 50%;
+      top: 50%; */
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 
+    html
+    1.元素分类 块级元素 行级元素 行级块元素
+    2.盒模型 
+      标准盒模型 元素宽度 = width + padding + border
+      怪异盒模型 width = 元素宽度 + padding + border
+
+    3.css选择器
+      标签 class id 子代 后代 伪类 伪元素 分组 *
+      id 100
+      class 10
+      标签 1
+      伪类 10
+      伪元素 1
+      !important 最高
+
+    4.margin外边距
+      绝对定位 浮动 边框 溢出隐藏
+
+    5.float 父元素塌陷
+      clearfix 加一个空的块级子元素 父元素设置高度 溢出隐藏
+    
+    6.定位
+      relative
+      absolute
+      fixed
+
+    7.opacity 0~1
+      background: rgba(0,0,0,0.5);
+
+    8.块级元素水平居中
+      行级元素水平居中
+
+    9.js基本数据类型 引用数据类型
+
+    10. typeof -> 基本数据类型
+
+    11. var arr = new Array(3,1,2) => a =[3,1,2] ['','','']
+
+    12. 'str' + 1 = str1   'str' * 4 = NAN '5'*4 = 20 '5'+4
+    13. NAN => not a number
+    14. == ===
+   -->
+  <div id="parent">
+    <div id="child">12345678</div>
+  </div>
+  <input type="radio" name="sex"> 男
+  <input type="radio" name="sex"> 女
+
+  <a href="http://www.baidu.com">123456</a>
+  <script>
+    // getElementsByTagName 通过标签名获取元素 返回是类数组 legnth
+    // getElementById 通过id获取元素 返回一个值 DOM对象
+    // getElementsByName 通过name属性获取元素 返回类数组
+    var oDiv = document.getElementsByTagName('div')[0];
+    // style 设置/获取元素的内联属性 带单位px
+    console.log(oDiv.style.width); //  600px
+
+    // offsetWidth = border + padding + width  返回是number
+    // clientWidth = width + padding
+    console.log(oDiv.offsetWidth); // 600
+
+    // 元素隐藏的情况下 offsetWidth = 0 offsetHeight = 0
+
+
+    // var a;
+    // console.log(a) // undefined
+
+    
+    var a1 = 3;
+    var b1 = a1;
+    b1 = 4;
+    console.log(a1, b1) // 3 4
+
+    var obj = {
+      name: 'xm',
+      age: 18
+    }
+
+    console.log('obj:', typeof obj)
+
+    // var obj1 = obj;
+    // obj1.age = 90;
+
+    // console.log(obj.age)
+
+    var a = [1,2,3]
+    var b = a;
+    b = [4,5,6]
+    console.log('a:',typeof a) // [1,2,3]
+
+    var c = [1,2,3]
+    var d = c;
+    d[0] = 4;
+    // c :[4,2,3]
+
+    var num = 10;
+    switch(false) {
+      case num<10:
+       console.log('小于10')
+       break;
+      case num>=10 && num < 20:
+        console.log('大于10小于20')
+        break;
+      case num>=20:
+        console.log('大于等于20')
+        break;
+    }
+
+    switch(num) {
+      case 10:
+       console.log('小于10')
+       break;
+      case  20:
+        console.log('大于10小于20')
+        break;
+      case 30:
+        console.log('大于等于20')
+        break;
+    }
+
+    fun();
+    fn();
+
+    function add(x,y) {
+      return x+y
+    }
+
+    fun(2,3)
+
+
+    var fn
+    fn();
+    fn = function() {
+      console.log(2)
+    }
+
+    var obj = {
+      name: 'zs',
+      age: 16
+    }
+
+    obj.height = '183cm'
+
+    console.log(obj.name)
+    obj['name']
+
+    aLi = document.getElementsByTagName('li');
+
+    for(var i=0; i< aLi[i]; i++) {
+      aLi[i].index = i;
+    }
+
+    // setInterval -> clearInterval
+    // setTimeout -> clearTimeout
+
+    setTimeout(function() {
+      console.log(0)
+    },10000)
+    console.log(1)
+    console.log(2)
+    // 
+   
+  
+
+  
+    
+
+  </script>
+</body>
+</html>
