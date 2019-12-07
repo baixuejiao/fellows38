@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #wrapper{
+      width: 300px;
+      height: 300px;
+      background: red;
+    }
+    #inner{
+      width: 100px;
+      height: 100px;
+      background: green;
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 
+      事件 事件处理函数 事件源
+      事件源：谁触发的这个事件谁就是事件源
+      this： 给谁绑定的事件 谁就是this
+
+      对象：
+        1. 内置对象： Date String Array  Math
+        2. DOM对象
+        3. 自定义对象
+   -->
+
+  <div id="wrapper">
+    123
+    <div id="inner"></div>
+  </div>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <script>
+    
+    var oDiv = document.getElementById('wrapper');
+    var aLi = document.getElementsByTagName('li'); //类数组
+
+    console.log(aLi.innerHTML)
+
+    oDiv.onclick = function(e) {
+      // this -> 给谁绑定的事件 谁就是this
+      // e.target 事件源
+      console.log(e.target)
+      console.log(oDiv.innerHTML);
+    }
+
+    // 自定义对象
+    var obj = {
+      name: 'zs',
+      age: 18
+    }
+
+  
+  </script>
+</body>
+</html>

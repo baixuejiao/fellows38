@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #wrapper{
+      width: 300px;
+      height: 300px;
+
+      background: pink;
+    }
+
+    #inner{
+      width: 100px;
+      height: 100px;
+
+      background: aqua;
+    }
+
+    #content{
+      width: 200px;
+      height: 200px;
+
+      background: red;
+    }
+
+
+  
+  
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="content">
+      <div id="inner"></div>
+    </div>
+  </div>
+  <!-- 
+    事件 事件源 事件处理函数 事件流
+    addEventListener: 添加事件监听
+      三个参数 第一个参数是事件类型 第二个参数 事件处理函数 第三个参数是一个boolean类型
+      false 事件冒泡
+        从里向外执行
+      true 事件捕获
+        从外向里执行
+      如果既有捕获 又有冒泡
+        先执行捕获再执行冒泡
+      添加事件监听  给同一个元素可以添加多个相同的事件监听
+
+      e.stopPropagation() 阻止事件冒泡
+      e.preventDefault() 阻止浏览器默认行为 
+      return false 阻止浏览器默认行为 
+
+    onclick
+      事件绑定 相同事件会覆盖
+
+   -->
+  <script>
+    var oWrapper = document.getElementById('wrapper');
+    var oInner = document.getElementById('inner');
+    var oContent = document.getElementById('content');
+
+    // oWrapper.onclick = function() {
+    //   console.log('div1')
+    // }
+    // oInner.onclick = function() {
+    //   console.log('div2')
+    // }
+
+    oWrapper.addEventListener('click', function() {
+      console.log('捕获：div1')
+    }, true)
+    oContent.addEventListener('click', function() {
+      console.log('捕获：div2')
+    }, true)
+    oInner.addEventListener('click', function() {
+      console.log('捕获：div3')
+    }, true)
+
+    oWrapper.addEventListener('click', function(e) {
+      e.stopPropagation();
+      console.log('冒泡：div1')
+    }, false)
+    oContent.addEventListener('click', function(e) {
+      e.stopPropagation();
+      console.log('冒泡：div2')
+    }, false)
+    oInner.addEventListener('click', function(e) {
+      e.stopPropagation();
+      console.log('冒泡：div3')
+    }, false)
+
+    
+  
+  </script>
+</body>
+</html>

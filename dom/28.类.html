@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+      类（构造函数/构造方法）： 具有相同属性和方法的集合
+      类名的首字母需要大写
+      属性写在方法里
+      方法写在原型下面
+   -->
+  <script>
+    
+      function Student(name, age, weight) {
+        // this 代表的是实例化对象
+        this.name = name,
+        this.age = age,
+        this.weight = weight
+        this.eat = function() { //  每次创建实例化对象都会新创建一个方法
+          console.log( this.name +' eating....')
+        }
+      }
+      // prototype 是一个指针，指向原型对象
+      // 原型下的属性和方法都可以被所有的实例化对象所共享
+      Student.prototype.sleep = function(tmp) {
+        console.log(this.name + ' sleeping...')
+        console.log(tmp)
+      }
+      // Student.prototype.weight = '123kg'
+
+      var s1 =  new Student('zs', 20);
+      console.log(s1.weight) // undefined
+      s1.sleep()
+      s1.eat();
+
+      var s2 = new Student('aa', 7)
+      console.log(s2.weight);
+
+      // prototype 原型
+
+      // s1 = 'aaa'
+      // s2 = 'bbb'
+      String.prototype.addString = function(s2) {
+        return this+s2
+      }
+      var s1 = 'aaa'
+      console.log(s1.addString('bbb'))
+      
+      var a1 = [1,2,3]
+      a1.push(4)
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- p2 = p1.cloneNode(true);//使用参数true表示克隆节点时包含子节点 -->
+  <ul id="wrapper">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <script>
+    var oWrapper = document.getElementById('wrapper');
+    var u = oWrapper.cloneNode(true);
+    console.log(u);
+
+    var aLi = u.getElementsByTagName('li');
+
+    for(var i=0; i<aLi.length; i++) {
+      oWrapper.appendChild(aLi[i].cloneNode());
+    }
+
+    console.log(oWrapper);
+
+
+    
+
+
+  
+  </script>
+</body>
+</html>

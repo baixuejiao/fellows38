@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <!-- 
+    构成闭包的条件：
+    1.两个函数 函数套函数
+    2.里面的函数调用外面的函数的变量
+
+    闭包的好处：
+      1.变量会一只存在内存中，不会被垃圾回收机制回收
+      2.可以在循环列表的时候拿到对应的索引
+    缺点：
+      造成内存泄漏
+   -->
+  <script>
+    var aLi = document.getElementsByTagName('li');
+    // for(var i=0; i<aLi.length; i++) {
+    //   aLi[i].onclick = function() {
+    //     // i=3
+    //     (function(i) {
+    //       console.log(i)
+    //     })(i)
+
+    //   }
+    // }
+
+    for(var i=0; i<aLi.length; i++) {
+      (function(j) {
+        aLi[j].onclick = function() {
+          console.log(j)
+        }
+      })(i)
+    }
+    // (function(i) {
+    //   console.log()
+    // })(i)
+
+    function f1() {
+      var x = 1;
+      return function(){
+        x++;
+        console.log(x)
+      }
+    }
+
+    var f = f1();
+    f();
+    f();
+
+
+    
+  </script>
+</body>
+</html>

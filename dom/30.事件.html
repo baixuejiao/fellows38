@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #wrapper{
+      width: 300px;
+      height: 300px;
+
+      background: pink;
+    }
+
+    #inner{
+      width: 100px;
+      height: 100px;
+
+      background: aqua;
+    }
+
+
+  
+  
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div id="inner"></div>
+  </div>
+  <!-- 
+    addEventListener
+      三个参数 第一个参数是事件类型 第二个参数 事件处理函数 第三个参数是一个boolean类型
+      false 事件冒泡 true 事件捕获
+      添加事件监听  给同一个元素可以添加多个相同的事件监听
+
+    onclick
+      事件绑定 相同事件会覆盖
+
+   -->
+  <script>
+    var oWrapper = document.getElementById('wrapper');
+
+    oWrapper.addEventListener('click', function() {
+      console.log(1)
+    }, false)
+    oWrapper.addEventListener('mouseover', function() {
+      console.log(2)
+    }, false)
+
+    var fn = function(){
+
+    }
+    oWrapper.onclick = function(){
+      console.log('1')
+    }
+    oWrapper.onmouseover = function(){
+      console.log('2')
+    }
+    function fun() {
+      console.log(1)
+    }
+    function fun() {
+      console.log(2)
+    }
+    fun()
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+      var oDiv = document.getElementsByTagName('div')[0];
+      // console.log(oDiv) //undefiend
+      // oDiv.onclick = function() {
+      //   console.log(1111)
+      // }
+
+      // 页面所有的资源都加载完成之后再执行
+      // 资源：页面元素 图片 视频...
+      window.onload = function() {
+        // console.log(1)
+        var oDiv = document.getElementsByTagName('div')[0];
+        // console.log(oDiv) //undefiend
+      }
+
+  
+  </script>
+</head>
+<body>
+  <div id="wrapper">1234</div>
+  <script src="./jquery-1.11.3.js"></script>
+  <script>
+    var oDiv = document.getElementById('wrapper');
+    console.log('DOM对象：',oDiv);
+
+    var $div = $('#wrapper');
+    console.log('jq对象：',$div);
+
+    // DOM 对象 -> JQ对象
+    var $d = $(oDiv);
+    console.log($d)
+
+    // JQ对象 -> DOM对象
+    console.log($div[0])
+    console.log($div.get(0))
+
+    // DOM对象不能调用JQ里的方法
+    // JQ对象不能调用DOM里的方法
+
+  
+  </script>
+</body>
+</html>

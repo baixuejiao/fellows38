@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      height: 3000px;
+    }
+
+    /* h1{
+      width: 0;
+      height: 0;
+    }
+    h2{
+      display: none;
+    }
+
+    ul{
+      display: none;
+    } */
+
+    h2{
+      opacity: 0;
+    }
+
+    h1{
+      visibility: hidden;
+    }
+    
+
+    /* 
+      opacity: 0;
+      visibility: hidden;
+        元素依然会在页面中，只是看不到了，依然会占用空间
+
+      元素的visibility: hidden 或 opacity: 
+        0被认为是可见的，因为他们仍然占用空间布局。
+      
+      display: none;
+        元素不在页面结构中，不会占用页面空间
+
+      元素可以被认为是隐藏的几个情况：
+        他们的CSS display值是none。
+        他们是type="hidden"的表单元素。
+        它们的宽度和高度都显式设置为0。
+        一个祖先元素是隐藏的，因此该元素是不会在页面上显示。
+     */
+    
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    div 
+    &gt;
+    &lt;
+    &nbsp;
+    <p>
+      p
+      <span>span1</span>
+    </p>
+    <span>span2</span>
+
+  </div>
+  <p class="list">p</p>
+  <ul>
+    <li lang="en-us" name="111list" index="0">0</li>
+    <li lang="en-us" name="list-index">1</li>
+    <li class="list" name="listindex" id="list1" lang="zh-CN">2</li>
+    <li lang="zh-CN" name="list">3</li>
+    <li class="last" name="index list" lang="en-us">4</li>
+    <li class="last" >5</li>
+  </ul>
+
+  <h1>h1</h1>
+  <h2>h2</h2>
+
+  <input type="hidden">
+
+  <form action="submit/login">
+    <input type="text" name="name">
+    <input type="text" name="age">
+    <input type="text">
+    <button>submit</button>
+  </form>
+
+
+  <p>123456789</p>
+
+  <script src="./jquery-1.11.3.js"></script>
+  <script>
+    // $('#wrapper').css('color','red').on('click', function(){
+
+    // }).css()
+    // oDiv.style.width = '100px'
+
+    // $("*").css('color','red');
+
+    // $('.list').css('color','pink');
+
+    // $('li').css('color','blue');
+
+    // $('div, p').css('color','black');
+
+    // $('#last').css('background','green')
+
+    // $('div > span').css('background', 'yellow')
+
+    // $('div span').css('background', 'gray')
+
+    // 匹配 后面所有的兄弟元素
+    // $('#list1 ~ li' ).css('background', 'red')
+
+    // 匹配 下一个兄弟元素
+    // $('#list1 + li' ).css('background', 'red')
+
+    // 匹配第几个元素 索引从0开始
+    // $('li:eq(2)' ).css('background', 'red')
+    // $('li:eq(-1)' ).css('background', 'green')
+
+    // 选中偶数
+    // $('li:even').css('color', 'red')
+
+    // 选中奇数
+    // $('li:odd').css('color', 'red')
+
+    // $('li:first').css('color', 'red')
+
+    // $('li:gt(2)').css('color', 'red')
+    // rgb
+    // 选中所有的h标签
+    // $(':header').css('color','#f00')
+
+    // $('li:lang(zh-CN').css('color', '#0f0');
+    
+    // 过滤掉某个元素 
+    // $('li:not(#list1)').css('color','#00f')
+    // #ff8907
+
+    // $(':hidden').css('display','block')
+
+    // $('li[name |= "list"]').css('color', 'orange')
+
+    // $('li[name *= "list"]').css('color', 'orange')
+    // $('li[name ~= "list"]').css('color', 'orange')
+    // $('li[name $= "list"]').css('color', 'orange')
+
+    // $('li[name ^= "list"]').css('color', 'orange')
+
+    $('li[name != "list"]').css('color', 'orange')
+
+
+    
+
+
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    基本数据类型
+      typeof
+    引用数据类型
+      判断数组还是对象
+      1. Array.isArray(arr)
+      2. arr.constroctor 
+      3. obj instanceof Array 判断否是实例化对象
+   -->
+
+   <script>
+      var arr = [1,2,3];
+      var obj = {
+        name: 'zs',
+        age: 18
+      }
+
+      console.log(typeof arr) // object
+      console.log(typeof obj) // object
+
+
+      console.log(Array.isArray(arr))
+      console.log(Array.isArray(obj))
+
+      console.log(arr.constructor == Array)
+      console.log(obj.constructor == Object)
+
+      // 类（构造函数/构造方法） ：具有相同属性和方法的集合
+      function Student() {
+
+      }
+
+      // 实例化对象
+      var s1 = new Student()
+      console.log(s1.constructor)
+
+      var a1 = new Array()
+      var o1 = new Object()
+    
+
+      console.log(obj instanceof Array)
+
+   
+   
+   </script>
+</body>
+</html>

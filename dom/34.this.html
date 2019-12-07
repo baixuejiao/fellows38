@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+  </ul>
+
+  <!-- 
+    this指向 （给谁绑定的事件/方法 谁就是this）
+    1. 事件处理函数中  this -> 绑定事件的DOM元素
+    2. 在自定义函数中 this -> window
+    3. 定时器中 this -> window
+    4. 在自定义对象中 this -> 对象
+    5. 在类中 this -> 实例化的对象
+   -->
+  <script>
+    var oDiv = document.getElementsByTagName('div')[0];
+    oDiv.onclick = function() {
+      console.log(this)
+    }
+
+    function fun() {
+      console.log(this)
+    }
+    fun();
+    
+    var a = 1;
+    var afun = function() {
+      console.log(111)
+    }
+
+    setTimeout(function() {
+      console.log(this)
+    }, 0)
+
+    var obj = {
+      name: 'zs',
+      age: 18,
+      eat: function() {
+        console.log(this)
+      }
+    }
+
+    obj.eat()
+
+    function Student(name, age) {
+      this.name = name,
+      this.age = age
+    }
+
+    // s1 实例化对象
+    var s1 = new Student();
+
+    var aLi = document.getElementsByTagName('li');
+    for(var i=0; i<aLi.length; i++){
+      aLi[i].index = i
+      aLi[i].onclick = function() {
+        // console.log(this)
+        console.log(this.index)
+        // var _this = this;
+        setTimeout(function(){
+          // console.log(_this)
+          // console.log(this.innerHTML)
+        }, 3000)
+      }
+    }
+
+    // call 改变this指针的方法 参数是多个 第一个参数是要改变的指针 后面的所有的参数都是方法的实参 方法会自动触发
+    // apply 改变this指针的方法 参数是2个 第一个参数是要改变的指针 第二个参数是一个数组，数组的每一项就是方法的实参 方法会自动触发
+    // bind 改变this指针的方法 参数是多个 第一个参数是要改变的指针 后面的所有的参数都是方法的实参 但是方法不会自动执行
+    function fn(a, b) {
+      console.log(a,this)
+    }
+
+    // fn.call(oDiv, 1, 2);
+
+    fn.apply(oDiv,['apply'])
+
+    fn.bind(oDiv,'bind')()
+    
+
+    
+      
+    
+  </script>
+</body>
+</html>

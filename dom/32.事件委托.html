@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul{
+      background: red;
+    }
+    li{
+      background: pink;
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 
+    事件的委托原理： 事件冒泡
+    动态生成的元素 不能直接绑定事件
+    如果需要给动态生成的元素绑定事件需要绑定给一个已存在的父元素上
+   -->
+  <button>click</button>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+    <script>
+      var a = [1,2,3]
+      var ul = document.getElementsByTagName('ul')[0];
+      // console.log(ul)
+      // ul.onclick = function() {
+      //   console.log(111)
+      // }
+
+
+      var oBtn = document.getElementsByTagName('button')[0];
+
+      oBtn.onclick = function() {
+        var oLi = document.createElement('li')
+        oLi.innerHTML = Math.random();
+        ul.appendChild(oLi);
+      }
+
+      // var aLi = document.getElementsByTagName('li');
+      for(var i=0; i<aLi.length; i++) {
+        aLi[i].onclick = function() {
+          console.log(i);
+          console.log(this.innerHTML);
+        }
+      }
+
+      ul.onclick = function(e) {
+        // this -> ul
+        // console.log(e.target);
+        if (e.target.nodeName == 'LI') {
+          console.log(e.target.innerHTML)
+        }
+        // console.log(e.target.tagName)
+        // console.log(123)
+      }
+
+      
+    
+    </script>
+</body>
+</html>
