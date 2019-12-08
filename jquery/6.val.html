@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      border: 5px solid pink
+    }
+    .active{
+      background: red;
+    }
+  
+  </style>
+</head>
+<body>
+  <div></div>
+  <input type="text" value="请输入....">
+
+  <script src="./jquery-1.11.3.js"></script>
+  <script>
+  
+    $('input').on('focus', function(){
+      if (this.value == this.defaultValue) {
+        $(this).val('')
+      }
+    }).on('blur', function(){
+      // defaultValue 默认value
+      var value = this.defaultValue
+      console.log(value)
+      if(!this.value) {
+        $(this).val(value)
+      }
+    })
+
+    $('div').on('click', function(){
+      // $('div').addClass('active')
+      // $('div').removeClass('active')
+      // $('div').toggleClass('active')
+
+      $('div').css({
+        width: '400px',
+        height: '400px',
+        opacity: '0.5',
+        background: 'red',
+      })
+    })
+  
+  </script>
+</body>
+</html>

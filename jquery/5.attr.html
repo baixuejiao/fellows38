@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="wrapper">
+    <input type="checkbox"> 苹果
+    <input type="checkbox"> 香蕉
+    <input type="checkbox"> 桃子
+    <input type="checkbox"> 葡萄
+  </div>
+
+  <div>
+    <button id="all">全选</button>
+    <button id="none">全不选</button>
+    <button id="reverse">反选</button>
+  </div>
+
+  <script src="./jquery-1.11.3.js"></script>
+
+  <script>
+    // attr ,prop 
+    // 给元素设置/获取属性 
+    // 设置时可以给所有元素设置属性
+    // 获取时只能获取第一个元素的属性
+    // attr设置普通属性
+    // prop设置特殊属性 （不是所有标签都有的属性）
+    $('#wrapper').attr('class','content');
+    console.log($('#wrapper').attr('class'));
+
+    $('#wrapper').removeAttr('class')
+
+    $('#all').on('click', function(){
+      // $(':checkbox').prop('checked', true)
+      $(':checkbox').attr('checked', true)
+    })
+
+    $('#none').on('click', function(){
+      // $(':checkbox').prop('checked', false)
+      $(':checkbox').attr('checked', false)
+
+    })
+
+    $('#reverse').on('click', function(){
+      // 获取属性的时候只能获取到第一个元素的属性
+      // var tag = $(':checkbox').prop('checked');
+      // $(':checkbox').prop('checked', !tag)
+
+      $(':checkbox').each(function(index, element){
+        // element -> DOM 对象
+        console.log(element)
+        // jquery对象
+        // var tag = $(element).prop('checked')
+        // $(element).prop('checked',!tag)
+        // DOM对象
+        element.checked = !element.checked;
+      })
+    })
+    
+  
+  </script>
+</body>
+</html>

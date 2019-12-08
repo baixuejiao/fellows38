@@ -64,6 +64,10 @@
     <span>span2</span>
 
   </div>
+
+  <div>
+    <p>12345678</p>
+  </div>
   <p class="list">p</p>
   <ul>
     <li lang="en-us" name="111list" index="0">0</li>
@@ -149,8 +153,11 @@
 
     // $('li[name ^= "list"]').css('color', 'orange')
 
-    $('li[name != "list"]').css('color', 'orange')
+    // $('li[name != "list"]').css('color', 'orange')
 
+      // $('li:nth-last-child(1)').css('background', 'pink');
+
+      $('p:only-child').css('background', 'yellow')
 
     
 
