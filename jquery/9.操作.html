@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+ 
+</head>
+<body>
+  <div id="wrapper">123456</div>
+
+  <div id="content"></div>
+  <div id="conatiner"></div>
+
+
+  <script src="./jquery-1.11.3.js"></script>
+  <script>
+    $('#wrapper').append('<p>p标签</p>');
+    $('<a href="#">a标签</a>').appendTo('#wrapper');
+
+    $('#content').html('<a href="#">百度</a>');
+    $('#conatiner').text('<a href="#">百度</a>');
+
+    $('div').after('<span>span标签</span>')
+
+    $('#wrapper').empty();
+
+    $('#content').remove();
+
+    var $s = $('span');
+    console.log($s.eq(0))
+
+    $s.each(function(i, ele){
+      console.log(i ,ele)
+      $(ele)
+    })
+
+  
+  </script>
+</body>
+</html>

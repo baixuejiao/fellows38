@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+</head>
+<body>
+  <div>123</div>
+  <button>click</button>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <script src="./jquery-1.11.3.js"></script>
+  <script>
+    // $('li').on('click', function(){
+      
+    //   console.log($(this).html())
+    // })
+
+    $('ul').on('click', 'li' ,function(event){
+      // this -> ul
+      console.log(event.target.innerHTML)
+      // console.log($(this).html())
+    })
+
+    $('button').on('click', function(){
+      $('ul').append('<li>'+Math.random()+'</li>');
+    })
+  
+
+    $('div').on('click', function(){
+      $('button').trigger('click');
+    })
+  </script>
+</body>
+</html>

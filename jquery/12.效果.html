@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background: red;
+    }
+  
+  </style>
+</head>
+<body>
+  <button id="hide">hide</button>
+  <button id="show">show</button>
+  <button id="toggle">toggle</button>
+  <button id="animate">animate</button>
+  <button id="stop">stop</button>
+
+  <button id="fadein">fadeIn</button>
+
+  <div></div>
+  <p>1234567890-</p>
+
+  <script src="./jquery-1.11.3.js"></script>
+  <script>
+    console.log($('button').length)
+    $('#hide').on('click', function(){
+      $('div').hide(4000, function(){
+        console.log(1)
+      });
+    })
+
+    $('#show').on('click', function(){
+      $('div').show(2000);
+    })
+    $('#toggle').on('click', function(){
+      $('div').toggle(2000);
+    })
+
+    $('#animate').on('click', function(){
+      // $('div').animate({
+      //   width: '400px',
+      //   opacity: 0.5
+      // }, 2000, function(){
+      //   $('div').animate({
+      //     height: '400px'
+      //   },1000)
+      // });
+
+      $('div').animate({
+        width: '400px',
+        opacity: 0.5
+      }, 5000).animate({
+        height: '400px',
+        opacity: 0.25
+      }, 4000)
+    })
+
+    $('#stop').on('click', function(){
+      $('div').stop(true, true)
+    })
+
+    $('#fadein').on('click', function(){
+      $('div').fadeTo(1000,0.5);
+    })
+  
+  </script>
+</body>
+</html>

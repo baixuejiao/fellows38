@@ -71,10 +71,11 @@
   <script src="./jquery-1.11.3.js"></script>
   <script>
     $('#menu li').on('click', function(){
-      var index = $(this).index()
-      $(this).addClass('selected').siblings().removeClass('selected')
-      // console.log($(this).index())
-      $('#content div').eq(index).addClass('active').siblings().removeClass('active')
+      // this -> dom (li)
+      $(this).addClass('selected').siblings().removeClass('selected');
+      // index() 获取jq对象索引
+      var tag = $(this).index()
+      $('#content div').eq(tag).addClass('active').siblings().removeClass('active')
     })
   </script>
 </body>
