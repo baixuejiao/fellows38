@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function deepClone(params) {
+      var tmp;
+      // 引用数据类型（数组/对象）
+      if(typeof params === 'object') {
+        tmp = Array.isArray(params) ? [] : {}
+        for(var key in params) {
+          if(typeof params[key] === 'object') {
+            tmp[key] = deepClone(params[key])
+          } else {
+            tmp[key] = params[key]
+          }
+        }
+      } else {
+        // 基本数据类型
+        tmp = params
+      }
+      return tmp;
+    }  
+
+    console.log(deepClone(123))
+    
+    
+  </script>
+</body>
+</html>

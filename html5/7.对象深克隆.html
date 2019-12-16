@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var obj = {
+      name: 'zs',
+      age: 18,
+      info: {
+        weight: '100',
+        height: '180'
+      }
+    }
+
+    var o1 = obj
+
+    console.log(typeof obj)
+
+    // 对象深克隆
+    function deepClone(obj) {
+      var tmp = {} 
+      for(var key in obj) {
+        // 判断对象中的每一项的数据类型 如果是引用数据类型 递归调用自己
+        if( typeof(obj[key]) === 'object') {
+          tmp[key] = deepClone(obj[key])
+        } else { // 基本数据类型 直接赋值
+          tmp[key] = obj[key]
+        }
+      }
+      return tmp;
+    }
+
+    var o2 = deepClone(obj)
+    o2.info.weight = '150';
+
+    console.log('obj:',obj)
+    console.log('o2:',o2)
+
+    var arr = [1,2,3];
+
+    console.log(deepClone(arr))
+
+    
+  </script>
+</body>
+</html>

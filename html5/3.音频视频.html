@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+      background: pink;
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 音频
+    src
+      音频资源资源 可以是相对路径 也可以是绝对路径
+    autoplay 
+      自动播放 （不是所有浏览器都支持）
+      ios系统 也无法自动播放，需要用户手动触发一下
+
+    controls 
+      音频播放控件
+
+    loop
+      循环播放
+  -->
+  <!-- <audio src="./music.mp3" autoplay controls loop></audio> -->
+  <!-- <audio src="https://m8.music.126.net/20191215111842/17efe0f692281f2c07275fa7c904ef13/ymusic/075c/015f/555a/0636119ac565799fd219b09ba0138154.mp3" autoplay></audio> -->
+  <!-- 
+    source 加载音频文件的资源  为了兼容不同的浏览器 需要引入不同格式的文件
+      src属性 资源的路径
+      type属性 代表资源类型
+      音频格式：Ogg MP3 Wav
+   -->
+  <!-- <audio autoplay controls>
+    <source src="song.ogg" type="audio/ogg">
+    <source src="song.mp3" type="audio/mpeg">
+  </audio> -->
+
+
+  <!-- 
+    video 视频
+      autoplay 自动播放（个别浏览器不支持）
+      controls 展示播放控件 
+      loop 循环播放
+      width height 设置宽高
+      视频格式 Ogg MPEG4 WebM
+   -->
+  <video src="./video.mp4" autoplay controls loop width="300" height="300"></video>
+
+  <!-- 
+    source 引入不同类型的视频资源 为了兼容不同的浏览器
+   -->
+  <!-- <video width="320" height="240" controls="controls">
+    <source src="movie.ogg" type="video/ogg">
+    <source src="movie.mp4" type="video/mp4">
+  </video> -->
+
+
+  <div id="wrapper">1234567</div>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  
+  <script>
+    var aLi = document.getElementsByTagName('li')
+
+    for(var i=0 ; i< aLi.length; i++) {
+      console.log(aLi[i])
+      console.log(aLi[i].innerHTML)
+    }
+  
+  
+  </script>
+</body>
+</html>

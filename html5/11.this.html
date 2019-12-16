@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 改变指针时 传入undefined/null this还是指向window
+    function fun() {
+      console.log(this)
+    }
+    fun()
+    fun.apply(undefined)
+    fun.call(null)
+
+    var a = fun.apply(undefined)
+    var b = fun.apply(null)
+
+    console.log(a, b) //undefined , undefined
+
+    
+    
+  </script>
+</body>
+</html>

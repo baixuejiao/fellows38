@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 本地存储 
+    // localStorage 存储大小为5M 会一直存储在本地 除非手动删除
+    // sessionStorage 存储大小为5M 浏览器关闭之后就失效了
+
+    // 设置localStorage
+    localStorage.islogin = true
+    localStorage.setItem('tag', 123)
+    // 获取localStorage
+    console.log(localStorage.islogin)
+    console.log(localStorage.getItem('tag'))
+
+    // 设置sesstionStroage
+    sessionStorage.name = '1111'
+    sessionStorage.setItem('age', 222)
+
+    // 获取sessionStorage
+    console.log(sessionStorage.name)
+    console.log(sessionStorage.getItem('age'))
+  </script>
+</body>
+</html>

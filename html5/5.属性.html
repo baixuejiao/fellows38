@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    图片懒加载
+      img标签中 src属性放的是一个质量较小的公用的图片
+      data-src中放的是图片的真实地址
+      当图片（即将）滚入到 页面的可视区域中 再将图片的真实地址赋值给src属性
+   -->
+  <img data-src="xxx.jpg" src="demo.jpg" alt="">
+ 
+  <div data-name="xm" data-age="18" data-first-name="w">123456789</div>
+  <script>
+
+    // this
+    var oDiv = document.querySelector('div')
+    oDiv.index = 1
+    console.log(oDiv.index)
+    oDiv.setAttribute('tag', false)
+    console.log(oDiv.getAttribute('tag'))
+
+    // 设置属性 data-*
+
+    // oDiv.dataset 获取所有通过 data-* 设置的属性 返回一个object
+    oDiv.dataset.height = '180'
+    console.log(oDiv.dataset.age)
+
+    console.log(oDiv.dataset.firstName)
+
+    // data-* 设置自定义属性
+    /* 
+      设置属性的方法(第一种方法设置的属性在html中无法看见但是能获取到 后面三种方式都可以在html中直接看到)
+      1. oDiv.index = 1
+      2. oDiv.setAttribute('index', 1)
+      3. oDiv.dataset.index = 1
+      4. <div data-index="1"></div>
+    */
+
+    /*
+      获取属性的方法
+      1. oDiv.index
+      2. oDiv.getAttribute('index')
+      3. oDiv.dataset.index
+    */
+
+    // 图片懒加载
+
+    
+  </script>
+</body>
+</html>

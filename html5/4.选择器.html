@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="parent">
+    <div id="wrapper" class="box">
+      <p>123456</p>
+    </div>
+  </div>
+  <div class="box"></div>
+
+  <script>
+    var aDiv = document.getElementsByTagName('div')
+    var oDiv = aDiv[0]
+    // getElementsByClassName 通过类名 获取元素 返回类数组
+    var aDiv1 = document.getElementsByClassName('box')
+
+    console.log(aDiv)
+    console.log(aDiv1)
+
+    // querySelector 查找符合条件的第一个元素
+    var oD = document.querySelector('.box')
+    console.log(oD)
+
+    // querySelectorAll 查找所有符合条件的元素 返回的是一个NodeList 类数组
+    var aD = document.querySelectorAll('.box')
+    console.log(aD)
+
+    // 任何一个DOM对象下都可以使用这两个方法
+    var oP = document.querySelector('#parent')
+    var aDiv2 = oP.querySelectorAll('div')
+
+
+    
+
+  
+  </script>
+</body>
+</html>

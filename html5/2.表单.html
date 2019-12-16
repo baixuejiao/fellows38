@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body style="height:3000px">
+  <!-- 
+    玉伯
+    winter
+   -->
+  <form action="">
+    <!-- placeholder -->
+    <input type="text" placeholder="please input a number"> <br/>
+
+    <!-- 校验邮箱格式 -->
+    email:<input type="email"> <br/>
+
+    <!-- 校验url格式 -->
+    url:<input type="url"> <br/>
+
+    <!-- 数字类型 输入非数字不生效
+        max表示最大值
+        min表示最小值
+        step 步长
+    -->
+    number: <input type="number" max="10" min="0" step="2">  <br/>
+
+    range: <input type="range" max="10" min="0" step="3">  <br/>
+
+    <!-- search类型 有一个清空内容的按钮 -->
+    search: <input type="search">  <br/>
+
+    date: <input type="date">
+
+    month: <input type="month">
+
+    time: <input type="time">
+
+    <!-- 返回颜色的十六进制表示 -->
+    color: <input type="color">
+
+    <!-- 只有在手机上会生效， 显示手机拨号键盘
+        maxlength 输入内容的最大长度
+    -->
+    tel: <input type="tel" maxlength="11">
+
+    <!-- 
+        上传文件
+        accept 限制文件上传的类型
+    -->
+    file: <input type="file" accept="image/png">
+
+    <!-- datalist input opation 配套使用
+      datalist 下拉列表
+      需要配合input使用
+      datalist 与 option 组合使用
+      input设置list属性与datalist的id关联
+    -->
+    <input type="text" list="name">
+    <datalist id="name">
+      <option value="shirley" label="18">shirley</option>
+      <option value="shirley" label="17">shirley</option>
+      <option value="cherry">cherry</option>
+      <option value="xiaoming">xiaoming</option>
+    </datalist>
+
+    <select name="" id="">
+      <option value="shirley">shirley</option>
+      <option value="cherry">cherry</option>
+      <option value="xiaoming">xiaoming</option>
+    </select>
+
+    <input type="submit">
+
+    <!-- <input type="button" value="submit"> -->
+  </form>
+</body>
+</html>

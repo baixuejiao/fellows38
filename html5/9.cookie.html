@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // cookie 存储大小为4k 过期时间 如果不设置 关闭窗口就过期了
+    // 设置cookie方式：document.cookie
+    // document.cookie = "name='zs'" 
+    // document.cookie = "token=111" 
+    // var date = new Date();
+    // date.setDate(date.getDate()+ 10);
+    // document.cookie = 'channel=123;expires=' + date.toUTCString()
+    
+    // document.cookie 获取cookie 
+    // 返回字符串 返回所有的cookie 
+    // console.log(document.cookie)
+    
+    // 设置cookie
+    function setCookie(key, value, expires) {
+      // 创建日期对象
+      var date = new Date()
+      // 设置过期天数
+      date.setDate(date.getDate() + expires * 1)
+      // 设置cookie
+      console.log(key + '=' + value + ';expires=' + date.toUTCString())
+      document.cookie = key + '=' + value + ';expires=' + date.toUTCString();
+    }
+
+    function getCookie(key) {
+      // 1.获取所有的cookie(字符串)
+      var cookie = document.cookie
+      var arr = cookie.split(';');
+      for(var i=0; i<arr.length; i++) {
+        var tmp = arr[i].split('=')
+        // trim 可以去掉字符串前后的空格
+        if(tmp[0].trim() === key) {
+          return tmp[1]
+        }
+      }
+
+    }
+    setCookie('tag', 111, 1)
+    setCookie('name', 222, 1)
+    
+    // 删除cookie
+    function delCookie(key) {
+      var date = new Date();
+      date.setDate(date.getDate() - 1)
+      document.cookie = key + '=null;expires='+ date.toUTCString()
+    }
+    delCookie('tag')
+
+    // cookie 设置本地存储
+    // 存储大小 4k 默认是窗口关闭就失效 可以通过expires设置过期时间
+
+  </script>
+</body>
+</html>
