@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>点击按钮</button>
+  <div></div>
+
+  <p></p>
+
+  <script>
+    var oBtn = document.querySelector('button')
+    var oDiv = document.querySelector('div')
+    var oP = document.querySelector('p')
+  
+    oBtn.onclick = function() {
+      var tag = Math.random();
+      oDiv.innerText = tag;
+      // location.hash = tag;
+      history.pushState(tag, '')
+
+    }
+
+    // 历史记录发生改变时会触发的方法
+    window.onpopstate = function(e) {
+      // e.target
+      console.log(e.state)
+      oP.innerText = e.state
+    }
+
+    // onhashchange 监听hash的改变
+    // window.onhashchange = function() {
+    //   console.log(location.hash)
+    //   oP.innerText = location.hash;
+    // }
+  
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 
+      1.元素选择器
+      2.关系选择器
+      3.属性选择器
+      4.伪类选择器 :
+      5.伪元素选择器 ::
+     */
+    /* 
+      关系选择器
+      + 选中后面紧挨着的兄弟
+      ～ 选中后面所有的兄弟
+     */
+    /* .list ~ li {
+      color: red;
+    } */
+  
+    /* li[class~="list"] {
+      color: pink;
+    }
+
+    input:focus{
+      background: pink;
+    } */
+  
+
+    li:nth-child(2n-1) {
+      color: red;
+    }
+
+    .demo span:first-of-type{
+      color: red;
+    }
+
+    #check{
+      outline: transparent;
+      background: transparent;
+      border: 10px solid red;
+    }
+    #check:checked{
+      color: red;
+      border-color: orange;
+    }
+
+    div{
+      width: 80px;
+      height: 600px;
+      border: 1px solid red;
+    }
+
+    div::first-letter{
+      color: pink;
+    }
+  </style>
+</head>
+<body>
+  <input id="check" type="checkbox">
+  <ul>
+    <li class="list1">1</li>
+    <li class="list">2</li>
+    <li class="list3">3</li>
+    <li class="list list111 li">4</li>
+    <li>5</li>
+  </ul>
+  <div>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
+  <!-- <div>1234567</div>
+  <div>1234567</div> -->
+  <input type="text" disabled>
+
+  <div class="demo">
+    <p>p1</p>
+    <p>p2</p>
+    <span>span1</span>
+    <p>p3</p>
+    <span>span2</span>
+  </div>
+</body>
+</html>

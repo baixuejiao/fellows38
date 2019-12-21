@@ -5,12 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <!-- 
+    js 是单线程的 浏览器是多线程
+    异步加载
+    defer 先渲染结构，遇到js开始加载同时dom继续渲染，渲染完成之后执行js
+    async 先渲染结构，遇到js开始加载并同时dom继续渲染，js加载完成之后立马执行js，同时dom停止渲染,js执行完成之后再继续渲染剩余部分
+   -->
+  <script src="script.js"></script>
+  <!-- async 则是一个乱序执行的主，反正对它来说脚本的加载和执行是紧紧挨着的，所以不管你声明的顺序如何，只要它加载完了就会立刻执行 -->
+  <script async src="../jquery/jquery.min.js"></script>
+  <!-- 关于 defer，此图未尽之处在于它是按照加载顺序执行脚本的，这一点要善加利用 -->
+  <script defer src="../jquery/jquery.min.js"></script>
+  <script >
+ </script>
 </head>
 <body>
   <script>
     // 本地存储 
     // localStorage 存储大小为5M 会一直存储在本地 除非手动删除
     // sessionStorage 存储大小为5M 浏览器关闭之后就失效了
+    // 如果代码写入的是能获取到
+    // 如果直接在浏览器中输入的是获取不到
 
     // 设置localStorage
     localStorage.islogin = true
