@@ -1,0 +1,174 @@
+<!-- 声明文档类型 html5版本 告诉浏览器根据哪个版本渲染页面   -->
+<!DOCTYPE html>
+<!-- 根标签 -->
+<html>
+<!-- 页面的配置 -->
+<head>
+  <!-- 编码格式 -->
+  <meta charset="UTF-8">
+  <!-- 响应式开发 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ie浏览器配置 -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- 关键字 -->
+  <meta name="keywords" content="购物 网上购物">
+  <!-- 网站的描述信息 -->
+  <meta name="description" content="">
+  <!-- 标题 -->
+  <title>Document</title>
+</head>
+<body style="height: 3000px;">
+  啊啊啊
+  <!-- 标题标签 h1~h6 -->
+  <h1>h1标签</h1>
+  <h2>h2标签</h2>
+  <h3>h3标签</h3>
+  <h4>h4标签</h4>
+  <h5>h5标签</h5>
+  <h6>h6标签</h6>
+
+  <!-- p 段落 -->
+  <!-- strong 加粗 -->
+  <p><strong>淘宝</strong>搜索是最智能的商品搜索引擎，通过大数据的运营，准确的理解商品与用户，提供精准的个性化搜索体验。</p>
+  <!-- i 斜体 -->
+  <!-- br 换行 -->
+  <p><i>淘宝</i>搜索是最智能的商品搜索引擎，<br/>通过大数据的运营，准确的理解商品与用户，提供精准的个性化搜索体验。</p>
+
+  <!-- 
+      a 超链接
+      href 跳转地址（url）
+      target="_blank" 在新的标签打开页面
+  -->
+  <a href="https://www.baidu.com">百度</a>
+  <a href="https://www.baidu.com" target="_blank">百度</a>
+
+  <!-- img 图片
+    src 图片地址
+    相对路径
+    绝对路径
+    alt 图片加载失败时给用户的提示信息
+
+    图片格式：
+      png 透明图片
+      jpg/jpeg 非透明图片
+      gif 动图
+  -->
+  <img src="https://www.baidu.com/img/bd_logo111111.png" alt="百度logo">
+  <img src="../imgs/logo.png" />
+
+  <!-- 无序列表
+      ul + li
+  -->
+  <ul>
+    <li>
+      <a href=""></a> 123</li>
+    <li>123</li>
+    <li>123</li>
+  </ul>
+
+  <!-- 有序列表
+    ol li
+  -->
+  <ol>
+    <li>aaaa</li>
+    <li>bbb</li>
+    <li>cccc</li>
+  </ol>
+
+  <!-- 
+      form 表单
+      action 表单提交的动作
+  -->
+  <form action="http://www.qmtech.com/login">
+    <!-- input 输入框 
+        type 输入框类型
+          text 文本
+          password 密码
+          radio 单选框
+    -->
+    <input type="text" name="username"  placeholder="please input a name">
+    <input type="password" name="pwd">
+
+    <!-- sex: boy -->
+    <input type="radio" name="sex" id="girl" value="girl"> <label for="girl">女</label>
+    <input type="radio" name="sex" value="boy"> 男
+
+    <input type="checkbox" name="fruit" id="apple"> <label for="apple">苹果</label>
+    <input type="checkbox" name="fruit" id=""> 香蕉
+    <input type="checkbox" name="fruit" id=""> 梨
+
+    <!-- 下拉列表
+      option 选项
+    -->
+    <!-- city:h -->
+    <select name="city">
+      <option value="">请选择</option>
+      <option value="h">哈尔滨</option>
+      <option value="q">齐齐哈尔</option>
+      <option value="m">牡丹江</option>
+    </select>
+    <!-- textarea 文本域 -->
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <!-- 按钮 -->
+    <input type="button" value="按钮">
+    <!-- 提交按钮 -->
+    <input type="submit" value="提交按钮">
+    <!-- 按钮 -->
+    <button>按钮</button>
+  </form>
+
+  <!-- div span 页面布局 -->
+  <!-- div + css -->
+  <div>123123123</div>
+  <div>123123123</div>
+
+  <span>1231231</span>
+  <span>1231231</span>
+
+  <!-- 
+    块级元素
+      单个元素占一行
+      块级元素可以嵌套块级元素和行级元素 行级块元素 h1~h6 p
+      div h1~h6 p ul ol li
+
+    行级元素/行内元素
+      多个元素占一行
+      行级元素里只能嵌套行级元素 a不能嵌套a
+      span a
+
+    行级块元素
+      既有行级元素的特点又有块级元素的特点
+      img
+   -->
+
+   <!-- table 表格
+        tr 行
+        td 单元格
+  -->
+   <table border="1">
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+   </table>
+  <p>
+      p标签
+      <div>div标签</div>
+  </p>
+
+  <a href="#">1231231
+    <a href="#">4567890</a>
+  </a>
+</body>
+</html>
+
+
+

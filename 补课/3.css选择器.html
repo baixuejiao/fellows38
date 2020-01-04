@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* id 选择器 */
+    #wrapper{
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+
+    /* 类选择器/class选择器 */
+    .list{
+      color: blue;
+    }
+
+    /* 标签选择器 */
+    span{
+      /* color: 设置文本颜色 */
+      /* color: green; */
+    }
+  
+    div{
+      /* color: orange */
+    }
+
+    /* 后代选择器 选中所有的后代 儿子 孙子 。。。 */
+    /* div span{
+      color: pink;
+    } */
+
+    /* 子代选择器 选中儿子 > */
+    #content>span{
+      color: pink;
+    }
+
+    /* 分组选择器 , */
+    #wrapper,.list{
+      color: aqua
+    }
+
+    /* 伪类选择器 : */
+    a:hover{
+      color: green;
+    }
+
+    #list1:hover{
+      color: hotpink;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="wrapper">123123</div>
+
+  <p class="list" id="list1">1234567</p>
+  <p class="list">1234567</p>
+
+  <span>hello world</span>
+
+  <div id="content">
+    <span>span1</span>
+    <p>
+      <span>span2</span>
+    </p>
+  </div>
+
+  <a href="#">baidu</a>
+
+</body>
+</html>
