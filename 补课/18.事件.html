@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #wrapper{
+      width: 200px;
+      height: 200px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">123</div>
+  <input type="text">
+
+  <script>
+    var oDiv = document.getElementById('wrapper')
+    // 鼠标单击事件
+    oDiv.onclick = function(event) {
+      // event 事件对象
+      console.log(event)
+    }
+
+    oDiv.ondblclick = function() {
+      console.log('ondblclick')
+    }
+
+    oDiv.onmouseover = function() {
+      // console.log('onmouseover')
+    }
+
+    oDiv.onmouseout =  function() {
+      // console.log('onmouseout')
+    }
+
+    oDiv.onmousemove = function() {
+      // console.log('onmousemove')
+    }
+    var a = [1,2,3]
+    console.log(a[0])
+
+    var oInput = document.getElementsByTagName('input')[0]
+    oInput.onfocus = function(){
+      // oInput.style.backgroundColor = 'red'
+    }
+    oInput.onblur = function() {
+      oInput.style.backgroundColor = 'pink'
+    }
+
+    oInput.onchange =  function() {
+      console.log(oInput.value)
+    }
+
+
+  </script>
+</body>
+</html>

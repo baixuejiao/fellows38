@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 
+      id选择器 > class > 标签
+      权重
+        style 1000
+        id  100
+        class 10
+        伪类 10
+        标签 1
+        伪元素 1
+    */
+    /* .wrapper{
+      border: 1px solid #000;
+      background: green;
+    } */
+    div{
+      width: 200px;
+      height: 200px;
+      background: aqua;
+    }
+    div{
+      background: pink;
+    }
+    /* #inner{
+      background: red;
+    } */
+
+    /*  1 */
+    span{
+      color: orange;
+    }
+    /* 100 */
+    #text{
+      color: pink;
+    }
+    /* 100 + 1 = 101 */
+    #inner>span{
+      color: green;
+    }
+    /* 10+1 =  11 */
+    .wrapper>span{
+      color: #000;
+    }
+    /* 110 */
+    .wrapper>#text{
+      color: blue;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div id="inner" class="wrapper">
+    <span id="text">1234567890</span>
+  </div>
+
+  
+
+</body>
+</html>

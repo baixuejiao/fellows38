@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      width: 1000px;
+      height: 1000px;
+      border: 10px dashed #000;
+      padding: 50px;
+      background: url('../imgs/800.jpg') no-repeat;
+      /* background-size: 100px 100px; */
+      /* 
+        背景图的尺寸
+        cover：将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。
+        contain：将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。
+      */
+      background-size: contain;
+      /* 
+        背景图片位置
+        border-box 从边框开始展示背景图片
+        padding-box 从内边距开始展示背景图片
+        content-box 从内容开始展示背景图片
+      */
+      background-origin: content-box;
+      background-color: chocolate;
+    }
+  
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

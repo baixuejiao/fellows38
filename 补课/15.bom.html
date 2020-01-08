@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- https://segmentfault.com/a/1190000013538587 -->
+  <script>
+    // window.open('https://www.baidu.com')  
+    // window.alert('123') => alert('123s')
+    // window.prompt()
+    // window.confirm('2345')
+
+    // 几毫秒之后执行
+    // var t1 = setTimeout(function(){
+    //   console.log('hello')
+    // }, 2000)
+
+    // clearTimeout(t1)
+
+
+    // 每隔几毫秒执行
+    // var a = 1
+    // var timer = setInterval(function(){
+    //   console.log(a++)
+
+    //   if(a >= 8) {
+    //     clearInterval(timer)
+    //   }
+    // }, 1000);
+    
+
+    console.log(1)
+    var t1 = setTimeout(function(){
+      console.log(2)
+    }, 0)
+    var t2 = setTimeout(function(){
+      console.log(2)
+    }, 0)
+
+    console.log(3)
+    
+    console.log(t1, t2)
+
+    history.back()
+
+    location.href = 'https://www.baidu.com'
+
+    // var ua = navigator.userAgent;
+    // ua.indexOf('iPhone') == -1
+  </script>
+</body>
+</html>

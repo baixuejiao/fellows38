@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+      js 基本数据类型 引用数据类型
+      基本数据类型： number string boolean undefined null
+      引用数据类型： 数组 对象
+      var 定义变量
+      变量名： 以字母下划线$开头 变量名里包含字母数字下划线$
+
+      减法 乘法 除法 如果有非number类型的变量 会转成number 如果能转成number就正常计算 如果转换的是NAN计算结果就是NAN
+      加法里如果有string类型 就会被认为是字符串拼接
+    -->
+  <script>
+    var a = 1.2;
+    console.log(a, typeof a) 
+    var b = 'hello'
+    console.log(typeof b)
+    var c = true;
+    console.log(typeof c)
+    var d;
+    console.log(d)
+
+    var a1 = '1';
+    var a2 = 2;
+    console.log(a1+a2);
+    // 字符串拼接
+    console.log('hello'+'world')
+    // true 1 false 0
+    console.log(1+false)
+   // console.log(2-'aaa') => NAN not a number 
+   console.log(2-true)
+
+   console.log(2/'2')
+
+   window.prompt('please input a number')
+   
+    
+    
+  </script>
+</body>
+</html>

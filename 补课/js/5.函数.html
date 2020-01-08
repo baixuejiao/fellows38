@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var 定义的变量会有变量提升
+    // 作用域 全局作用域 局部作用域
+    // 局部作用域可以调用全局作用域变量
+    // 全局作用域里不能调用局部作用域里的变量
+
+    var a = 1; // 全局变量
+    // console.log(a)
+
+    var b;
+    // console.log(b);
+    b=9;
+
+    function fn() {
+      var c = 2; // 局部变量
+      console.log(a)
+    }
+
+    fn();
+    // console.log(c)    
+
+    // var fun;
+    // fun();
+    // fun = function() {
+    //   console.log(1)
+    // } 
+
+    // function fn(a, b) {
+    //   console.log(a)
+    //   console.log(b)
+    // }
+
+
+    var a1 = 1;
+    function f1() {
+      console.log(a1); //undefined
+      var a1 = 2;
+    }
+    f1();
+    console.log(a1)
+
+    
+    
+  </script>
+</body>
+</html>

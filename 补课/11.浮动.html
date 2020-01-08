@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* div{
+      float: right;
+      width: 200px;
+      height: 200px;
+      margin-bottom: 10px;
+      background: aqua;
+    }
+
+    #wrapper{
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: pink;
+    } */
+
+    #container{
+      /* height: 200px; */
+      /* overflow: hidden; */
+      background: red;
+    }
+    .clearfix::after{
+      content: '';
+      display: block;
+      clear: both;
+    }
+    #inner{
+      float: left;
+      width: 200px;
+      height: 200px;
+      background: pink;
+    }
+    #last{
+      /* 清除浮动 
+        left right both
+      */
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    元素浮动以后 父元素塌陷问题
+    1.给父元素加溢出隐藏
+    2.给父元素加高度
+    3.在父元素里的最后面加一个空的子元素（块级元素） 给子元素设置清除浮动
+    4.添加伪元素 设置clearfix
+   -->
+  <!-- <div id="wrapper">1</div>
+  <div>2</div>
+  <div>3</div> -->
+
+  <div id="container" class="clearfix">
+    <div id="inner"></div>
+    <!-- <div id="last"></div> -->
+  </div>
+</body>
+</html>

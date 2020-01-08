@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #parent{
+      display: flex;
+      /* 
+        水平方向的对齐方式
+        flex-start
+        flex-end
+        space-between
+        space-around
+        center
+      */
+      justify-content: flex-end;
+      flex-direction: row-reverse;
+    }
+
+    /* #parent>div{
+    } */
+    #parent>div:nth-child(1){
+      width: 200px;
+      height: 200px;
+      background: chartreuse;
+      border: 1px solid #000;
+    }
+
+    #parent>div:nth-child(2){
+      /* flex 占剩余空间的n份 */
+      /* flex: 1; */
+      width: 200px;
+      height: 200px;
+      background: chocolate;
+    }
+    #parent>div:nth-child(3){
+      /* flex: 2; */
+      width: 200px;
+      height: 200px;
+      background: pink;
+    }
+
+
+    ul{
+      display: flex;
+      justify-content: space-around;
+    }
+    ul>li{
+      width: 100px;
+      list-style: none;
+      text-align: center;
+    }
+    ul>li>div{
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      /* margin: 0 auto; */
+      border-radius: 50%;
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="parent">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+
+  <ul>
+    <li>
+      <div></div>
+      <p>1</p>
+    </li>
+    <li>
+      <div></div>
+      <p>2</p>
+    </li>
+    <li>
+      <div></div>
+      <p>3</p>
+    </li>
+    <li>
+      <div></div>
+      <p>4</p>
+    </li>
+    <li>
+      <div></div>
+      <p>5</p>
+    </li>
+  </ul>
+</body>
+</html>

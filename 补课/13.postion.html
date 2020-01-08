@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      height: 3000px;
+    }
+    .content{
+      width: 100px;
+      height: 100px;
+      background: red;
+      /* position
+        relative 相对定位 元素定位以后 空间不会释放 相对于元素本身的位置改变的
+        absolute 绝对定位 元素定位以后空间释放 相对于最近的已定位的祖先元素定位的
+        fixed 固定定位 元素定位以后空间释放 相对于浏览器窗口定位的
+      */
+      position: absolute;
+      top: 40px;
+      left: 20px;
+    }
+    .inner{
+      width: 150px;
+      height: 150px;
+      border: 1px solid #000;
+      margin-top: 100px;
+      /* position: relative;
+      top:40px;
+      left: 40px; */
+    }
+    #container{
+      width: 200px;
+      height: 200px;
+      margin-top: 40px;
+      border: 1px solid blue;
+      /* position: relative; */
+    }
+    .fixed{
+      height: 100px;
+      width: 1000px;
+      background: aqua;
+      position: fixed;
+      top: 100px;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="inner">
+      <div class="content"></div>
+    </div>
+  </div>
+
+
+  <div class="fixed"></div>
+  <div>1234567</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var obj = new Object()
+    console.log(obj)
+    obj.name = 'zs'
+    console.log(obj)
+
+    // 对象
+    var person = {
+      // 属性
+      name: 'xm',
+      age: 18,
+      eat: function() {
+        console.log('eating....')
+      }
+    } 
+    console.log(person.name)
+    person.eat()
+    person.height = '180cm'
+    person.age = 20
+    console.log(person)
+    console.log('age:',person['age'])
+
+    for (p in person) {
+      console.log(p)// 属性 name age height eat
+      console.log(person[p])
+    }
+
+
+    
+    
+    
+  </script>
+</body>
+</html>

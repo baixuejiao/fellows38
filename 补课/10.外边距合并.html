@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* 通配符选择器 */
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #wrapper{
+      width: 300px;
+      height: 300px;
+      margin-bottom: 10px;
+      background: red;
+
+      /* position: absolute; */
+
+      /* float: left; */
+
+      /* border: 1px solid #000; */
+      /* overflow: hidden; */
+    }
+    #inner{
+      /* float: left; */
+      width: 150px;
+      height: 150px;
+      margin-top: 30px;
+      background: pink;
+
+      /* position: absolute; */
+
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 外边距合并
+      （嵌套关系的元素）
+        1.给父元素加溢出隐藏 overflow: hidden;
+        2.给父元素加边框
+        3.给父元素或子元素加浮动
+        4.给父元素或子元素加绝对定位
+  -->
+  <div id="wrapper">
+    <div id="inner"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = 1;
+    var b = a;
+    b = 3;
+    console.log(b, a)  
+    
+    var o1 = {
+      name: 'zs',
+      age: 18
+    }
+
+    var o2 = o1;
+    o2.age = 4
+    console.log(o2.age)
+    console.log(o1.age)
+
+    var a1 = [1,2,3]
+    var b1 = a1;
+    b1 = [4,5,6];
+    console.log(a1,b1)
+
+    console.log(Math.random()*10)
+
+    var date = new Date();
+    var d = date.getDate()
+    var m = date.getMonth()+1
+    var y = date.getFullYear()
+    var s = y + '年' + m + '月' + d + '日'
+    console.log(s)
+
+    
+  </script>
+</body>
+</html>

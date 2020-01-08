@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arr = [1,2,3];
+    var a1 = new Array(1,2,3) // [1,2,3]
+    var a2 = new Array(3) // 数组的长度为3 [ , , ]
+    var a3 = new Array() // => var a3 = []
+
+    console.log('a1:',a1)
+    console.log('a2:',a2)
+    console.log('a3:', a3)
+    // arr[0]
+
+    // 数组的长度
+    console.log(arr.length);
+
+    for (var i=0; i<4; i++ ) { 
+      console.log(arr[i])
+    }
+
+    var b1 = [1,2]
+    var b2 = [2,3]
+    var b3 = b1.concat(b2)
+    console.log(b3)
+
+    console.log(b3.pop(), b3)
+    console.log(b3.push(8), b3)
+
+    // b3[1,2,2,8]
+    console.log(b3.slice(0,2), b3)
+
+    console.log(b3.splice(1,2,99) , b3) // [1, 99 ,8]
+    console.log(b3.join(';'))
+
+    function fn(a, b) {
+      // return a-b // 升序
+      return b-a // 降序
+    }
+
+    var b4 = [1, 19, 0 ,99, 2 ,23 ,123]
+    console.log(b4.sort(fn));
+
+
+    
+  </script>
+</body>
+</html>

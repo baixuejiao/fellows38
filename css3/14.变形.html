@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      /* width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      background: red; */
+
+      /* 
+        transform 变换
+        rotate 旋转
+        translate 位移
+      */
+      /* transform: rotate(-30deg); */
+
+      /* transform: translateY(100px); */
+      /* transform: scale(0.5); */
+
+      /* 变换的原点 */
+      /* transform-origin: 0 0; */
+    }
+
+    #wrapper{
+      width: 200px;
+      height: 200px;
+      font-size: 20px;
+      /* border: 1px solid #000; */
+      background: pink;
+      position: relative;
+    }
+    #wrapper::after{
+      content: '';
+      display: block;
+      width: 200%;
+      height: 200%;
+      border: 1px solid #000;
+      transform: scale(0.5);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: 0 0;
+      z-index: 1;
+    }
+
+    p{
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div>1</div>
+
+  <div id="wrapper">
+    <p>123</p>
+  </div>
+
+  <script>
+    var oP = document.getElementsByTagName('p')[0];
+
+    oP.onclick = function(){
+      alert('hello')
+    }
+  
+  </script>
+</body>
+</html>

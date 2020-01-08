@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #wrapper{
+      background-color: red;
+    }
+
+    .inner{
+      color: blue
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="wrapper">123</div>
+  <div class="content">34567</div>
+
+  <p name = "list">12345</p>
+  <p name = "list">67890</p>
+
+  <script>
+    var oDiv = document.getElementById('wrapper');
+    console.log(oDiv)
+
+    // getElementsByTagName 返回类数组
+    var aDiv = document.getElementsByTagName('div')
+    console.log(aDiv[1])
+
+    var aP = document.getElementsByName('list')
+    console.log(aP)
+
+    for(var i=0; i<aDiv.length; i++) {
+      console.log(aDiv[i])
+    }
+
+    oDiv.style.width = '100px';
+    oDiv.style.height = '100px';
+    oDiv.style.backgroundColor = 'red';
+    //  font-size => fontSize background-color => backgroundColor
+  
+    oDiv.className = 'inner'
+  </script>
+</body>
+</html>
