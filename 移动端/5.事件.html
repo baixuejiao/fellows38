@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background: pink;
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 
+      300ms 延迟情况
+      点击事件中 如果点击事件 会等待300ms之后才会触发 因为为了判断用户是否想双击页面进行页面的缩放
+      如果在meta中有配置信息的话，就不会出现300ms延迟
+   -->
+  <div id="wrapper"></div>
+
+  <script src="./js/zepto.js"></script>
+  <script src="./js/touch.js"></script>
+  <script>
+    // var oDiv = document.getElementsByTagName('div')[0];
+
+    // oDiv.onclick = function() {
+    //   console.log('click')
+    // }
+
+    // oDiv.onmousemove = function() {
+    //   console.log('move')
+    // }
+
+    $('#wrapper').on('tap', function() {
+      console.log('tap')
+    })
+    $('#wrapper').on('touchmove', function() {
+      console.log('touchmove')
+    })
+    $('#wrapper').on('swipeLeft', function() {
+      console.log('swipeLeft')
+    })
+
+  </script>
+</body>
+</html>

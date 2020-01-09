@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <script src="./rem.js"></script>
+  <style>
+    html{
+      /* 100px => 1rem */
+      font-size: 100px;
+    }
+    body{
+      /* font-size: 30px; */
+    }
+    #div1{
+      width: 2em;
+      height: 2em;
+      /* 40px => 1em  */
+      font-size: 40px; 
+      background: red;
+    }
+    #div2{
+      width: 2em;
+      height: 2em;
+      background: blue;
+    }
+  
+    #div3{
+      width: 2rem;
+      height: 2rem;
+      font-size: 30px;
+      background: pink;
+    }
+
+    #div4{
+      width: 50vw;
+      height: 50vw;
+      background: green;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    em rem font-size
+    em 相对单位 相对于font-size 计算的大小 如果元素本身设置了字体大小 就相对于元素本身计算 如果元素本身没有设置过字体大小 就相对于最近的已设置的祖先元素的字体大小计算
+    rem 相对单位 相对于根元素（html）的字体大小计算的 根元素的字体大小就表示1rem 假设html font-size = 100px  100px => 1rem
+    vw vh 相对于浏览器窗口 把浏览器窗口的宽或者高平均分成100份 1vw = 1/100窗口宽度
+  -->
+  <div id="div1"></div>
+  <div id="div2"></div>
+
+  <div id="div3"></div>
+
+  <ul>
+    <li>123456789</li>
+  </ul>
+
+  <div id="div4"></div>
+
+
+  
+
+</body>
+</html>
