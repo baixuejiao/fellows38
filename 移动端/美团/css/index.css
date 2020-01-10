@@ -1,0 +1,247 @@
+#container{
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* header */
+#header {
+  display: flex;
+  height: 1.01rem;
+  line-height: 1.01rem;
+  font-size: .28rem;
+  color: #222;
+  background-image: linear-gradient(135deg, #FFD000 0%, #FFBD00 100%);
+  background-color: #FFD000;
+}
+#header-city{
+  padding-left: .37rem;
+}
+#header-city i {
+  margin-right: .3rem;
+}
+#header-login{
+  display: inline-block;
+  width: .94rem;
+  height: 100%;
+  position: relative;
+}
+#header-login>img{
+  width: .48rem;
+  height: .48rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#header-search{
+  flex: 1;
+  height: .64rem;
+  margin-top: .185rem;
+  line-height: .64rem;
+  font-size: .28rem;
+  border-radius: .18rem;
+  color: #999;
+  background: #fff;
+  opacity: 0.9;
+}
+#header-search i {
+  margin: 0 .13rem 0 .17rem;
+}
+
+/* download */
+#download{
+  display: flex;
+  height: .72rem;
+  padding: .16rem .3rem;
+  background: #000;
+}
+#download>img{
+  width: .72rem;
+}
+#download-info{
+  flex: 1;
+  padding-left: .2rem;
+  font-size: .26rem;
+  color: #fff;
+}
+#download-info>p:nth-child(2){
+  font-size: .22rem;
+}
+#download-btn{
+  width: 1.1rem;
+  height: .6rem;
+  margin-top: .06rem;
+  font-size: .24rem;
+  line-height: .6rem;
+  text-align: center;
+  border-radius: .14rem;
+  color: #000;
+  background-image: linear-gradient(135deg, #FFD000 0%, #FFBD00 100%);
+  background-color: #FFD000;
+}
+
+/* nav */
+#nav{
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  position: relative;
+}
+#nav::after{
+  content: '';
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #DDD8CE;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.nav-list{
+  width: 1.5rem;
+  /* height: 1.62rem; */
+  padding: .2rem 0;
+}
+.nav-list>div{
+  width: .8rem;
+  height: .8rem;
+  margin: 0 auto;
+  line-height: .8rem;
+  text-align: center;
+  border-radius: 50%;
+  background: pink;
+}
+.nav-list>p {
+  margin-top: .14rem;
+  text-align: center;
+  line-height: 1.0;
+  font-size: .24rem;
+  color: #666;
+}
+.nav-list .iconfont{
+  font-size: .5rem;
+  color: #fff;
+}
+.nav-list:nth-child(1)>div{
+  background: #fd9d21;
+}
+.nav-list:nth-child(2)>div{
+  background: #ff6767;
+}
+.nav-list:nth-child(3)>div{
+  background: #8a90fa;
+}
+.nav-list:nth-child(4)>div{
+  background: #fed030;
+}
+.nav-list:nth-child(5)>div{
+  background: #fd9d21;
+}
+.nav-list:nth-child(6)>div{
+  background: #fed030;
+}
+.nav-list:nth-child(7)>div{
+  background: #4dc6ee;
+}
+.nav-list:nth-child(8)>div{
+  background: #ff80c2;
+}
+.nav-list:nth-child(9)>div{
+  background: #fd9d21; 
+}
+.nav-list:nth-child(10)>div{
+  background: #00d3be;
+}
+
+/* content */
+#content{
+  margin-top: .2rem;
+  padding-left: .2rem;
+  background: #fff;
+}
+#content>h4{
+  padding: .28rem 0 .2rem;
+  font-size: .34rem;
+  position: relative;
+}
+#content>h4::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #DDD8CE;
+  transform: scaleY(0.5);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.content-list{
+  display: flex;
+  padding: .28rem 0;
+  position: relative;
+}
+.content-list::after{
+  content: '';
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #DDD8CE;
+  transform: scaleY(.5);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.content-list-pic{
+  width: 1.8rem;
+  height: 1.64rem;
+  overflow: hidden;
+}
+.content-list-pic>img{
+  width: 100%;
+}
+.content-list-info{
+  flex: 1;
+  padding: 0 .2rem;
+  line-height: 1.0;
+}
+.content-list-title{
+  font-size: .3rem;
+  padding: .1rem 0 .12rem;
+}
+.content-list-desc{
+  display: -webkit-box;
+  width: 100%;
+  height: .64rem;
+  margin-bottom: .1rem;
+  font-size: .24rem;
+  color: #666;
+
+  /* 单行文本溢出显示。。。 */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.content-list-tips{
+  position: relative;
+}
+.content-list-price{
+  font-size: .36rem;
+  color: #F60;
+}
+.content-list-price::after{
+  content: '元';
+  display: inline-block;
+  font-size: .24rem;
+}
+.content-list-before{
+  font-size: .24rem;
+  color: #666;
+}
+.content-list-sum{
+  font-size: .24rem;
+  color: #666;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
