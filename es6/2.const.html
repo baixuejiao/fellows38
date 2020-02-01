@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    1. const关键字声明的变量不可以重复声明，会报错
+    2. const关键字声明的变量不存在变量提升的问题，会报错
+    3. 在块级作用域内通过const关键字声明的变量，在定义的作用域外部获取不到对应的变量
+    4. 暂时性死区（当前作用域内不允许同名的变量进来） 
+        在块级作用域内const声明的变量会形成一个封闭性的死区，只能在声明之后调用，否则会报错
+   -->
+  <script>
+    const num = 10;
+    console.log(num); // 10
+
+    // const num =  20;
+    // console.log(num); // 报错
+
+    /*
+      const 关键字定义的是一个常量,并且是只读
+      const定义的变量在声明的时候就必须赋值
+      赋值之后不允许修改
+    */
+    // const str;
+    // console.log(str); //报错
+
+    // const arr = [1,2,3];
+    // const arr1 = arr; // [1,2,3]
+    // console.log(arr1)
+
+    // arr1[1] = 888;
+    // console.log(arr) // [1,888,3]
+    // console.log(arr1) // [1,888,3]
+
+
+    var a1 = [1,2,3]
+    var b1 = a1; // 赋值的是地址
+
+    b1[0] = 4;
+    console.log(a1,b1) // [4,2,3] [4,2,3]
+
+    b1 = [4,5,6] // b1有一个新的地址 指向一块内容
+    console.log(a1,b1) // [4,2,3] [4,5,6]
+
+    const arr = [1,2,3];
+    const arr1 = arr; // [1,2,3] 赋值的是地址（指针）
+    console.log(arr1)
+
+    arr1[1] = 888; // 引用数据类型内容修改无影响 因为地址没变
+    console.log(arr) // [1,888,3]
+    console.log(arr1) // [1,888,3]
+
+
+    // arr1 = [9,8,9]; // 开辟了一个新的地址，const arr1(arr1存的地址变了就报错了）
+    // console.log(arr1);
+
+    /*
+      const定义基本数据类型 基本数据类型存的就是值，值不能改变 
+      const定义引用数据类型 引用数据类型存的是地址，地址不能修改，内容可以修改
+    */
+
+
+    const obj1 = {
+      name: 'zs',
+      age: 18
+    }
+
+    const obj2 = obj1; //赋值的是地址
+    
+    console.log(obj2.age) // 18
+
+    // 冻结 冻结了之后 内容修改就不生效了，修改不会报错
+    Object.freeze(obj2)
+    obj2.age = 28; // 因为obj2被冻结了，所以修改不生效，但不会报错
+    console.log(obj1.age, obj2.age)
+
+    // obj2 = {
+    //   name: 'ls',
+    //   age: 40
+    // }
+    // console.log(obj1, obj2) // 报错
+    
+   
+
+
+  </script>
+</body>
+</html>

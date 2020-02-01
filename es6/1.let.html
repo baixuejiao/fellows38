@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <!-- 
+      let 和 var 区别
+      1. let关键字声明的变量不可以重复声明，会报错
+      2. let关键字声明的变量不存在变量提升的问题，会报错
+      3. 在块级作用域内通过let关键字声明的变量，在定义的作用域外部获取不到对应的变量
+      4. 暂时性死区（当前作用域内不允许同名的变量进来） 
+         在块级作用域内let声明的变量会形成一个封闭性的死区，只能在声明之后调用，否则会报错
+   -->
+  <script>
+
+    // var关键字定义的变量会有变量提升的问题
+    console.log(a); // undefined
+    var a = 10;
+    console.log(a); // 10
+    var a = 20;
+    console.log(a); // 不会报错 20 
+
+    let b = 10;
+    console.log(b); // 10
+    // let b = 30;
+    console.log(b); // 报错 不可以重复声明
+
+
+    // console.log(c); // 报错 不存在变量提升
+    let c = 'aaa';
+
+    /* 
+      作用域
+      全局作用域
+      局部作用域（函数作用域）
+      块级作用域
+    */
+
+    if(true) {
+      var d = 11;
+    }
+    console.log(d); // 全局变量
+
+    // es6中新增加了一个块级作用域 通过let声明的变量 在{}内部属于块级作用域
+    if(true) {
+      let e = 12;
+    }
+    // console.log(e); // 报错 e is not defined
+
+    let aLi = document.getElementsByTagName('li');
+
+    // var 定义的变量不存在块级作用域（全局 函数）
+    for(var i=0; i<aLi.length; i++) {
+      console.log(aLi[i]);
+    }
+    console.log(i) // 3
+
+    for(let j=0; j<aLi.length; j++) {
+      console.log(j)
+    }
+    // console.log(j) //报错 j is not defined
+
+
+    if (true) {
+      let arr1 = [1,2,3];
+      let arr2 = arr1;
+    }
+    // console.log(arr1, arr2)
+
+    var x = 6;
+    function fun() {
+      console.log(x); 
+      var x = 8;
+    }
+    fun();
+
+    let y = 9;
+    function fun1() {
+      // console.log(y); // 报错
+      let y = 888;
+      console.log(y)
+    }
+    fun1();
+
+
+
+    
+  </script>
+</body>
+</html>
