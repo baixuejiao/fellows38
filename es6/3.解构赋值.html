@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 从数组和对象中提取值，对变量进行赋值，这被称为解构
+    // let a1 = [1,2,3];
+    // let a = a1[0];
+    // let b = a1[1];
+    // let c = a1[2];
+
+    // 数组的解构赋值 从左向右依次赋值
+    let [a,b,c,d] = [1,2,3];
+    console.log(a,b,c,d); // 1 2 3 undefined
+
+    // let [,b,,d] = [1,2,3,4]
+    // console.log(b,d) // 2, 4
+
+
+    // 对象的解构 按照对象里的key(属性名解构)
+    let obj1 = {
+      // key: value
+      name: 'zs',
+      age: 18,
+    }
+
+    // let {name:aaa} = obj1;
+    // console.log("name:",name,'aaa:', aaa)
+
+    let {age,name} = obj1
+    console.log(age, name) //18 zs
+
+    // let {name, age} = obj1 
+    // console.log(name, age)
+
+    // let {x,y} = obj1
+    // console.log(x, y) //undefined undefined
+
+    // 起别名 key:别名
+    let {age:m, name:n} = obj1
+    console.log(m, n) // 18 zs
+
+
+    // 字符串解构
+    let str = 'hello';
+    let [e,f,g,h,i,j,k] = str;
+    console.log(e,f,g,h,i,j,k) // h e l l o undefined
+
+    /*
+      变量的交换
+      x = 3 y = 4  
+      y = 3 x = 4
+    */
+    // let x = 3;
+    // let y = 4;
+
+    // 方法一 临时变量
+    // let tmp = y;
+    // y = x;
+    // x = tmp;
+
+    // 方法二 解构
+    // [y, x] = [x, y] // let [y, x] = [3,4]
+    // console.log(x, y)
+
+
+    function fun([x,y = 99,z = 100]) {
+      console.log(x, y, z) // undefined
+    }
+    
+    fun([1,2, null])
+
+
+    // 没有形参的情况下 可以通过arguments来获取参数
+    function fn1() {
+      // arguments 可以获取调用方法时传递进来的实参
+      console.log(arguments)
+    }
+    fn1([3,4,5])
+    fn1(2,3,4)
+
+
+
+
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // rest 剩余的
+    function fun(x,y,...rest) {
+      // ...rest 表示剩余的参数
+      console.log(x,y) // 1 2
+      console.log(...rest) // 3 4 5
+    } 
+    
+    fun(1,2,3,4,5)
+
+
+    // 没有形参的情况下 可以通过arguments来获取参数
+    function fn1() {
+      // arguments 可以获取调用方法时传递进来的实参
+      console.log(arguments)
+      // 函数的递归调用
+      console.log(arguments.callee) // 代表当前的函数 
+    }
+    // fn1([3,4,5])
+    fn1(2,3,4)
+    
+    
+  </script>
+</body>
+</html>
