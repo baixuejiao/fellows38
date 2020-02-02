@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+    let _id = 'container'
+    let str = '<div id="'+_id+'"></div>'
+
+    let str1 = `<div id="${_id}"></div>`
+
+    let name = 'wwh';
+    let age = 18;
+
+    let s = '我的名字是：' + name + '我的年龄是：' + age
+
+    let s1 = `我的名字是：${name}我的年龄是：${age}`
+
+    let _start = 10;
+    let _count = 5;
+    //https://douban.uieee.com/?start=10&count=5
+    let url = 'https://douban.uieee.com/?start=' + _start + '&count=' + _count;
+    let url1 = `https://douban.uieee.com/?start=${_start}&count=${_count}`
+
+
+
+    // indexOf 查找字符串 返回首次出现的索引 没有找到返回-1
+    let str2 = 'hello';
+    console.log(str2.indexOf('l'));
+
+    // includes 查找字符串 如果存在 返回true 否则返回false
+    console.log(str2.includes('o'));
+
+    // ***判断当前浏览器环境是否iphone
+
+    // 判断查询的字符串是否是原字符串的开始 => boolean
+    console.log(str2.startsWith('hello'))
+
+    // 判断查询的字符串是否是原字符串的结尾 => boolean
+    console.log(str2.endsWith('hello'))
+
+
+    console.log(str2.padStart(5,'abc') )
+    console.log(str2.padEnd(8,'xy') )
+
+    console.log(str2.repeat(3));
+
+   
+  </script>
+</body>
+</html>

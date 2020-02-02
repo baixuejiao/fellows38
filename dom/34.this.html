@@ -81,11 +81,11 @@
       console.log(a,this)
     }
 
-    // fn.call(oDiv, 1, 2);
+    fn.call(oDiv, 1, 2);
 
-    fn.apply(oDiv,['apply'])
+    fn.apply(oDiv,[1,2])
 
-    fn.bind(oDiv,'bind')()
+    fn.bind(oDiv,1,2)()
     
 
     

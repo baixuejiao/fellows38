@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    this指向 （给谁绑定的事件/方法 谁就是this）
+    1. 事件处理函数中  this -> 绑定事件的DOM元素
+    2. 在自定义函数中 this -> window
+    3. 定时器中 this -> window
+    4. 在自定义对象中 this -> 对象
+    5. 在类中 this -> 实例化的对象
+   -->
+
+  <!-- 
+    普通函数 =>箭头函数
+      1.去掉 function 关键字
+      2.在()和{} 之间加 =>
+
+    箭头：
+      1.函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+        （箭头函数内部的this指向的是父作用域中的this）
+      2.不可以当作构造函数（类），也就是说，不可以使用new命令，否则会抛出一个错误。
+      3.不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替
+
+  -->
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <script>
+    function fun(x,y) {
+      x = x || 'a'; // 设置默认值
+      y = y || 'b'; // 设置默认
+      console.log(x, y) // 1 undefined
+    }
+    fun(1)
+
+    // 设置默认值
+    function fun1(x, y=2) {
+      console.log(this) // window
+      console.log(x, y) 
+    }
+    fun1(2, null)
+
+    // fn.length => 没有设置默认值的参数的个数
+    console.log(fun1.length) // 1
+    // fn.name => 方法名
+    console.log(fun1.name) // fun1
+
+
+    
+    let fn = (...rest) => {
+      console.log(...rest)
+      // console.log(arguments) // 箭头函数里不能使用arguments，可以使用rest
+    } // let fn = function(){}
+
+    fn(1,2,3)
+
+    let aLi = document.getElementsByTagName('li');
+
+    // for( let i=0; i<aLi.length; i++) {
+    //   aLi[i].onclick = function() {
+    //     console.log(this); // li
+    //     setTimeout(function() {
+    //       console.log(this) // window
+    //     }, 1000)
+    //   }
+    // }
+
+    for(let i=0; i<aLi.length; i++) {
+      aLi[i].onclick = function() {
+        console.log(this); // li
+        setTimeout(() => {
+          // 箭头函数里的this是父作用域中的this
+          console.log(this)
+        }, 1000)
+      }
+    }
+
+
+    let obj = {
+      name: 'zs',
+      age: 18,
+      code: () => {
+        console.log(this) // 
+        setTimeout(()=>{
+          console.log(this) // 
+        }, 2000)
+      }
+    }
+    // obj.code();
+
+    // function Person(name, age) {
+    //   this.name = name,
+    //   this.age = age
+    // }
+    // var p1 = new Person('ls', 20)
+
+    
+
+    // 箭头函数里的this是父作用域中的this
+    let obj1 = {
+      list: [1,2,3],
+      study: () => {
+        console.log(this) // 
+        setTimeout(function(){
+          //this
+          let obj2 = {
+            name: 'sss',
+            code: () => {
+              console.log(this) 
+            }
+          }
+          obj2.code();
+        }, 1000)
+      }
+    }
+
+    obj1.study();
+
+    let obj1 = {
+      list: [1,2,3],
+      study: () => {
+        // this
+      }
+    }
+
+    
+  
+  </script>
+</body>
+</html>
