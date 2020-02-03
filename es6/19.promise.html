@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let p1 = new Promise((reslove, reject) => {
+      setTimeout(() => {
+        console.log('p1 ok')
+        reslove()
+      }, 1500)
+    })
+
+    let p2 = new Promise((reslove, reject) => {
+      setTimeout(() => {
+        console.log('p2 ok')
+        reslove()
+      }, 500)
+    })
+
+    let p3 = new Promise((reslove, reject) => {
+      setTimeout(() => {
+        console.log('p3 ok')
+        reslove()
+      }, 2000)
+    })
+
+    // Promise.all([p1, p2, p3]).then(() => {
+    //   console.log('okokok')
+    // })
+
+    Promise.race([p1,p2,p3]).then(() => {
+      console.log('1111')
+    })
+    
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 回调地狱
+    console.log('开始发送请求1')
+    setTimeout(() => {
+      console.log('请求1成功')
+      
+      console.log('开始发送请求2')
+      setTimeout(() => {
+        console.log('请求2成功')
+
+        console.log('开始发送请求3')
+        setTimeout(() => {
+          console.log('请求3成功')
+        }, 2000)
+
+      }, 800)
+
+    }, 1500)  
+    
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // resolve 成功的回调函数
+    // reject 失败的回调函数
+    // let p1 = new Promise(function(resolve, reject) {
+      
+    //   console.log('开始发送请求1');
+    //   setTimeout(() => {
+    //     let tag = false
+    //     if(tag) {
+    //       resolve()
+    //     } else {
+    //       reject()
+    //     }
+
+    //   }, 1500)
+
+    // }).then(function() {
+    //   console.log('请求1成功')
+    // }).catch(function() {
+    //   console.log('请求1失败')
+    // })
+
+    // p1.then().catch()
+
+
+    let p1 = new Promise((resolve, reject) => {
+
+      console.log('开始发送请求1')
+
+      setTimeout(() => {
+        let tag = false;
+
+        if(tag) {
+          resolve()
+        } else {
+          reject()
+        }
+
+      }, 2000)
+
+    }).then(function(){
+
+      console.log('请求1成功')
+
+    }, function() {
+
+      console.log('请求1失败')
+
+    })
+    
+    
+  </script>
+</body>
+</html>
