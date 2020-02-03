@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <button>登录</button>
+  <div></div>
+  
+  <script src="../jquery/jquery.min.js"></script>
+
+  <script>
+    // var oBtn = document.querySelector('button') //原生方法获取button
+
+    $('button').on('click', function() {
+      $.ajax({
+        data: {
+          name: 'xxx',
+          pwd: 'xxxx'
+        },
+        method: 'GET', // 请求类型 GET POST
+        url: 'Data.json', // 请求地址
+        // url: 'http://www.qingmengtech.com:8082/browse/getBrowse',
+        dataType: 'json', // 返回的数据类型 （jquery内部自动帮我们处理了 把json转成了obj）
+        success(res) { // 请求成功后的回调函数
+          if (res.errno * 1 === 0) {
+            $('button').html('已登录')
+            $('div').html(res.data.name + '欢迎访问本网站！')
+          } else if (res.errno * 1 === 1){
+            $('div').html('用户名输入错误')
+          } else {
+            // $('div').html('登录失败')
+            $('div').html(res.errmsg)
+          }
+          // console.log(res)
+        },
+        error() { // 请求失败的回调函数
+          // 一般网络中断 或者 接口超时 会触发这个方法
+          alert('请重新加载。。。')
+        }
+      })
+    })
+  
+  
+    /* 
+      注册  
+      1. 注册成功 
+      2. 用户名不符合要求 
+      3. 密码不符合要求
+      4. 用户名重复
+    */ 
+  </script>
+</body>
+</html>
