@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let tmp = new Map();
+    // set() 设置数据
+    tmp.set('name', 'xm');
+    tmp.set('age', 20)
+    // size 长度
+    console.log(tmp.size)
+    console.log(tmp)
+    // get() 获取数据
+    console.log(tmp.get('name'))
+    // has() => boolean
+    console.log(tmp.has('height'))
+
+    tmp.set('height','183')
+    tmp.set('weight', 70)
+
+    tmp.set('weight', 80)
+    console.log(tmp)
+
+    // delete() 删除数据 => boolean
+    // console.log(tmp.delete('age'))
+    // console.log(tmp)
+
+    // tmp.clear()
+    // console.log(tmp)
+    
+  </script>
+</body>
+</html>

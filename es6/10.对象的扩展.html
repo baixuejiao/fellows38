@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let name = 'gs';
+    let age = 21;
+    
+    let person = {
+      // key: value
+      name: name,
+      age: age,
+      eat: function() {
+        console.log(`${this.name} is eating....`);
+      }
+    }
+
+    // 对象的属性值是一个变量，并且变量的名称与属性名相同就可以简写属性
+    let p1 = {
+      name,
+      age,
+      eat() {
+        console.log(`${this.name} is eating....`);
+      }
+    }
+    p1.eat();
+    console.log(p1.name, p1.age)
+
+    let xxx = 'cname';
+
+    let p2 = {
+      [xxx+'a']: '高深',
+      xxx: 'gs',
+      age
+    }
+
+    console.log(p2)
+
+    // Object.is() 判断是否严格相等 ===
+    console.log(Object.is('111', 111)) // false
+    console.log(+0 === -0) // true
+    console.log(Object.is(+0, -0)) // false
+    console.log(NaN === NaN) // false
+    console.log(Object.is(NaN, NaN)) //true
+
+    let obj1 = {
+      name: 'gs',
+      age: 20
+    }
+
+    let obj2 = {
+      height: '180cm',
+      weight: '80kg'
+    }
+
+    // 对象的合并 浅拷贝
+    let obj3 = Object.assign(obj1, obj2)
+
+    console.log(Object.keys(obj3)) // => [key, key]
+    console.log(Object.values(obj3)) // => [value, value]
+    console.log(Object.entries(obj3)) // => [[key,value],[key,value]]
+
+    // console.log('obj3:', obj3)
+    // console.log('obj1:', obj1)
+    // console.log('obj2:', obj2)
+    // Object.freeze(obj1);
+
+    // obj3.age = 19;
+    // console.log('obj3:', obj3)
+    // console.log('obj1:', obj1)
+    // console.log('obj2:', obj2)
+
+    console.log('height' in obj2)
+    console.log(4 in [1,2,3])
+
+    // 对象合并 深拷贝
+    // let obj4 = Object.assign({},obj1, obj2)
+    // console.log('obj4:', obj4)
+    // console.log('obj1:', obj1)
+    // console.log('obj2:', obj2)
+
+    // obj4.age = 28;
+    // console.log('obj4:', obj4)
+    // console.log('obj1:', obj1)
+    // console.log('obj2:', obj2)
+  
+  </script>
+</body>
+</html>

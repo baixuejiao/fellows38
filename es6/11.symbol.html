@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    基本数据类型
+      ES5: number string boolean undefined null 
+      ES6：symbol
+    引用数据类型
+      数组 对象
+
+    深克隆/深拷贝 a = b  a修改 b不修改
+    浅克隆/浅拷贝 a = b  a修改了 b也修改
+   -->
+
+   <script>
+    //  symbol 是独一无二的
+    let aaa = Symbol();
+    console.log(aaa);
+
+    let bbb = Symbol();
+    console.log(bbb);
+
+    console.log(aaa === bbb); // false
+    console.log(Object.is(aaa,bbb)); //false
+
+
+    let xxx = Symbol();
+    let obj = {
+      name: 'zs',
+      age: 18,
+      weight: '80kg',
+      [xxx]: '183cm',
+      [Symbol('x1')]: '18级'
+    }
+
+    // console.log(obj)
+    // console.log(obj.name)
+    // console.log(obj[xxx])
+
+    obj[Symbol('x2')] = 'abc'
+
+    console.log(obj)
+
+    // 在循环中symbol类型的属性无法拿到
+    for(key in obj) {
+      console.log(key)
+      // console.log(obj[key])
+    }
+   
+   </script>
+</body>
+</html>

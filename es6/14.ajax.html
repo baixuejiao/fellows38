@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+      ajax
+      在不刷新整个页面的情况下，更新部分数据
+      异步加载数据
+  -->
+
+
+  <script>
+    // ！！！ajax原理
+
+    // 1.创建 XMLHttpRequest 对象
+    var xmlhttp; //（实例化对象）
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp = new XMLHttpRequest();
+    } else {// code for IE6, IE5
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    // 2.向服务器发送请求
+    /*
+       open 第一个参数请求类型 GET POST
+            第二个参数请求地址
+            第三个参数是否是异步操作
+    */
+    //  规定请求的类型、URL 以及是否异步处理请求。
+    xmlhttp.open("GET", "Data.json", true);
+    // 将请求发送到服务器。
+    xmlhttp.send();
+
+    // 3.响应
+    xmlhttp.onreadystatechange = function () {
+      // 当 readyState 等于 4 且状态为 200 时，表示响应已就绪
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        // xmlhttp.responseText;
+        // 返回的信息是json(字符串类型)
+        console.log(xmlhttp.responseText)
+        // 转换成对象类型 便于后续使用
+        let res = JSON.parse(xmlhttp.responseText)
+        console.log(res)
+      }
+    }
+
+    /*
+      readyState：
+        0: 请求未初始化
+        1: 服务器连接已建立
+        2: 请求已接收
+        3: 请求处理中
+        4: 请求已完成，且响应已就绪
+    */
+
+
+    // http://www.qmtech.com/login?name=xxx&pwd=xxx
+
+
+    // setTimeout(function(){
+    //   console.log(1)
+    // }, 1000)
+    // console.log(2)    
+
+  </script>
+</body>
+
+</html>
