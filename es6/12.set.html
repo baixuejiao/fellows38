@@ -64,13 +64,15 @@
     console.log(fn2([2,1,3,3,2,4,1,5])) // 2 1 3 4 5
 
     // 方法三：
-    // function fn3(arr) {
-    //   let tmp = arr.filter((value, index) => {
-    //     return !tmp.includes(value)
-    //   })
-    //   return tmp
-    // }    
-    // console.log(fn3([2,1,3,3,2,4,1,5]))
+    // https://www.runoob.com/jsref/jsref-indexof-array.html
+    function fn3(arr) {
+      return arr.filter((value, index, array) => {
+        // indexOf 返回查找的数组成员第一次出现的索引值
+        return array.indexOf(value) === index
+      })
+      // return tmp
+    }    
+    console.log(fn3([2,1,3,3,2,4,1,5]))
     
   </script>
 </body>

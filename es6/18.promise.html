@@ -13,7 +13,7 @@
 
       console.log('开始发送请求1')
       setTimeout(() => {
-        let tag = true
+        let tag = false
         if (tag) {
           resolve()
         } else {
@@ -45,6 +45,8 @@
     }, () => {
 
       console.log('请求1失败')
+      // return Promise.reject()
+      return new Promise(()=>{})
 
     }).then(() => {
       console.log('请求2成功')

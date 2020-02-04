@@ -8,54 +8,65 @@
 </head>
 <body>
   <script>
+    // ！！！promise 的 then 返回了一个新的对象
     // resolve 成功的回调函数
     // reject 失败的回调函数
-    // let p1 = new Promise(function(resolve, reject) {
+    let p1 = new Promise(function(resolve, reject) {
       
-    //   console.log('开始发送请求1');
+      console.log('开始发送请求1');
+      setTimeout(() => {
+        let tag = true
+        if(tag) {
+          let obj = {
+            name: 'zs',
+            age: 18
+          }
+          resolve(obj)
+        } else {
+          reject()
+        }
+
+      }, 1500)
+
+    }).then(function(obj) {
+      console.log(obj)
+      console.log('请求1成功')
+
+    }).catch(function() {
+
+      console.log('请求1失败')
+
+    })
+
+    // p1.then(f1).catch(f2)
+
+
+    // let p2 = new Promise((resolve, reject) => {
+
+    //   console.log('开始发送请求1')
+
     //   setTimeout(() => {
-    //     let tag = false
+    //     let tag = false;
+
     //     if(tag) {
     //       resolve()
     //     } else {
     //       reject()
     //     }
 
-    //   }, 1500)
+    //   }, 2000)
 
-    // }).then(function() {
+    // }).then(function(){
+
     //   console.log('请求1成功')
-    // }).catch(function() {
+
+    // }, function() {
+
     //   console.log('请求1失败')
+
     // })
 
-    // p1.then().catch()
-
-
-    let p1 = new Promise((resolve, reject) => {
-
-      console.log('开始发送请求1')
-
-      setTimeout(() => {
-        let tag = false;
-
-        if(tag) {
-          resolve()
-        } else {
-          reject()
-        }
-
-      }, 2000)
-
-    }).then(function(){
-
-      console.log('请求1成功')
-
-    }, function() {
-
-      console.log('请求1失败')
-
-    })
+    // p1.then(f1,f2)
     
     
   </script>
