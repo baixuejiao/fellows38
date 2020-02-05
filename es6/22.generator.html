@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      generator 函数
+      在function 和 函数名 之间加一个 *
+      yield 执行之后暂停
+    */
+    function * fun1 (){
+      console.log('hello');
+      let res = yield request1(); //  res 的值是next方法调用的时候传递的参数
+      console.log(res);
+      console.log('world');
+    }
+
+    // 方法返回的是一个指针对象 需要调用next()执行
+    let fn1 = fun1();
+    console.log(fn1.next()); // {value: undefined, done: false} 
+                            // value表示yield表达式的返回值
+                            // done表示 当前函数是否执行完
+    // fn1.next();
+
+    function request1() {
+      setTimeout(() => {
+        let obj = {
+          name: 'zs',
+          age: 18
+        }
+        console.log('请求成功')
+        console.log(fn1.next(obj)); //{value: undefined, done: true}
+      }, 1000)
+      return 'requset函数'
+    }
+
+
+    function * fun2() {
+      console.log('start')
+      yield 'hahahah'
+      console.log('end')
+    }
+
+    // let fn2 = fun2();
+    // fn2.next();
+    // fn2.next();
+    // console.log(1)
+    // setTimeout(() => {
+    //   console.log(2)
+    // }, 1000)
+    // console.log(3)
+
+  </script>
+
+</body>
+</html>

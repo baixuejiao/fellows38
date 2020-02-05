@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function * fun() {
+      console.log('准备发送请求1')
+      let res = yield request1();
+      console.log('准备发送请求2');
+      yield request2(res);
+      console.log('结束')
+    }  
+
+    let fn = fun();
+    console.log(fn.next())
+
+    function request1() {
+      setTimeout(() => {
+        let str = 'hello world!';
+        console.log('请求1成功')
+        console.log(fn.next(str));
+      }, 1000)
+    }
+
+    function request2(res) {
+      console.log('res:',res)
+      setTimeout(() => {
+        console.log('请求2成功')
+        console.log(fn.next());
+      }, 1000)
+    }
+    
+    
+  </script>
+</body>
+</html>
