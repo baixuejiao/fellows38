@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <script>
+    // className
+
+    // es6 里 通过class定义类（obj）
+    class Person {
+      // 构造函数里定义属性
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      // 定义方法
+      eat() {
+        console.log(this.name + ' is eating....')
+      }
+      sleep() {
+        console.log(this.name + ' is sleeping...')
+      }
+      // static 关键字定义的方法是静态方法 只能通过 类名.方法 来调用 实例化对象不能直接调用
+      static fun() {
+        console.log(123);
+      }
+    }  
+
+    let p1 = new Person('zs', 18);
+    console.log(p1)
+    p1.eat();
+    Person.fun();
+
+    // es6 里 通过 extends 来实现的继承
+    class Student extends Person {
+      constructor(...params) {
+        // 通过super()来继承父类的构造函数
+        super(...params)
+        this.grade = params[2]
+      }
+      code() {
+        console.log(this.name + ' is coding...')
+      }
+    }
+    let s1 = new Student('xm', 21, '10');
+    console.log(s1);
+    // s1.eat();
+    // s1.code();
+
+  
+    
+  </script>
+</body>
+</html>

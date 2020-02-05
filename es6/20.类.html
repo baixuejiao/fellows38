@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /* 
+      类（构造函数/构造方法）： 具有相同属性和方法的集合
+      通过function关键字定义 类名首字母大写
+      属性写在构造函数里 方法写在原型下
+    */
+    function Person(name, age) {
+      this.name = name;
+      this.age = age;
+      // this.eat = function() {
+      //   console.log(this.name + ' is eating...')
+      // }
+    }
+
+    // 类下有个prototype属性（原型） 原型下所有的属性和方法都会被实例化对象所共享
+    Person.prototype.sleep =  function() {
+      console.log(this.name + ' is sleeping ....');
+    }
+    let p1 = new Person('xm', 20)
+    let p2 = new Person('zs', 18)
+    // p1.sleep();
+    // p2.sleep();
+    // console.dir(Person);
+    // console.log(p1);
+
+
+    /* 继承
+      ES5中实现继承的方式：
+      1.子类的构造函数中 通过父类.call() 继承父类的属性
+      2.子类的prototype = 父类的实例化对象 来继承父类的方法
+      3.子类的constructor指向子类
+    */
+    function Student(name, age, grade) {
+      // this
+      Person.call(this,name, age)
+      // Person(name, age)
+      this.grade = grade
+    }
+    Student.prototype = new Person();
+    Student.prototype.constructor = Student;
+
+    Student.prototype.code = function() {
+      console.log(this.name + ' is codeing....');
+    }
+
+    let s1 = new Student('ls', 21, '18')
+    console.log(s1)
+    // s1.eat();
+    s1.sleep();
+    s1.code();    
+
+
+
+
+  
+  </script>
+</body>
+</html>

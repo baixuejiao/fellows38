@@ -41,30 +41,30 @@
     // p1.then(f1).catch(f2)
 
 
-    // let p2 = new Promise((resolve, reject) => {
+    let p2 = new Promise((resolve, reject) => {
 
-    //   console.log('开始发送请求1')
+      console.log('开始发送请求1')
 
-    //   setTimeout(() => {
-    //     let tag = false;
+      setTimeout(() => {
+        let tag = false;
 
-    //     if(tag) {
-    //       resolve()
-    //     } else {
-    //       reject()
-    //     }
+        if(tag) {
+          resolve()
+        } else {
+          reject()
+        }
 
-    //   }, 2000)
+      }, 2000)
 
-    // }).then(function(){
+    }).then(function(){
 
-    //   console.log('请求1成功')
+      console.log('请求1成功')
 
-    // }, function() {
+    }, function() {
 
-    //   console.log('请求1失败')
+      console.log('请求1失败')
 
-    // })
+    })
 
     // p1.then(f1,f2)
     
