@@ -1,5 +1,128 @@
+@charset "UTF-8";
+body {
+  color: #333;
+  background: #f2f2f2;
+}
+
 #container {
   width: 100%;
-  color: #ff0036; }
+  color: #ff0036;
+  padding-top: 30px;
+  padding-right: 50px;
+}
+#container #wrapper {
+  width: 100%;
+  height: 20px;
+}
+#container #wrapper a {
+  color: #ff0036;
+}
+#container #wrapper a:hover {
+  color: #ff8907;
+}
+#container #wrapper a::after {
+  content: "";
+}
+
+div {
+  width: 100%;
+  color: #ff8907;
+  background: #ff0036 url(./images/logo.png) no-repeat;
+}
+
+#main .list {
+  width: 100%;
+}
+#main .list-name {
+  font-size: 30px;
+}
+
+#submit-btn {
+  width: 100px;
+  height: 40px;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 4px;
+  color: #fff;
+  background: #ff8907;
+}
+
+#reset-btn, #confirm-btn {
+  width: 120px;
+  height: 30px;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 4px;
+  color: #fff;
+  background: #ff8907;
+  border: 1px solid #ff0036;
+}
+
+#confirm-btn {
+  opacity: 0.7;
+}
+
+/* 占位符 */
+#content {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+/* 编译后的文件里会保留 */
+div {
+  width: 218px;
+  height: 1000px;
+  border: 1px "SOLID" red;
+}
+
+p {
+  border: 1px solid red;
+}
+
+.item-1 {
+  width: 2rem;
+}
+
+.item-2 {
+  width: 4rem;
+}
+
+.item-3 {
+  width: 6rem;
+}
+
+.list-1 {
+  width: 2rem;
+}
+
+.list-2 {
+  width: 4rem;
+}
+
+.apple-icon {
+  background: url("./imgage/apple.png");
+}
+
+.banana-icon {
+  background: url("./imgage/banana.png");
+}
+
+.peal-icon {
+  background: url("./imgage/peal.png");
+}
+
+.item-6 {
+  width: 12rem;
+}
+
+.item-4 {
+  width: 8rem;
+}
+
+.item-2 {
+  width: 4rem;
+}
 
 /*# sourceMappingURL=index.css.map */

@@ -1,0 +1,26 @@
+// 定义变量 $
+$red: #ff0036;
+// 定义默认变量
+$orange: #ff8903 !default;
+$orange: #ff8907;
+
+// 特殊变量
+$attr: width;
+$logo: './images/logo.png';
+
+// @mixin 定义混合宏 可以传参 可以设置默认参数
+@mixin orange-btn($width:100px, $height:40px, $font:30px) {
+  width: $width;
+  height: $height;
+  font-size: $font;
+  line-height: $height;
+  text-align: center;
+  border-radius: 4px;
+  color: #fff;
+  background: $orange;
+}
+
+body{
+  color: #333;
+  background: #f2f2f2;
+}
