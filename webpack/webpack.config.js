@@ -3,6 +3,8 @@ const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
+  // 开发环境配置 production：生产环境 development:开发环境
+  mode: 'development',
   // 入口文件
   entry: {
     index: './src/index.js'
@@ -52,7 +54,12 @@ module.exports = {
         // use: ['style-loader', 'css-loader']
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader'
+          use: [{
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },'postcss-loader']
         })
       }, {
         loader: 'url-loader',
@@ -65,6 +72,22 @@ module.exports = {
       }, {
         test: /\.(htm|html)$/i,
         loader: 'html-withimg-loader'
+      }, {
+        test: /\.scss$/,
+        // use: ['style-loader','css-loader','sass-loader']
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
+      }, {
+        test: /\.js$/,
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }],
+        exclude: /node_modules/
       }
     ]
   }

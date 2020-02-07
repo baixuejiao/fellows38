@@ -2,4 +2,7 @@ div{
   width: 100%;
   color: red;
   background: url('./imgs/800.jpg');
+
+  transform: translateX(100px);
+
 }
