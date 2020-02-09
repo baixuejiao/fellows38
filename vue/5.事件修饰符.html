@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #div1{
+      width: 200px;
+      height: 200px;
+      background: red;
+    }
+    #div2{
+      width: 100px;
+      height: 100px;
+      background: pink;
+    }
+    
+  </style>
+</head>
+<body> 
+  <!-- 
+    事件修饰符 .
+    stop 阻止事件冒泡 (stopPropagation)
+    prevent 阻止浏览器的默认行为 (preventDefault)
+    once 事件只触发一次
+   -->
+  <div id="app">
+    <div id="div1" @click.once="fun1">
+      <div id="div2" v-on:click.stop="fun2"></div>
+    </div>
+    <a href="https://www.baidu.com" v-on:click.prevent="fun3">123</a>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      methods: {
+        fun1() {
+          console.log('div1')
+        },
+        fun2() {
+          console.log('div2')
+        },
+        fun3() {
+          console.log('1111')
+        }
+      }
+    })
+  
+  </script>
+</body>
+</html>

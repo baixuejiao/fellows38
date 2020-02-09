@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <!-- v-for 循环数组  obj: 数组中的每一项 index: 数组的索引  -->
+      <li v-for="(obj, index) in list">
+        {{ index }} :  {{ obj.name }} : {{ obj.age }}
+      </li>
+    </ul>
+  </div>
+
+  
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        list: [
+          {
+            name: 'gs',
+            age: 21
+          }, {
+            name: 'lkx',
+            age: 22
+          }, {
+            name: 'zs',
+            age: 18
+          }
+        ]
+      }
+    })
+  
+  </script>
+</body>
+</html>

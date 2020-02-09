@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h1> {{ msg }} </h1>
+  </div>
+
+  <!-- 不生效 -->
+  <div id="container">
+    {{ msg }}
+  </div>
+
+  <!-- 
+    1.创建一个实例化对象
+    2.el:挂载元素，只有在这个元素内部 vue的操作才会生效
+   -->
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello world'
+      }
+    })
+
+
+  
+  </script>
+</body>
+</html>

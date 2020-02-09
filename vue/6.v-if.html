@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    v-if 条件渲染
+    v-else-if
+    v-else
+
+    v-if 不需要频繁的控制元素的展示和隐藏
+    v-show 频繁的控制元素的展示和隐藏
+
+    v-show 控制元素的展示和隐藏 => 就是控制css中display属性
+   -->
+  <div id="app">
+    <!-- v-on:click -->
+    <button @click="change">切换</button>
+    <p id="p1" v-if="tag">马上下课啦</p>
+    <p id="p2" v-else>不可以下课，好好学习</p>
+
+    <p v-show="tag">在家隔离</p>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        tag: true
+      },
+      methods: {
+        change() {
+          this.tag = !this.tag
+        }
+      }
+    })
+  
+  </script>
+</body>
+</html>
