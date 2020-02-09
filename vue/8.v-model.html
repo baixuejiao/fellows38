@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    双向数据绑定
+    v-model
+  -->
+  <div id="app">
+    <input type="text" v-model="msg">
+
+    <!-- 
+      当表单类型是复选框时
+      v-model 的数据类型是数组， 数组里存的值是被选中一项的value值
+    -->
+    你最喜爱的水果：
+    <input type="checkbox" v-model="fruit" value="apple"> 苹果
+    <input type="checkbox" v-model="fruit" value="banana"> 香蕉
+    <input type="checkbox" v-model="fruit" value="pear"> 梨
+
+    <!-- 
+      当表单类型是单选框时
+      v-model的数据类型是string，v-model的值存的是被选中一项的value值
+     -->
+    性别：
+    <input type="radio" v-model="sex" value="1"> 男
+    <input type="radio" v-model="sex" value="2"> 女
+
+
+     <!-- 
+      当表单类型是下拉列表时
+      v-model的数据类型是string，v-model的值存的是被选中的option的value值
+     -->
+    选择城市：
+    <select v-model="city">
+      <option value="哈">哈尔滨</option>
+      <option value="齐">齐齐哈尔</option>
+      <option value="牡">牡丹江</option>
+      <option value="佳">佳木斯</option>
+      <option value="大">大庆</option>
+    </select>
+
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '123',
+        fruit: ['pear'],
+        sex: '2',
+        city: '齐'
+      }
+    })
+  
+  
+  </script>
+</body>
+</html>
