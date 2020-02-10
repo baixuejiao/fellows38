@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .active{
+      color: red;
+    }
+  
+  </style>
+</head>
+<body>
+  <!-- 挂载元素 -->
+  <div id="app">
+    <div>
+      <!-- keyup 键盘抬起时触发的事件 -->
+      <input type="text" v-model="msg" @keyup="search">
+      <!-- 绑定点击事件 -->
+      <button @click="add">添加</button>
+    </div>
+
+    <!-- 数组 循环生成 -->
+    <ul>
+      <!-- item是数组中的每一项 index是对应的索引 -->
+      <li v-for="(item, index) in list" @click="changeClass(item)">
+        <!-- 通过当前li里的isActive属性来控制自己的class的切换 -->
+        <span :class="{active:item.isActive}">{{ item.content }}</span>
+        <!-- 点击button时会触发li的点击事件 => 事件冒泡 -->
+        <button @click.stop="del(index)">删除</button>
+      </li>
+    </ul>
+  </div>
+
+  <script src="./vue.js"></script>
+
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: '',
+        list: [{ // list 数组用于修改数据
+          content: '1111', // 列表的内容
+          isActive: false // 通过isActive来控制当前li元素class的切换
+        }],
+        showlist: [{
+          content: '1111', // 列表的内容
+          isActive: false // 通过isActive来控制当前li元素class的切换
+        }] // show数组用于展示数据
+        // isActive: false
+      },
+      methods: {
+        // 添加方法里 
+        // 1.获取到input中的值
+        // 2.将获取到的值插入到list数组里
+        // 3.页面中去循环渲染数组通过v-for渲染
+        // 4.添加完数据后给input清空
+        add() {
+          console.log(this.msg)
+          // this.list.push(this.msg)
+          this.list.push({
+            content: this.msg,
+            isActive: false
+          })
+          this.showlist = [...this.list]
+          this.msg = ''
+        },
+        // 点击li修改li中span中class的切换
+        // 每一个元素都需要有自己的标记值来控制自己的样式的状态
+        changeClass(obj) {
+          // this.isActive = !this.isActive
+          obj.isActive = !obj.isActive
+          this.showlist = [...this.list]
+        },
+        // 删除方法
+        // 接收的参数是需要删除的元素的索引
+        // 通过数组中原生的方法 splice()来实现删除的功能
+        del(index) {
+          this.list.splice(index, 1)
+          this.showlist = [...this.list]
+        },
+        // 过滤
+        // 根据输入输入的内容 筛选出数组中包含该内容的一项并展示出来
+        // 由于对原数组进行过滤后 会将原数组进行修改 内容会丢失，此时需要创建一个新的数组用于展示数据，原数组进行数据操作
+        // 
+        search() {
+          this.showlist = this.list.filter((value, index) => {
+            return value.content.includes(this.msg)
+          })
+          // console.log(arr)
+        }
+      }
+    })
+  
+  
+  </script>
+
+</body>
+</html>

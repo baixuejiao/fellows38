@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="value in list">
+        {{value}}
+      </li>
+    </ul>
+    <button @click="change">change</button>
+  </div>
+
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        list: [1,2,3]
+      },
+      methods: {
+        change() {
+          // console.log(123)
+          // this.list[1] = 888;
+          // console.log(this.list)
+          /*
+            修改数组 三个参数 
+            第一个参数 => 要求改的数组
+            第二个参数 => 修改的索引
+            第三个参数 => 要修改的值
+           */
+          Vue.set(this.list, 1, 888)
+          this.$set(this.list, 2, 999)
+          
+          // this.list[1] = 888; // 这种方式只能来获取数组中的内容 不能用来修改内容
+        }
+      }
+    })
+  
+  
+  </script>
+</body>
+</html>

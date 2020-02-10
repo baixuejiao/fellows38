@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- name 是计算属性 不是方法的调用 -->
+    <p> {{name}} </p>
+    <p > {{add}} </p>
+    <button @click="fun1" >button</button>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        firstname: 'SAN',
+        lastname: 'ZHANG',
+        a: 9,
+        b: 10
+      },
+      methods: {
+        fun1() {
+          console.log('fun1')
+
+          this.fun2()
+        },
+        fun2() {
+          console.log('fun2')
+        }
+      },
+      // 计算属性
+      // 计算后的结果会被缓存下来，只有在里面的属性发生改变后才会重新计算 否则就使用缓存的内容
+      // 普通的方法会一直调用
+      computed: {
+        name() {
+          return this.firstname + ' ' + this.lastname
+        },
+        add() {
+          return this.a + this.b
+        }
+        // name: {
+        //   // 获取属性时会进入到get方法
+        //   get() {
+        //     console.log('get')
+        //     return this.firstname + ' ' + this.lastname
+        //   },
+        //   // 设置属性时会进入到set方法
+        //   set() {
+        //     console.log('set')
+        //   }
+        // }
+      },
+      // watch 监测属性的变化，被监测的属性一旦发生改变就会触发对应的方法
+      watch: {
+        // 方法中有两个参数 newVal, oldVal
+        a: function(newVal, oldVal) {
+          console.log(newVal, oldVal)
+        },
+        b: function() {
+          console.log('b is change')
+        }
+      }
+    })
+  
+  </script>
+</body>
+</html>

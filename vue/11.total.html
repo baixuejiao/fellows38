@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #app{
+      width: 400px;
+      margin: 50px auto;
+    }
+    li {
+      list-style: none;
+    }
+    ul{
+      border-bottom: 1px solid #ccc;
+    }
+    h1{
+      margin-bottom: 10px;
+    }
+    .list {
+      display: flex;
+      justify-content: space-between;
+      /* width: 100%; */
+      height: 40px;
+      padding: 0 10px;
+      margin-bottom: 10px;
+      line-height: 40px;
+      background: pink;
+    }
+    .active{
+      background: red;
+    }
+  
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>商品列表</h1>
+    <ul>
+      <!-- class="list active wrapper"  -->
+      <li v-for="obj in list" :class="['list', obj.isActive ? 'active' : '']" @click="change(obj)">
+        <span>{{ obj.name }}</span>
+        <span>{{ obj.price }}</span>
+      </li>
+    </ul>
+    <!-- <p>总价：{{total}}</p> -->
+    <!-- 调用方法  -->
+    <p>总价：{{ sum() }}</p>
+
+    <p>总价：{{ total }}</p>
+
+  </div>
+
+
+  <!-- 
+    1.写简单的页面结构 #app  引入vue.js 实例化对象
+    2.写html/css
+    3.把页面中需要的数据写在data
+    4.在html里 使用v-for 进行列表渲染
+    5.切换li 的背景
+    6.遍历数组 计算总价
+   -->
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        // total: 0,
+        list: [
+          {
+            name: "衬衫",
+            price: 999,
+            isActive: false
+          }, {
+            name: '裙子',
+            price: 1450,
+            isActive: false
+          }, {
+            name: '电脑',
+            price: 15800,
+            isActive: false
+          }, {
+            name: '裤子',
+            price: 650,
+            isActive: false
+          }
+        ],
+      },
+      // 计算属性
+      computed: {
+        total() {
+          let count = 0
+          this.list.forEach((obj, index) => {
+            if(obj.isActive) {
+              count += obj.price // cout = count + obj.price
+            }
+          })
+          return count
+        }
+      },
+      methods: {
+        // 修改当前元素的 isActive 属性 ，通过isActive属性改变背景颜色 当isActive为true时，表示该项被选中
+        change(item) {
+          item.isActive = !item.isActive
+        },
+        // 遍历list数组中的每一项 找到isActive为true的元素 把价格进行累加
+        sum() {
+          let count = 0
+          this.list.forEach((obj, index) => {
+            if(obj.isActive) {
+              count += obj.price // cout = count + obj.price
+            }
+          })
+
+          return count
+        }
+      }
+    })
+  
+  
+  </script>
+</body>
+</html>
