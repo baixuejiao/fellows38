@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <com></com>
+    <my-com>
+      <p slot="slot1">记得写作业啊</p>
+      <h3 slot="slot2">这是第一次调用myCom组件</h3>
+    </my-com>
+    <my-com>
+      <h3 slot="slot1">这是第二次调用myCom组件</h3>
+    </my-com>
+  </div>
+  
+  <!-- 定义组件模版部分 id -->
+  <template id="temp">
+    <div>
+      <h1>组件</h1>
+      <slot name="slot1"></slot>
+      <p>{{msg}}</p>
+      <!-- slot 插槽 可以理解为占位 调用组件时 组件开始和结束标签内的内容就会插入到这里 -->
+      <slot name="slot2"></slot>
+      <button @click="fun">btn</button>
+    </div>
+  </template>
+
+  <script src="./vue.js"></script>
+  <script>
+    let tpl = {
+      template: `
+        <div>
+          <h1>
+            hello world
+          </h1>
+        </div>
+      `
+    }
+
+    let vm = new Vue({
+      el: '#app',
+      data: {
+
+      },
+      methods: {
+        
+      },
+      components: {
+        'com': tpl,
+        'myCom': {
+          template: '#temp', // <template>的id
+          // 在组件里 通过调用data方法来返回一个对象，方式多次调用组件，对属性相互影响
+          data () {
+            return {
+              msg: 'aaaa'
+            }
+          },
+          props: [],
+          methods: {
+            fun(){
+              console.log('1234567')
+            }
+          }
+        }
+      }
+    })
+  
+  </script>
+</body>
+</html>

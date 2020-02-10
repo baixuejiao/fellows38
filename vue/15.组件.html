@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    模块化 -> js 
+    组件化 -> html css js
+   -->
+
+  <div id="app">
+    <!-- 组件名字 -->
+    <!-- 通过属性来给组件传值 通过v-bind方式传值 -->
+    <my-component title="hello" :msg="msg"></my-component>
+
+    <tpl title="hello"></tpl>
+  </div>
+
+  <div id="container">
+    <my-component title="1111"></my-component>
+
+    <!-- <tpl></tpl> -->
+
+  </div>
+
+  <script src="./vue.js"></script>
+
+  <script>
+    // 全局组件
+    // 第一个参数是一个string 代表的是组件的名称
+    // 第二个参数是一个对象 
+    Vue.component('myComponent', {
+      // template： 组件的模版，必须要有一个唯一的根元素
+      template: '<div> {{title}} {{msg}}</div>',
+      // 通过ptops来接收父组件的传值，props是一个array 里面的值是传递过来的属性名
+      // props里的属性使用方式与data里属性使用方式相同，但是 props里的内容不可以修改 是只读的
+      props: ['title','msg']
+    })
+
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        msg: 'lalalalalal'
+      },
+      // 局部组件
+      components: {
+        'tpl': {
+          template: '<div>hahha {{title}}</div>',
+          props: ['title']
+        },
+        'com': {
+          template: '<div>lalalalla</div>'
+        }
+      }
+    })
+
+
+    let con = new Vue({
+      el: '#container'
+    })
+  
+  </script>
+</body>
+</html>
