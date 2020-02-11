@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <label for="show">是否需要支付额外费用？</label>
+      <!-- 当只有一个复选框的时候 v-model的值是一个boolean类型的值 -->
+      <input id="show" type="checkbox" v-model="isShow"></input>
+    </header>
+
+    <ul v-show="isShow">
+      <li v-for="obj in list">
+        <!-- v-bind -->
+        <label :for="obj.id">{{obj.name}} ({{obj.price}})</label>
+        <input type="checkbox" name="" :id="obj.id" v-model="orderList" :value="obj">
+      </li>
+    </ul>
+
+    <div>
+      <p>订单费用信息：</p>
+      <ul>
+        <li v-for="obj in orderList">
+          {{obj.name}} ({{obj.price}})
+        </li>
+      </ul>
+    </div>
+
+    <footer>
+      总金额：{{ sum }}
+    </footer>
+
+
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        isShow: false,
+        list: [
+          {
+            id: 'list1',
+            name: '沙发',
+            price: 3500,
+          }, {
+            id: 'list2',
+            name: '椅子',
+            price: 800
+          }, {
+            id: 'list3',
+            name: 'wifi',
+            price: 100
+          }
+        ],
+        orderList: [
+          {
+            name: '群力花园豪华型',
+            price: 400
+          }
+        ]
+      },
+      computed: {
+        sum() {
+          let count = 0;
+          this.orderList.forEach((obj, index) => {
+            count += obj.price
+          })
+          return count
+        }
+      },
+      watch: {
+        isShow: function(newValue, oldValue) {
+          if(!newValue) {
+            this.orderList.splice(1)
+          }
+        }
+      }
+    })
+  
+  
+  </script>
+</body>
+</html>

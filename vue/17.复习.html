@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    v-for 可以循环数组和对象
+      v-for="(value, index) in list"
+      v-for="(value, key) in obj"
+
+    v-on (@) 绑定事件
+      事件修饰符
+        .stop 阻止事件冒泡
+        .prevent 阻止浏览器的默认行为
+
+    v-if 条件判断
+      v-if
+      v-else-if
+      v-else
+    v-show （display）
+      v-show 和 v-if 区别
+
+    v-bind 绑定属性
+      v-bind:index="key" => :index="key"
+
+    v-model 
+      双向数据绑定 应用与表单元素
+   -->
+  <div id="app">
+    <button @click.stop="change">button</button>
+    <p>{{ msg }}</p>
+    <p v-text="msg" v-bind:index="key" title="hahah"></p>
+    <p v-html="msg" v-show="tag=='aaa'" :index="key"></p>
+
+    <ul>
+      <li v-for="(value, index) in list">{{index}} : {{value}}</li>
+    </ul>
+    <div>
+      <p v-for="(value, key) in obj">{{ key }} : {{ value }} </p>
+    </div>
+
+    <input type="text" v-model="msg">
+    <span>{{add()}}</span>
+    <span> {{sum}} </span>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        key: 123,
+        tag: 'aaa',
+        msg: '123456',
+        list: [1,2,3,4,5],
+        obj: {
+          name: 'zs',
+          age: 18
+        },
+        a: 10,
+        b: 20
+      },
+      // 方法
+      methods: {
+        change() {
+          // this.tag = 'bbb'
+          // this.list[0] = 99
+          // 修改数组内容
+          Vue.set(this.list, 0, 999)
+          this.$set(this.list, 1, 888)
+
+          this.obj.name = 'lisi'
+
+          this.$set(this.obj, 'age', 28)
+
+          // Object.assign
+        },
+        add() {
+          return this.a + this.b
+        }
+      },
+      // 计算属性 计算的值会被缓存下来，只有用到的属性值发生变化时才会重新计算
+      computed: {
+        sum() {
+          return this.a + this.b
+        }
+      },
+      watch: {
+        msg: function(newvalue, oldvalue) {
+          console.log(newvalue, oldvalue)
+        }
+      }
+
+    })
+
+  
+  </script>
+
+
+
+</body>
+</html>

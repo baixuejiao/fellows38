@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h1>实例1</h1>
+    <com></com>
+    <tpl></tpl>
+    <!-- @fun v-on:fun -->
+    <mycom title="title1111" @fun11111="fun"></mycom>
+    <button @click="fun">按钮</button>
+  </div>
+
+  <div id="container">
+    <h1>实例2</h1>
+    <com></com>
+    <!-- <tpl></tpl> -->
+  </div>
+
+  <template id="temp">
+    <div>
+      小组件 {{ title }}
+      <p>{{msg}}</p>
+      <button @click="fun1">子组件按钮</button>
+    </div>
+  </template>
+
+  <script src="./vue.js"></script>
+  <script>
+    // 全局组件
+    Vue.component('com',{
+      template: '<div> 组件 </div>'
+    })
+
+    let vm = new Vue({
+      el: '#app',
+      components: {
+        'tpl': {
+          template: '<div>局部组件</div>'
+        },
+        'mycom': {
+          template: '#temp',
+          // props里的属性在子组件里不允许修改
+          props: ['title'],
+          data () {
+            return {
+              msg: '123456789'
+            }
+          },
+          methods: {
+            fun1() {
+              this.$emit('fun11111')
+            }
+          }
+        }
+      },
+      methods: {
+        fun() {
+          alert('hi~')
+        }
+      }
+    })
+
+    new Vue({
+      el: '#container'
+    })
+  </script>
+</body>
+</html>
