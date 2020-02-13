@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    /* #app{
+      position: relative;
+    } */
+    #content button{
+      width: 100px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 18px;
+      border: none;
+      color: #fff;
+      background: #ff8907;
+      cursor: pointer;
+    }
+
+    .container{
+      width: 400px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #f2f2f2;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .container-header{
+      height: 40px;
+      padding: 0 20px;
+      line-height: 40px;
+      border-bottom: 1px solid #ccc;
+    }
+    .container-header span{
+      padding: 0 10px;
+      float: right;
+      cursor: pointer;
+    }
+
+    .container-footer{
+      padding: 10px 20px;
+    }
+    .container-footer button{
+      width: 80px;
+      height: 30px;
+      border: 1px solid #ff8907;
+      border-radius: 2px;
+      color: #ff8907;
+      background: #fff;
+      cursor: pointer;
+    }
+    .main{
+      padding: 10px 20px;
+    }
+    .wrapper{
+      margin-bottom: 5px;
+    }
+
+
+  
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="content">
+      <button @click="showLogin">登录</button>
+      <button @click="showReg">注册</button>
+    </div>
+
+    <!-- 登录组件 -->
+    <!-- @click @keyup -->
+    <dialog-tpl title="登录" v-show="isLogin" @close="hide">
+      <div class="wrapper">
+        <label for="lname">用户名</label>
+        <input type="text" id="lname">
+      </div>
+      <div class="wrapper">
+        <label for="lpwd">密码</label>
+        <input type="text" id="lpwd">
+      </div>
+    </dialog-tpl>
+
+    <!-- 注册组件 -->
+    <dialog-tpl title="注册" v-show="isRegister" @close="hide">
+      <div class="wrapper">
+        <label for="lname">用户名</label>
+        <input type="text" id="rname">
+      </div>
+      <div class="wrapper">
+        <label for="lpwd">密码</label>
+        <input type="text" id="rpwd">
+      </div>
+      <div class="wrapper">
+        <label for="lpwd">确认密码</label>
+        <input type="text" id="rcpwd">
+      </div>
+    </dialog-tpl>
+
+  </div>
+
+  <!-- dialog组件的html部分 -->
+  <template id="temp">
+    <div class="container">
+      <header class="container-header">
+        {{title}}
+        <span @click="closeDialog">X</span>
+      </header>
+      <div class="main">
+        <slot></slot>
+      </div>
+      <footer class="container-footer">
+        <button @click="closeDialog">{{title}}</button>
+      </footer>
+    </div>
+  </template>
+
+  <script src="./vue.js"></script>
+  <script>
+    let vm = new Vue({
+      el: '#app',
+      data: {
+        isLogin: false,
+        isRegister: false
+      },
+      components: {
+        'dialogTpl': {
+          template: '#temp',
+          props: ['title'],
+          methods: {
+            // 点击关闭 调用父组件的关闭弹窗的方法
+            closeDialog() {
+              // 调用父组件传递过来的close事件
+              this.$emit('close')
+            }
+          }
+        }
+      },
+      methods: {
+        // 点击登录按钮 展示登录的弹窗 并且 隐藏注册的弹窗
+        showLogin() {
+          this.isLogin = true
+          this.isRegister = false
+        },
+        // 点击注册按钮 展示注册的弹窗 并且 隐藏登录的弹窗
+        showReg() {
+          this.isRegister = true
+          this.isLogin = false
+        },
+        hide() {
+          this.isLogin = false
+          this.isRegister = false
+        }
+      }
+    })
+  
+  
+  </script>
+</body>
+</html>
