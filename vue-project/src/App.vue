@@ -24,7 +24,8 @@
       <router-link to="/details/101/16900">课程详情</router-link> | 
       <!-- <router-link to="/test/101/16900"> 测试页面</router-link> -->
       <router-link to="/test"> 测试页面</router-link> | 
-      <router-link to="/aaa"> aaa</router-link>
+      <router-link to="/aaa"> aaa</router-link> | 
+      <router-link to="/count">计数器</router-link>
 
     </div>
     <router-view/>

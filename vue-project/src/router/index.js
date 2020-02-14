@@ -13,6 +13,7 @@ import Details from '../views/Details.vue'
 import Error from '../views/Error.vue'
 
 import Test from '../views/Test.vue'
+import Count from '../views/Count.vue'
 
 Vue.use(VueRouter)
 
@@ -76,6 +77,11 @@ const routes = [
     })
   },
   {
+    path: '/count',
+    name: 'Count',
+    component: Count
+  },
+  {
     path: '*',
     name: 'Error',
     component: Error
@@ -83,7 +89,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history', 
+  mode: 'history',  // history/hash
   // mode: 'hash',
   base: process.env.BASE_URL,
   routes
