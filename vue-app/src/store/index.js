@@ -9,11 +9,15 @@ export default new Vuex.Store({
     curMenu: {
       name: '电影',
       bgColor: '#ff0000'
-    }
+    },
+    photoList: []
   },
   mutations: {
     setCurMenu(state, data) {
       state.curMenu = data
+    },
+    setPhotoList(state, data) {
+      state.photoList = data
     }
   },
   actions: {
