@@ -49,7 +49,7 @@ export default {
     // 切换菜单时，获取当前被选中的菜单的信息
     // 利用事件冒泡 点击 router-link时触发了父元素的点击事件
     changeMenu(obj) {
-      this.curColor = obj.bgColor
+      // this.curColor = obj.bgColor
       this.setCurMenu(obj)
     }
   },
