@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="./browser.min.js"></script>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+
+  <script type="text/babel">
+    class Main extends React.Component{
+      constructor(params){
+        super(params)
+
+        this.state = {
+          list: [1,2,3]
+        }
+
+        this.addFun = this.addFun.bind(this)
+      }
+
+      // 向组件内追加数据
+      addFun(data) {
+        console.log(data)
+        let list = [...this.state.list]
+        list.push(data)
+
+        this.setState({
+          list
+        })
+      }
+
+      render() {
+        return(
+          <div id="container">
+            <h1>To Do List</h1>  
+            <Add addFun={this.addFun} />
+            <List list={this.state.list}/>
+          </div>
+        )
+      }
+
+    }
+    // 添加组件
+    class Add extends React.Component{
+      constructor(params){
+        super(params)
+
+        this.add = this.add.bind(this)
+      }
+
+      add() {
+        // 获取输入框里的值 传递给Main组件中的addFun方法中
+        this.props.addFun(this.refs.myInput.value)
+        this.refs.myInput.value = ''
+      }
+      
+
+      render() {
+        return (
+          <div>
+            <input type="text" ref="myInput" />  
+            <button onClick={this.add}>添加</button>
+          </div>
+        )
+      }
+    }
+    // 显示列表的组件
+    class List extends React.Component {
+      constructor(params) {
+        super(params)
+      }
+
+      render(){
+        // this.props.list
+        return (
+          <ul>
+            {
+              this.props.list.map((value, index) => (
+                <li key={index}>{value}</li>
+              ))
+            }
+          </ul>
+        )
+      }
+    }
+
+    ReactDOM.render(<Main/>, document.getElementById('app'))
+  
+  
+  
+  </script>
+</body>
+</html>

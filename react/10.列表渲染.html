@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="./browser.min.js"></script>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+
+  <script type="text/babel">
+
+    // 列表渲染 使用map方法进行遍历 同时遍历出的每一项需要增加一个key属性且key的值必须是唯一的
+  
+    class Com extends React.Component{
+      constructor(params) {
+        super(params)
+      }
+
+      render() {
+        let a1 = [1,2,3]
+        let arr = []
+
+        for(let i=0; i<a1.length; i++) {
+          arr[i] = <li key={i}>{a1[i]}</li>
+        }
+
+        let list = [
+          {
+            name: 'zs',
+            age: 19
+          },
+          {
+            name: 'ls',
+            age: 17
+          },
+          {
+            name: 'xm',
+            age: 20
+          }
+        ]
+
+        // list.map((value, index) =>  (value))
+
+        let _list = list.map((value, index) => (
+          <li key={index}>
+            <p>姓名： {value.name}</p>  
+            <p>年龄： {value.age}</p>
+          </li>
+        ))
+
+
+        return (
+          <div>
+            <ul>
+              {arr}
+            </ul>
+
+            <ul>
+              {_list}  
+            </ul>
+
+            <ul>
+              {
+                list.map((obj, index) => (
+                  <li key={index}>{obj.name}:{obj.age}</li>
+                ))
+              }
+            </ul>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Com/>, document.getElementById('app'))
+  
+  </script>
+</body>
+</html>

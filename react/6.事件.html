@@ -22,6 +22,10 @@
         super(params)
         
         this.num = 1
+        // 组件的状态
+        this.state = {
+          number: 1
+        }
 
         // 改变自定义事件里的this指向
         this.fun1 = this.fun1.bind(this)
@@ -33,22 +37,44 @@
       }
 
       fun1() {
-        console.log(this.num)
+        // this.num++
+        // console.log(this.num)
+
+        // 通过setState的方法来修改state里的属性
+        this.setState({
+          number: this.state.number+1
+        })
+
+        // props接收的属性是只读的不可以修改
+        this.props.age++
+
+        console.log(this.state.number)
+      }
+      jump() {
+        // 阻止浏览器的默认行为 需要调用preventDefault()
+        // event 事件对象
+        event.preventDefault()
+        // return false 不能用于阻止浏览器的默认行为
+        return false
       }
 
       render() {
+        console.log('渲染了')
         return (
           <div>
-            <p> {this.num} </p>
+            <p> num: {this.num} </p>
+            <p> number : {this.state.number}</p>
+            <p> age: {this.props.age} </p>
             <button onClick={this.fun.bind(this)}>点击按钮</button>  
             <button onClick={this.fun1}>点击按钮num+1</button>  
+            <a href="https://baidu.com" onClick={this.jump.bind(this)}>baidu</a>
           </div>
         )
       }
     }
 
 
-    ReactDOM.render(<Com/>, document.getElementById('app'))
+    ReactDOM.render(<Com age={18}/>, document.getElementById('app'))
   
   
   </script>

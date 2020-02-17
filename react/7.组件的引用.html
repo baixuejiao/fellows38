@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="./browser.min.js"></script>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+  <!-- 
+    组件的引用
+      通过给组件或元素增加一个ref属性来引用对应的组件或元素且ref的值不允许重复
+      在父级中 通过refs属性来获取当前组件内的所用引用
+   -->
+  <script type="text/babel">
+    class Parent extends React.Component{
+      constructor(params) {
+        super(params)
+
+        this.addFun = this.addFun.bind(this)
+      }
+
+      addFun() {
+        console.log(this.refs.child1)
+        let child = this.refs.child1
+        child.add(this.refs.myInput.value)
+
+        // 可以实现但不推荐使用！！！
+        // child.setState({
+        //   count: child.state.count + 1
+        // })
+      }
+
+      render() {
+        // input里的value是一个string类型的
+        // ref的值一旦重复了 后面的就会把前面的覆盖
+        return (
+          <div>
+            <h1>父组件</h1>
+            <input type="text" ref="myInput" />
+            <br/>
+            <button onClick={this.addFun}>点击后子组件count+1</button>
+            <Child ref="child1" name="a1"/>
+            <Child ref="child1" name="a2"/>
+          </div>
+        )
+      }
+    }
+
+    class Child extends React.Component{
+      constructor(params) {
+        super(params)
+
+        this.state = {
+          count: 0
+        }
+
+        this.add = this.add.bind(this)
+      }
+
+      add(num) {
+        this.setState({
+          count: this.state.count + num * 1
+        })
+      }
+
+      render() {
+        return (
+          <div>
+            <h1>子组件</h1>  
+            <p> count: {this.state.count} </p>
+            <button onClick = {this.add}> 点击count+1 </button>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Parent />, document.getElementById('app'))
+
+  
+  </script>
+</body>
+</html>
