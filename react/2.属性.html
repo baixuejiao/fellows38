@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #wrapper{
+      color: pink;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="app">
+    <input type="text">
+  </div>
+
+  <script src="./browser.min.js"></script>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+
+  <!-- 
+    特殊属性：
+      class -> className
+      for -> htmlFor
+    单标签必须闭合
+    必须要有一个唯一的父元素
+
+   -->
+  <script type="text/babel">
+   
+    let root = document.getElementById('app')
+    ReactDOM.render(
+      <div id="container">
+        <div id="wrapper" className="content">hello world</div>
+        <label htmlFor="username">姓名</label>
+        <br/>
+        <input id="username" type="text" /> 
+      </div>
+      ,root
+    )
+  </script>
+</body>
+</html>

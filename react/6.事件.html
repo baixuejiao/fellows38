@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="./browser.min.js"></script>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+
+  <!-- 
+    绑定事件时 事件名称需使用小驼峰式 onclick => onClick onblur => onBlur
+    在组件的自定义事件中，必须要通过bind来改变this指向
+   -->
+  <script type="text/babel">
+    class Com extends React.Component {
+      constructor(params){
+        super(params)
+        
+        this.num = 1
+
+        // 改变自定义事件里的this指向
+        this.fun1 = this.fun1.bind(this)
+      }
+
+      fun() {
+        console.log('fun')
+        console.log(this.num)
+      }
+
+      fun1() {
+        console.log(this.num)
+      }
+
+      render() {
+        return (
+          <div>
+            <p> {this.num} </p>
+            <button onClick={this.fun.bind(this)}>点击按钮</button>  
+            <button onClick={this.fun1}>点击按钮num+1</button>  
+          </div>
+        )
+      }
+    }
+
+
+    ReactDOM.render(<Com/>, document.getElementById('app'))
+  
+  
+  </script>
+</body>
+</html>

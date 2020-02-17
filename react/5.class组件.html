@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="./browser.min.js"></script>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+
+  <script type="text/babel">
+    // class 组件中必须要有render()
+    // class 组件中通过this.props来获取引用组件时传递的所有参数 props也是一个object类型
+    class Com extends React.Component {
+      // 定义状态的
+      constructor(params) {
+        super(params)
+      }
+
+      render() {
+        return (
+          <div>
+            hello world  
+            <p>姓名：{this.props.name} </p>
+            <p>年龄：{this.props.age} </p>
+            <p>{this.props.arr}</p>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Com name="zs" age={18} arr={[1,2,3]}/>, document.getElementById('app'))
+  
+  </script>
+</body>
+</html>

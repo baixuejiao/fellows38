@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- browser.js 用来编译JSX语法的  -->
+  <script src="./browser.min.js"></script>
+  <!-- react.js react的核心库 用来管理组件和状态的 -->
+  <script src="./react.development.js"></script>
+  <!-- react-dom.js 渲染组件的 依赖react.js 必须在react.js后面引入！！！ -->
+  <script src="./react-dom.development.js"></script>
+
+  <script type="text/babel">
+    // 第一个参数： 需要插入html内容
+    // 第二个参数： 挂载元素
+
+    let root = document.getElementById('app')
+    ReactDOM.render(<h1>Hello World</h1>,root)
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="./browser.min.js"></script>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+
+  <script type="text/babel">
+    // jsx中需要使用{} 来表示表达式
+    // style={{}} 第一个{} 表示的是一个表达式 第二个{}表示这里是一个对象里面写相关样式
+    let name = 'zs'
+    let a = 10;
+    let b = 3;
+
+
+    let _style = {
+      color: 'red',
+      backgroundColor: '#ff8907'
+    }
+
+    ReactDOM.render(
+      <div id="container">
+        <p style={_style}>姓名：{ name }</p>
+        <p>姓名： name </p>
+        <p style={{
+          color: '#ff0036',
+          fontSize: '20px'
+        }}>sum = {a + b}</p>
+      </div>,
+      document.getElementById('app')
+    )
+
+  
+  </script>
+</body>
+</html>

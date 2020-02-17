@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="./browser.min.js"></script>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+
+  <script type="text/babel">
+    // 函数组件 
+    // 组件名称首字母必须大写
+    // 通过props来接收引用组件时传递的所有的参数 props本身是一个object
+    function Com(props) {
+      let name = 'aaa'
+      console.log(props)
+      return (
+        <div>
+          hello world
+          {name}
+          <p>年龄：{ props.age }</p>
+          <p>年龄：{ props.age1 } </p>
+          <p>身高：{ props.info.height } </p>
+          <p>体重：{ props.info.weight } </p>
+        </div>
+      )
+    }
+
+    /*
+      在引用组件的时候可以给通过给组件定义属性的方式传参
+      age = "xxx"  只能传一个string类型的参数过去
+      age = {}  可以传任何类型的数据
+    */
+    
+    ReactDOM.render(<Com age="18" age1={ 18 } info={ {
+      height: '180cm',
+      weight: '70kg'
+     } } />,document.getElementById('app'))
+  
+  </script>
+</body>
+</html>
