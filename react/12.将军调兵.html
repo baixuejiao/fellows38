@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="./browser.min.js"></script>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+
+  <script>
+    let xx = 'age'
+    let obj = {
+      'name': 'aaa',
+      [xx]: 18
+    }
+
+    obj.name = 'aaa'
+
+
+    for(key in obj) {
+      obj.key
+      obj[key]
+    }
+
+
+
+  </script>
+
+  <script type="text/babel">
+    // 主组件
+    class Main extends React.Component{
+      constructor(params){
+        super(params)
+
+        this.state = {
+          total: 120,
+          numA: 100,
+          numB: 80
+        }
+
+        this.change = this.change.bind(this)
+      }
+
+      // 修改人数
+      change(tag) {
+        // this.setState({
+        //   total: this.state.total - 20
+        // })
+        // if(tag == 'A') {
+        //   this.setState({
+        //     numA: this.state.numA + 20
+        //   })
+        // } else {
+        //   this.setState({
+        //     numB: this.state.numB + 20
+        //   })
+        // }
+        if (this.state.total <= 0) {
+          alert('剩余士兵数量不足！！！')
+        } else {
+          this.setState({
+            total: this.state.total - 20,
+            [`num${tag}`]: this.state[`num${tag}`] + 20
+          })
+        }
+      }
+ 
+      render(){
+        return(
+          <div>
+            <h1>剩余士兵数量 {this.state.total} 人</h1>
+            <General name="A" number={this.state.numA} change={this.change}/>
+            <General name="B" number={this.state.numB} change={this.change}/>
+
+          </div>
+        )
+      }
+    }
+
+    // 子组件
+    class General extends React.Component{
+      constructor(params){
+        super(params)
+
+        this.changeFun = this.changeFun.bind(this)
+      }
+
+      changeFun() {
+        this.props.change(this.props.name)
+      }
+
+      render(){
+        return(
+          <div>
+            <h3>将军{ this.props.name }有士兵{this.props.number}人</h3>
+            <button onClick={this.changeFun}>调兵</button>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Main/>, document.getElementById('app'))
+  
+  
+  
+  
+  </script>
+</body>
+</html>
