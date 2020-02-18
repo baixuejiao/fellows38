@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .active{
+      background: pink;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="./browser.min.js"></script>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+
+  <!-- 
+
+    <Child  name={this.state.name}/>
+    左边的name是属性名 右边时属性值
+
+   -->
+
+  <script type="text/babel">
+    class Main extends React.Component{
+      constructor(params) {
+        super(params)
+
+        this.state = {
+          list: [
+            {
+              id: 1,
+              name: '吃饭',
+              isActive: false
+            },
+            {
+              id: 2,
+              name: '睡觉',
+              isActive: true
+            },
+            {
+              id: 3,
+              name: '写代码',
+              isActive: false
+            }
+          ],
+          showlist: [
+            {
+              id: 1,
+              name: '吃饭',
+              isActive: false
+            },
+            {
+              id: 2,
+              name: '睡觉',
+              isActive: true
+            },
+            {
+              id: 3,
+              name: '写代码',
+              isActive: false
+            }
+          ]
+        }
+
+        this.changeFun = this.changeFun.bind(this)
+        this.addFun = this.addFun.bind(this)
+        this.delFun = this.delFun.bind(this)
+        this.searchFun = this.searchFun.bind(this)
+      }
+
+      // 切换列表被选中的状态 修改isActive属性
+      changeFun(id) {
+        let list = [...this.state.list]
+        list.forEach(obj => {
+          if (obj.id == id) {
+            obj.isActive = !obj.isActive
+          }
+        })
+
+        this.setState({
+          list,
+          showlist: list
+        })
+      }
+
+      // 添加方法 向数组的末尾添加一条数据
+      addFun(data) {
+        let list = [...this.state.list]
+        list.push({
+          id: new Date().getTime(),
+          name: data,
+          isActive: false
+        })
+
+        this.setState({
+          list,
+          showlist: list
+        })
+      }
+
+      // 删除 通过filter过滤出不含被删除的那条数据的一个新数组
+      delFun(id) {
+        let list = this.state.list.filter(obj => {
+          return obj.id != id
+        })
+        this.setState({
+          list,
+          showlist: list
+        })
+      }
+
+      searchFun(value) {
+        let list = this.state.list.filter(obj => {
+          return obj.name.includes(value)
+        })
+        this.setState({
+          showlist: list
+        })
+      }
+
+      render() {
+        return (
+          <div>
+            <h1>To do List</h1>
+            <Search searchFun={this.searchFun} />
+            <Add addFun={this.addFun} />
+            <List list={this.state.showlist} changeFun={this.changeFun} delFun={this.delFun}/>
+          </div>
+        )
+      }
+    }
+
+    class Search extends React.Component{
+      constructor(params) {
+        super(params)
+      }
+      search() {
+        this.props.searchFun(this.refs.searchInput.value)
+      }
+      render() {
+        return (
+          <div>
+            <span>搜索：</span>
+            <input type="text" ref="searchInput" onKeyUp={this.search.bind(this)}/>
+          </div>
+        )
+      }
+    }
+
+    class Add extends React.Component{
+      constructor(params) {
+        super(params)
+      }
+
+      // 获取到input里的value 然后调用父组件添加的方法
+      add() {
+        this.props.addFun(this.refs.addInput.value)
+        this.refs.addInput.value = ''
+      }
+
+      render() {
+        return (
+          <div>
+            <span>添加：</span>
+            <input type="text" ref="addInput" />
+            <button onClick={this.add.bind(this)}>添加按钮</button>
+          </div>
+        )
+      }
+    }
+
+    class List extends React.Component{
+      constructor(params) {
+        super(params)
+      }
+
+      // 切换父选框时去修改对应数组信息的isActive属性
+      change(id) {
+        this.props.changeFun(id)
+      }
+
+      // 删除
+      del(id) {
+        this.props.delFun(id)
+      }
+
+      render() {
+        return (
+          <div>
+            {
+              this.props.list.map((obj) => (
+                <li key={obj.id} className={obj.isActive ? 'active' : ''}>
+                  <input type="checkbox" defaultChecked={obj.isActive} onChange={this.change.bind(this, obj.id)} />
+                  <span>{ obj.name }</span>
+                  <button onClick={this.del.bind(this, obj.id)}>删除</button>
+                </li>
+              ))
+            }
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Main/>, document.getElementById('app'))
+  
+  
+  
+  
+  </script>
+</body>
+</html>

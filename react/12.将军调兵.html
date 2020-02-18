@@ -67,6 +67,8 @@
             total: this.state.total - 20,
             [`num${tag}`]: this.state[`num${tag}`] + 20
           })
+          // Object.assign
+          // 修改引用数据类型（Array， Object）不能对原数组进行修改造成影响 push
         }
       }
  
