@@ -27,6 +27,7 @@ class Course extends Component {
       })
       .catch(err => {
         console.log(err)
+        alert('服务器错误请稍后重试。。')
       })
   }
   render() {
@@ -36,8 +37,8 @@ class Course extends Component {
         <div>
           {
             this.state.list.map(obj => (
-              <p>
-                <Link to={`/course/${obj.id}`} key={obj.id}>{obj.title}</Link>
+              <p key={obj.id}>
+                <Link to={`/course/${obj.id}`}>{obj.title}</Link>
               </p>
             ))
           }
