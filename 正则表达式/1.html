@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 定义正则表达式的方式
+    let reg = /c/
+    let reg1 = new RegExp('c')
+
+    let str = 'hello'
+    let str1 = 'abcdefg'
+
+    // exec 检索制定字符串并返回指定值和位置
+    // test 检索制定字符串并返回boolean
+
+    console.log(reg.exec(str)) // null
+    console.log(reg.exec(str1))
+    console.log(reg.test(str))
+
+    // c{n} 匹配连续的n个c
+    // c{m,n} 匹配连续的m个或n个c
+    // c{n,} 匹配连续的大于等于n个c
+    // * 表示0个或多个 => {0,} (连续的)
+    // + 表示1个或多个 => {1,} (连续的)
+    // ? 表示0个或1个 => {0,1} (连续的)
+
+    // {n}? {m,n}? {n,}? *? +? ?? 中的？表示非贪婪模式 尽可能少的去匹配
+    // ^ 匹配开头
+    // $ 匹配结尾
+    // . 匹配除了\n之外所有的字符（包括中文）
+    // | 表示或的意思
+    // ()
+    // [abc]表示a或者b或者c中的任意一个字符
+    // [a-z] 所有小写字母
+    // [A-Z] 所有大写字母 
+    // [0-9] 所有数字
+    // [^abc] 反字符集合 表示不能是abc中任何的一个
+
+    // \b 边界
+    // \B 非边界
+    // \d 数字
+    // \D 非数字
+    // \s 单个空格
+    // \S 非空格字符
+    // \w 单词 => [a-zA-Z0-9_]
+    // \W 非单词 => [^a-zA-Z0-9_]
+
+    // i 忽略大小写 eg: /\w/i
+    // g 全局匹配 eg: /Microsoft/g
+
+
+    let reg2 = /.+/;
+    let str2='bbs.blue\nidea.com';
+    console.log(reg2.exec(str2)) // bbs.blue
+
+    // reg = /^b|c.+/; 匹配^b 或者 c.+
+
+    let reg3 = /^(b|c).+?/;
+    let str3='bcs.blueidea.com';
+    console.log(reg3.exec(str3)) // bc
+
+    let reg4 = /^[^abc]/;
+    let str4='blueidea';
+    console.log(reg4.exec(str4)) //null
+
+    let reg5 = /\s.+/;
+    let str5='This is a test String.';
+    console.log(reg5.exec(str5)) // ' is a test String.'
+
+    let reg6 = /Microsoft/g
+    let str6="Welcome to Microsoft! We are proud to announce that Microsoft has one of the largest Web Developers sites in the world."
+    console.log(str6.replace(reg6, 'xm'))
+  </script>
+</body>
+</html>
