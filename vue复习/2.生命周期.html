@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{msg}}
+    <button @click="update">更新</button>
+    <button @click="destory">销毁</button>
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    /*
+      vue实例和组件都有一个完整的生命周期 给我们了8个生命周期函数（钩子函数）
+      当组件或实例进入到对应的生命周期状态时就会自动帮我们触发对应的钩子函数
+    */
+    new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello world'
+      },
+      methods: {
+        update() {
+          this.msg = '123'
+        },
+        destory() {
+          this.$destroy()
+        }
+      },
+      // 实例创建之前调用
+      beforeCreate () {
+        console.log('=======beforeCreate========')
+        console.log('el:',this.$el)
+        console.log('data:',this.$data)
+        console.log('html:',document.getElementById('app'))
+      },
+      // 实例创建成功，此时 data 中的数据显示出来了 (computed, methods)
+      created () {
+        console.log('=======created========')
+        console.log('el:',this.$el)
+        console.log('data:',this.$data)
+        console.log('html:',document.getElementById('app'))
+      },
+      // 数据中的 data 在模版中先占一个位置
+      beforeMount () {
+        console.log('=======beforeMount========')
+        console.log('el:',this.$el)
+        console.log('data:',this.$data)
+        console.log('html:',document.getElementById('app'))
+      },
+      // 模版中的 data 数据直接显示出来了
+      mounted () {
+        console.log('=======mounted========')
+        console.log('el:',this.$el)
+        console.log('data:',this.$data)
+        console.log('html:',document.getElementById('app'))
+      },
+      // 当 data 数据发生变化调用，发生在虚拟 DOM 重新渲染
+      beforeUpdate () {
+        console.log('=======beforeUpdate========')
+        console.log('el:',this.$el)
+        console.log('data:',this.$data)
+        console.log('html:',document.getElementById('app').innerHTML)
+      },
+      // 数据更改导致的虚拟 DOM 重新渲染
+      updated () {
+        console.log('=======updated========')
+        console.log('el:',this.$el)
+        console.log('data:',this.$data)
+        console.log('html:',document.getElementById('app').innerHTML)
+      },
+      // 在 vue 实例销毁之前调用，此时实例任然可用
+      beforeDestroy () {
+        console.log('=======beforeDestroy========')
+        console.log('el:',this.$el)
+        console.log('data:',this.$data)
+        console.log('html:',document.getElementById('app').innerHTML)
+      },
+      // 在 vue 实例销毁之后调用，vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁
+      destroyed () {
+        console.log('=======destroyed========')
+        console.log('el:',this.$el)
+        console.log('data:',this.$data)
+        console.log('html:',document.getElementById('app').innerHTML)
+      }
+    })
+
+    /*
+      1.知道什么是生命周期
+      2.vue的8个生命周期都是什么 以及对应生命周期会触发什么效果
+      3.实际操作中在不同的生命周期可以做什么事情
+        eg: 可以在created中发送异步请求 获取页面需要渲染的数据
+            可以在mounted中上报用户访问行为
+      4.在更新的时候 首先修改是的虚拟dom 而不是直接修改真实DOM
+    */
+
+
+  </script>
+</body>
+</html>

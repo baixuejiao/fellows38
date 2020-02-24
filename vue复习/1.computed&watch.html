@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    computed
+    watch
+    生命周期
+    router跳转
+   -->
+
+  <div id="app">
+    <ul>
+      <li v-for="item in list" v-if="item.age>=18">
+        {{item.name}} : {{item.age}}
+      </li>
+    </ul>
+
+    <ul>
+      <li v-for="item in newlist" >
+        {{item.name}} : {{item.age}}
+      </li>
+    </ul>
+
+    <input type="text" v-model="msg">
+    <input type="text" v-model="obj.name">
+  </div>
+
+  <script src="./vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        msg: '',
+        obj: {
+          name: ''
+        },
+        list: [
+          {
+            name: 'zs',
+            age: 18
+          },
+          {
+            name: 'ls',
+            age: 16
+          },
+          {
+            name: 'xm',
+            age: 21
+          },
+          {
+            name: 'jj',
+            age: 4
+          }
+        ]
+      },
+      // computed计算属性 为了减少模板中的一些判断逻辑
+      // 计算的结果会缓存下来 除非以来的属性发生改变才会重新计算
+      // vuex中的mapState要写在计算属性中
+      computed: {
+        // 默认不写get和set的话会直接调用get方法
+        newlist() {
+          return this.list.filter(obj => (
+            obj.age>=18
+          ))
+        },
+        // 计算属性有两个方法 get set，默认不写get和set的话会直接调用get方法
+        // 获取属性时会调用get方法
+        // 设置属性时会调用set方法
+        newdata: {
+          get() {
+
+          },
+          set() {
+
+          }
+        }
+      },
+      methods: {
+        // 方法只要调用就会重新计算，即使依赖的属性不变
+        getList() {
+          return this.list.filter(obj => (
+            obj.age>=18
+          ))
+        }
+      },
+      // 侦听 属性改变
+      watch: {
+        // 只要msg改变就会触发这个方法
+        msg: function(newValue, oldValue) {
+          console.log(newValue, oldValue)
+        },
+        // 侦听对象中属性的改变
+        'obj.name': function(nV, oV) {
+          console.log(nV, oV)
+        },
+        // msg(newValue, oldValue) {
+          
+        // }
+      }
+    })
+
+
+
+    /* 函数体内一行返回语句 函数可以简写
+    list.filter((value,inde) => {
+      return value
+    })
+    // 简写
+    list.filter((value,index) => (
+      value
+    ))
+    */
+
+
+  </script>
+</body>
+</html>
