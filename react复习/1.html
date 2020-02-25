@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="./browser.min.js"></script>
+  <script src="./react.development.js"></script>
+  <script src="./react-dom.development.js"></script>
+
+  <!-- 
+      1.掌握生命周期不同阶段的钩子函数
+      2.记住钩子函数的名字
+      3.了解什么情况下才会触发组件的重新渲染
+      4.在何种钩子函数中做对应的操作，eg： 在componentDidMount()中获取数据
+   -->
+  <script type="text/babel">
+    class Com extends React.Component{
+      constructor(params) {
+        super(params)
+        // 状态改变 （setState）才会触发组件的重新渲染
+        this.state = {
+          num: 0
+        }
+        // 改属性只需要显示结果 不需要通过他的改变来重新渲染组件，就可以定位普通属性
+        this.number = 1111
+      }
+      change() {
+        this.state.num++
+        console.log(this.state.num)
+        this.setState({
+          num: this.state.number + 1
+        })
+        this.forceUpdate()
+      }
+      componentDidMount(){
+        console.log('componentDidMount')
+      }
+      componentDidUpdate() {
+        console.log('componentDidUpdate')
+      }
+      render() {
+        console.log('render')
+        return (
+          <div>
+            num: {this.state.num}
+            <button onClick={this.change.bind(this)}>change</button>
+          </div>
+        )
+      }
+    }
+
+    ReactDOM.render(<Com/>, document.getElementById('app'))
+
+  
+  </script>
+</body>
+</html>
